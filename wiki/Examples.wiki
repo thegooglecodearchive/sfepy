@@ -33,3 +33,42 @@ done in 2.13 s
 [   56.58422132+0.j   120.86053155+0.j   120.94379536+0.j ...,
   5449.54444587+0.j  5635.20027136+0.j  5856.39070200+0.j]
 }}}
+
+== Tests ==
+
+All tests should pass:
+{{{
+$ ./runTests.py --filter-more
+<<< directory: tests, test files: 13
++++ test_structAdd: ok
++++ test_structIAdd: ok
++++ test_linear_terms: ok
++++ test_input: ok
++++ test_input: ok
++++ test_input: ok
++++ test_input: ok
++++ test_recursiveDictHDF5: ok
++++ test_sparseMatrixHDF5: ok
+--- test_linearRigidBodyBC: failed!
+--- test_linearRigidBodyBC: failed!
++++ test_parseEquations: ok
++++ test_parseRegions: ok
++++ test_pbc: ok
++++ test_pbc: ok
++++ test_problemCreation: ok
+13 test file(s) executed in 24.51 s, 2 failure(s) of 16 test(s)
+}}}
+The two failing tests are due to the fact, that in the latest released scipy you cannot use generalized indices:
+{{{
+  File "/usr/lib/python2.4/site-packages/scipy/sparse/sparse.py", line 2450, in __setitem__
+    raise ValueError, "invalid index value: %s" % str((i, j))
+ValueError: invalid index value: (array([  16,   17,   18, ..., 7095, 7096, 7097]), array([   0,    1,    2, ..., 5689, 5690, 5691]))
+}}}
+which is fixed in the svn version of scipy.
+
+If it fails, run with `--debug`:
+{{{
+$ ./runTests.py --debug
+[...]
+}}}
+This will break on the first error.
