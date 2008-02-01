@@ -1,0 +1,35 @@
+#summary Example of usage
+
+== Schrodinger ==
+
+{{{
+$ ./schroedinger.py input/schroed.py
+warning: other missing: ['functions', 'modules', 'epbc', 'lcbc']
+warning: left over: ['funV', 'options']
+mesh.read =  0.08
+mesh.split =  0.0
+t =  0.0
+t =  0.03
+t =  0.05
+t =  0.08
+t =  0.0
+t =  0.02
+t =  0.03
+t =  0.05
+leaf Y1 region_1
+leaf Omega region_2
+op Surface region_100
+Omega 3_4_P1
+rhs
+dw_mass_scalar.i1.Omega( v, Psi )
+lhs
+  dw_laplace.i1.Omega( m, v, Psi )
+               + dw_mass_scalar_variable.i1.Omega( matV.V, v, Psi )
+using solvers:
+sfe: matrix shape: (342, 342)
+0.01
+computing resonance frequencies...
+done in 2.13 s
+[   56.58422132+0.j   120.86053155+0.j   120.94379536+0.j ...,
+  5449.54444587+0.j  5635.20027136+0.j  5856.39070200+0.j]
+}}}
