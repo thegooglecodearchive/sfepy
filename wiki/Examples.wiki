@@ -39,37 +39,52 @@ done in 2.13 s
 
 All tests should pass:
 {{{
-$ ./runTests.py --filter-more
-<<< directory: tests, test files: 13
-+++ test_structAdd: ok
-+++ test_structIAdd: ok
-+++ test_linear_terms: ok
-+++ test_input: ok
-+++ test_input: ok
-+++ test_input: ok
-+++ test_input: ok
-+++ test_recursiveDictHDF5: ok
-+++ test_sparseMatrixHDF5: ok
---- test_linearRigidBodyBC: failed!
---- test_linearRigidBodyBC: failed!
-+++ test_parseEquations: ok
-+++ test_parseRegions: ok
-+++ test_pbc: ok
-+++ test_pbc: ok
-+++ test_problemCreation: ok
-13 test file(s) executed in 24.51 s, 2 failure(s) of 16 test(s)
+$ ./runTests.py 
+<<< directory: tests, test files: 14
+tests/test_base.py
++++   test_structAdd: ok
++++   test_structIAdd: ok
+tests/test_elasticity_small_strain.py
++++   test_linear_terms: ok
+tests/test_input_kostka.py
++++   test_input: ok
+tests/test_input_le.py
++++   test_input: ok
+tests/test_input_navier_stokes.py
++++   test_input: ok
+tests/test_input_poisson.py
++++   test_input: ok
+tests/test_io.py
++++   test_recursiveDictHDF5: ok
++++   test_sparseMatrixHDF5: ok
+tests/test_lcbc_2d.py
++++   test_linearRigidBodyBC: ok
+tests/test_lcbc_3d.py
++++   test_linearRigidBodyBC: ok
+tests/test_meshio.py
++++   test_readMeshes: ok
++++   test_compareSameMeshes: ok
+tests/test_parsing.py
++++   test_parseEquations: ok
++++   test_parseRegions: ok
+tests/test_periodic_bc_2d.py
++++   test_pbc: ok
+tests/test_periodic_bc_3d.py
++++   test_pbc: ok
+tests/test_quadratures.py
++++   test_problemCreation: ok
+14 test file(s) executed in 13.51 s, 0 failure(s) of 18 test(s)
 }}}
-The two failing tests are due to the fact, that in the latest released scipy you cannot use generalized indices:
-{{{
-  File "/usr/lib/python2.4/site-packages/scipy/sparse/sparse.py", line 2450, in __setitem__
-    raise ValueError, "invalid index value: %s" % str((i, j))
-ValueError: invalid index value: (array([  16,   17,   18, ..., 7095, 7096, 7097]), array([   0,    1,    2, ..., 5689, 5690, 5691]))
-}}}
-which is fixed in the svn version of scipy.
 
-If it fails, run with `--debug`:
+If some test fails, run it with `--debug`:
 {{{
 $ ./runTests.py --debug
 [...]
 }}}
-This will break on the first error.
+This will stop on the first error. You can also execute some particular test file only:
+{{{
+$ ./runTests.py tests/test_lcbc_3d.py
+tests/test_lcbc_3d.py
++++   test_linearRigidBodyBC: ok
+1 test file executed in 0.00 s, 0 failure(s) of 1 test(s)
+}}}
