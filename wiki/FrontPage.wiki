@@ -2,6 +2,10 @@
 
 This will be a new site for SFE (http://ui505p06-mbs.ntc.zcu.cz/sfe) developers.
 
-Mailing list: [http://groups.google.com/group/sfepy-devel sfepy-devel]
+=== Mailing Lists ===
+Developer/user discussions: [http://groups.google.com/group/sfepy-devel sfepy-devel]
 
+Issues announcements list: [http://groups.google.com/group/sfepy-issues sfepy-issues]
+
+=== Sources ===
 Mercurial repository: http://hg.sympy.org/sfepy
