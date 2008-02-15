@@ -1,6 +1,8 @@
 #summary Example of usage
 #labels Featured
 
+See also [http://ui505p06-mbs.ntc.zcu.cz/sfe/Examples]
+
 == Schrodinger ==
 
 {{{
@@ -88,3 +90,88 @@ tests/test_lcbc_3d.py
 +++   test_linearRigidBodyBC: ok
 1 test file executed in 0.00 s, 0 failure(s) of 1 test(s)
 }}}
+
+== Heat conduction ==
+{{{
+$ ./simple.py input/time_poisson.py
+warning: other missing: ['functions', 'modules', 'epbc', 'lcbc']
+mesh.read =  0.04
+t =  0.0
+t =  0.0
+t =  0.01
+t =  0.02
+t =  0.0
+t =  0.0
+t =  0.01
+t =  0.01
+leaf Gamma_Right region_4
+leaf Omega region_1000
+leaf Gamma_Left region_03
+Omega 3_4_P1
+Temperature
+  dw_laplace.i1.Omega( coef, s, t )
+       + dw_mass_scalar.i1.Omega( s, t ) = dw_mass_scalar_r.i1.Omega( s, t0 )
+using solvers:
+           ts: ts
+          nls: newton
+           ls: ls
+sfe: ====== time 0.000000e+00 (step  1 of 10) =====
+sfe: matrix shape: (300, 300)
+0.0
+sfe: ====== time 1.111111e-01 (step  2 of 10) =====
+nls: iter: 0, out-of-balance: 1.176265e-05 (rel: 1.000000e+00)
+  rezidual:    0.00 [s]
+     solve:    0.01 [s]
+    matrix:    0.00 [s]
+nls: iter: 1, out-of-balance: 9.083702e-21 (rel: 7.722493e-16)
+sfe: ====== time 2.222222e-01 (step  3 of 10) =====
+nls: iter: 0, out-of-balance: 2.716326e-06 (rel: 1.000000e+00)
+  rezidual:    0.00 [s]
+     solve:    0.01 [s]
+    matrix:    0.00 [s]
+nls: iter: 1, out-of-balance: 4.308282e-21 (rel: 1.586070e-15)
+sfe: ====== time 3.333333e-01 (step  4 of 10) =====
+nls: iter: 0, out-of-balance: 1.437913e-06 (rel: 1.000000e+00)
+  rezidual:    0.00 [s]
+     solve:    0.00 [s]
+    matrix:    0.01 [s]
+nls: iter: 1, out-of-balance: 3.546256e-21 (rel: 2.466252e-15)
+sfe: ====== time 4.444444e-01 (step  5 of 10) =====
+nls: iter: 0, out-of-balance: 9.418369e-07 (rel: 1.000000e+00)
+  rezidual:    0.00 [s]
+     solve:    0.01 [s]
+    matrix:    0.00 [s]
+nls: iter: 1, out-of-balance: 2.928262e-21 (rel: 3.109096e-15)
+sfe: ====== time 5.555556e-01 (step  6 of 10) =====
+nls: iter: 0, out-of-balance: 6.543687e-07 (rel: 1.000000e+00)
+  rezidual:    0.00 [s]
+     solve:    0.01 [s]
+    matrix:    0.00 [s]
+nls: iter: 1, out-of-balance: 3.465069e-21 (rel: 5.295286e-15)
+sfe: ====== time 6.666667e-01 (step  7 of 10) =====
+nls: iter: 0, out-of-balance: 4.620136e-07 (rel: 1.000000e+00)
+  rezidual:    0.00 [s]
+     solve:    0.00 [s]
+    matrix:    0.01 [s]
+nls: iter: 1, out-of-balance: 3.647033e-21 (rel: 7.893777e-15)
+sfe: ====== time 7.777778e-01 (step  8 of 10) =====
+nls: iter: 0, out-of-balance: 3.276678e-07 (rel: 1.000000e+00)
+  rezidual:    0.00 [s]
+     solve:    0.01 [s]
+    matrix:    0.00 [s]
+nls: iter: 1, out-of-balance: 3.435623e-21 (rel: 1.048508e-14)
+sfe: ====== time 8.888889e-01 (step  9 of 10) =====
+nls: iter: 0, out-of-balance: 2.326953e-07 (rel: 1.000000e+00)
+  rezidual:    0.00 [s]
+     solve:    0.01 [s]
+    matrix:    0.00 [s]
+nls: iter: 1, out-of-balance: 3.214248e-21 (rel: 1.381312e-14)
+sfe: ====== time 1.000000e+00 (step 10 of 10) =====
+nls: iter: 0, out-of-balance: 1.653207e-07 (rel: 1.000000e+00)
+  rezidual:    0.00 [s]
+     solve:    0.01 [s]
+    matrix:    0.00 [s]
+nls: iter: 1, out-of-balance: 3.198397e-21 (rel: 1.934662e-14)
+}}}
+
+Then run paraview, open simple_out..vtk files, and launch the animation.
