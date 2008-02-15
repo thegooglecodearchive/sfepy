@@ -37,6 +37,13 @@ done in 2.13 s
   5449.54444587+0.j  5635.20027136+0.j  5856.39070200+0.j]
 }}}
 
+=== Images ===
+
+http://sfepy.googlecode.com/svn/web/schrodinger/p10.png
+http://sfepy.googlecode.com/svn/web/schrodinger/p12.png
+http://sfepy.googlecode.com/svn/web/schrodinger/p12-o.png
+http://sfepy.googlecode.com/svn/web/schrodinger/p17.png
+
 == Tests ==
 
 All tests should pass:
