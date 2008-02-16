@@ -1,4 +1,4 @@
-#summary Example of usage
+﻿#summary Example of usage
 #labels Featured
 
 See also [http://ui505p06-mbs.ntc.zcu.cz/sfe/Examples]
@@ -38,6 +38,12 @@ done in 2.13 s
 }}}
 
 === Images ===
+
+11th eigenvalue (calculated: -0.04398532, exact: -0.056), on the mesh with 976 691 tetrahedrons and 163 666 nodes, for the hydrogen atom (`V=-1/r`):
+
+http://sfepy.googlecode.com/svn/web/schrodinger/hydrogen-10.png
+
+Other images for harmonic oscillator:
 
 http://sfepy.googlecode.com/svn/web/schrodinger/p10.png
 http://sfepy.googlecode.com/svn/web/schrodinger/p12.png
