@@ -1,0 +1,8 @@
+#summary How to use paraview to view results from sfepy
+
+= Introduction =
+
+{{{
+$ ./schroedinger.py
+$ paraview --data=t.1.vtk
+}}}
