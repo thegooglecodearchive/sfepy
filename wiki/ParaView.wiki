@@ -1,5 +1,9 @@
 #summary How to use paraview to view results from sfepy
 
+= Introduction =
+
+Excellent official documentation is in [http://www.paraview.org/Wiki/images/2/26/Servermanager.pdf Servermanager.pdf], so here we just show how to get you started with paraview and sfepy. Consult the official documentation for more advanced stuff.
+
 = Tutorial =
 
 {{{
