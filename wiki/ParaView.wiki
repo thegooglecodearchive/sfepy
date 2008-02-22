@@ -21,7 +21,7 @@ view = sm.GetRenderView()
 view.StillRender()
 pause()
 }}}
-And execute the script using (adapt the path to your installation of paraview):
+And execute the script using (adjust the path to your installation of paraview):
 {{{
 $ export P=/home/ondra/ext/paraview-3.2.1-Linux-x86/lib/paraview-3.2/
 $ LD_LIBRARY_PATH=$P PYTHONPATH=$P python2.5 t.py
