@@ -1,8 +1,45 @@
 #summary How to use paraview to view results from sfepy
 
-= Introduction =
+= Tutorial =
 
 {{{
 $ ./schroedinger.py
 $ paraview --data=t.1.vtk
 }}}
+Hit "Apply". Hit the "Clip" button, "Apply". Move the result with mouse to see it better.
+File -> Save State -> "state". This will save the current state into a xml file "state.pvsm". Look into it so that you get a feeling about it:
+{{{
+$ vim state.pvsm
+}}}
+Then create a script `t.py`:
+{{{
+from sfe.base.base import pause
+from paraview import servermanager as sm
+c = sm.Connect()
+sm.LoadState("state.pvsm")
+view = sm.GetRenderView()
+view.StillRender()
+pause()
+}}}
+And execute the script using (adapt the path to your installation of paraview):
+{{{
+$ export P=/home/ondra/ext/paraview-3.2.1-Linux-x86/lib/paraview-3.2/
+$ LD_LIBRARY_PATH=$P PYTHONPATH=$P python2.5 t.py
+}}}
+A simple window will popup showing the result. The `pause()` command is necessary, as the windows is automatically closed when the script finishes.
+
+==More Advanced Stuff==
+
+In theory, adding this to the end of the script:
+{{{
+view.WriteImage("image.png", "vtkPNGWriter", 1)
+}}}
+should save the image into a file. However, I get:
+{{{
+X Error of failed request:  GLXBadContext
+  Major opcode of failed request:  159 (GLX)
+  Minor opcode of failed request:  5 (X_GLXMakeCurrent)
+  Serial number of failed request:  24
+  Current serial number in output stream:  24
+}}}
+It's probably a bug that should be reported to either paraview or mesa, or whatever.
