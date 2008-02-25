@@ -9,3 +9,7 @@ Issues announcements list: [http://groups.google.com/group/sfepy-issues sfepy-is
 
 === Sources ===
 Mercurial repository: http://hg.sympy.org/sfepy
+
+=== IRC channel ===
+
+#sfepy at Freenode.
