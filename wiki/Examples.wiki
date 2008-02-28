@@ -3,38 +3,60 @@
 
 See also [http://ui505p06-mbs.ntc.zcu.cz/sfe/Examples]
 
-== Schrodinger ==
+== Schroedinger ==
+
+The special-purpose script schroedinger.py implicitly uses input/schroed.py input file.
 
 {{{
-$ ./schroedinger.py input/schroed.py
-warning: other missing: ['functions', 'modules', 'epbc', 'lcbc']
-warning: left over: ['funV', 'options']
-mesh.read =  0.08
-mesh.split =  0.0
-t =  0.0
-t =  0.03
-t =  0.05
-t =  0.08
-t =  0.0
-t =  0.02
-t =  0.03
-t =  0.05
-leaf Y1 region_1
-leaf Omega region_2
-op Surface region_100
-Omega 3_4_P1
-rhs
-dw_mass_scalar.i1.Omega( v, Psi )
-lhs
-  dw_laplace.i1.Omega( m, v, Psi )
+$ ./schroedinger.py
+sfe: warning: other missing: ['functions', 'modules', 'epbc_[0-9]+|epbcs', 'lcbc_[0-9]+|lcbcs', 'nbc_[0-9]+|nbcs']
+sfe: warning: left over: ['funV']
+sfe: reading mesh...
+       nodes: 100% |############################################| Time: 00:00:00
+       elements: 100% |#########################################| Time: 00:00:02
+sfe: ...done in 2.56 s
+sfe: setting up domain edges...
+sfe: ...done in 1.14 s
+sfe: setting up domain faces...
+sfe: ...done in 0.87 s
+sfe: creating regions...
+sfe:     leaf Omega region_1000
+sfe:     leaf Surface region_2
+sfe: ...done in 1.64 s
+sfe: equation "rhs":
+sfe: dw_mass_scalar.i1.Omega( v, Psi )
+sfe: equation "lhs":
+sfe:   dw_laplace.i1.Omega( m.val, v, Psi )
                + dw_mass_scalar_variable.i1.Omega( matV.V, v, Psi )
-using solvers:
-sfe: matrix shape: (342, 342)
-0.01
+sfe: describing geometries...
+sfe: ...done in 0.21 s
+sfe: setting up dof connectivities...
+sfe: ...done in 0.00 s
+sfe: matrix shape: (7964, 7964)
+sfe: assembling matrix graph...
+sfe: ...done in 0.12 s
+sfe: updating materials...
+sfe:     m
+sfe:     matV
+sfe: ...done in 0.00 s
+sfe: assembling lhs...
+sfe:   setting up dof connectivities...
+sfe:   ...done in 0.01 s
+sfe: ...done in 0.32 s
+sfe: assembling rhs...
+sfe:   setting up dof connectivities...
+sfe:   ...done in 0.01 s
+sfe: ...done in 0.10 s
 computing resonance frequencies...
-done in 2.13 s
-[   56.58422132+0.j   120.86053155+0.j   120.94379536+0.j ...,
-  5449.54444587+0.j  5635.20027136+0.j  5856.39070200+0.j]
+loading...
+solving...
+number of converged eigenvalues: 10
+done
+[ 1.60246586  2.66350385  2.66592179  2.66745129  3.73764474  3.74251454
+  3.74545591  3.74824003  3.75739244  3.78188468]
+relative values:
+[ 1.5         2.49319243  2.49545577  2.49688747  3.49864995  3.50320836
+  3.50596165  3.50856774  3.51713492  3.54006107]
 }}}
 
 === Images ===
