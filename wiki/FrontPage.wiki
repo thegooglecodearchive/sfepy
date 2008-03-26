@@ -2,6 +2,9 @@
 
 This is a site for !SfePy (http://sfepy.kme.zcu.cz) developers.
 
+=== News ===
+|| 26.03.2008 || Version 00.41.03 released (works on 64 bits, support for various mesh formats, new solvers and other improvements)||
+
 === Mailing Lists ===
 Developer/user discussions: [http://groups.google.com/group/sfepy-devel sfepy-devel]
 
