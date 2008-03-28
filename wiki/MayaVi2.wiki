@@ -2,7 +2,7 @@
 
 === Installation ===
 
-...based on discussion with Gaël Varoquaux
+...based on discussion with Gaël Varoquaux (in 28 March 2008, check https://svn.enthought.com/enthought/wiki/MayaVi for possibly updated info)
 
   # grab http://code.enthought.com/downloads/source/ets2.7/
      * install traits, then traits-ui, then mayavi
