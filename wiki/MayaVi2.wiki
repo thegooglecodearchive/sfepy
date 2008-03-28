@@ -6,6 +6,8 @@
 
   # grab http://code.enthought.com/downloads/source/ets2.7/
      * install traits, then traits-ui, then mayavi
+       * edit install.sh script to change installation prefix
+       * run build.sh and install.sh scripts
   # use recent wxpython (on gentoo: wxpython-2.8.7.1)
   # use recent ipython (on gentoo: ipython-0.8.2)
 
