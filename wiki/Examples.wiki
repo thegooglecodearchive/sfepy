@@ -243,3 +243,89 @@ nls: iter: 1, out-of-balance: 3.198397e-21 (rel: 1.934662e-14)
 }}}
 
 Then run paraview, open simple_out..vtk files, and launch the animation.
+
+== Acoustic band gaps ==
+
+ * set 'text.usetex' to 'True' and lines.linewidth to 3 in your matplotlibrc
+ * run:
+{{{
+$ ./eigen.py -p input/phono.py
+/home/share/software/usr/lib/python2.4/site-packages/scipy/sparse/linalg/dsolve/linsolve.py:20: DeprecationWarning: scipy.sparse.linalg.dsolve.umfpack will be removed, install scikits.umfpack instead
+  ' install scikits.umfpack instead', DeprecationWarning )
+eigen: warning: other missing: ['functions', 'modules', 'epbc_[0-9]+|epbcs', 'lcbc_[0-9]+|lcbcs', 'nbc_[0-9]+|nbcs']
+eigen: warning: left over: ['clip', 'selectInPlane', 'normalize', 'nm', 'geom', '__doc__', 'dim']
+eigen: reading mesh...
+eigen: ...done in 0.05 s
+eigen: setting up domain edges...
+eigen: ...done in 0.01 s
+eigen: creating regions...
+eigen:     leaf Y1 region_1
+eigen:     leaf Y region_1000
+eigen:     leaf Y2 region_2
+eigen:     op Y2_Surface region_100
+eigen: ...done in 0.04 s
+eigen: equation "rhs":
+eigen: dw_mass_vector.i1.Y2( inclusion.density, v, u )
+eigen: equation "lhs":
+eigen: dw_lin_elastic_iso.i1.Y2( inclusion.lame, v, u )
+eigen: describing geometries...
+eigen: ...done in 0.01 s
+eigen: setting up dof connectivities...
+eigen: ...done in 0.00 s
+eigen: matrix shape: (406, 406)
+eigen: assembling matrix graph...
+eigen: ...done in 0.01 s
+eigen: updating materials...
+eigen:     matrix
+eigen:     inclusion
+eigen: ...done in 0.00 s
+eigen: setting up dof connectivities...
+eigen: ...done in 0.00 s
+eigen: setting up dof connectivities...
+eigen: ...done in 0.00 s
+eigen: computing resonance frequencies...
+eigen: ...done in 0.82 s
+eigen: [    232.40156299     232.45829855     289.95997046 ...,  119585.50471959
+  126661.98236838  132604.79235405]
+eigen: volumes: 0.79067070822303875 0.2093292917769598 0.99999999999999856
+eigen: densities: 0.2799 0.1142
+eigen: average density: 0.24521413635255734
+eigen: method: eig.sgscipy
+eigen: freq. range             : [  15.245,   50.804]
+eigen: freq. range with margins: [  11.689,   54.254]
+eigen: mass matrix components...
+computing: 100% |###############################################| Time: 00:00:10
+eigen: ...done in 10.13 s
+eigen: interval: ]11.68877816, 15.24472246[...
+eigen:   [2, 11.688778163324915, 0.2683300317325728]
+eigen:   [2, 11.688778163324915, 0.26833387013170645]
+eigen: ...done
+eigen: interval: ]15.24472246, 15.24658318[...
+eigen:   finding zero of the largest eig...
+eigen:   ...done
+eigen:   finding zero of the smallest eig...
+eigen:   ...done
+eigen:   [1, 15.246583176111219, -63.199325600551674]
+eigen:   [2, 15.244722463655851, 63.726122234686045]
+...
+eigen: interval: ]50.80416547, 54.25443895[...
+eigen:   [2, 50.804165466965202, 0.21954353009874045]
+eigen:   [2, 50.804165466965202, 0.21971889759333721]
+eigen: ...done
+eigen: 0 2 2 11.68877816 15.24472246
+eigen:  -> propagation zone
+    [(11.688778163324915, 15.244722463655851)]
+eigen: 1 1 2 15.24472246 15.24658318
+eigen:  -> full weak band gap
+    [(15.244722463655851, 15.246583176166673)]
+eigen: 2 0 0 15.24658318 17.02821102
+eigen:  -> strong band gap + weak band gap + propagation zone
+    [(15.246583176166673, 15.74506005680678), (15.74506005680678, 15.747410641568624), (15.747410641568624, 17.02821101763119)]
+...
+eigen: 30 2 2 50.80416547 54.25443895
+eigen:  -> propagation zone
+    [(50.804165466965202, 54.254438946289547)]
+}}}
+ * to get:
+
+http://sfepy.googlecode.com/svn/web/acoustics/band_gaps.png
