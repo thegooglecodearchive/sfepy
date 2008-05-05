@@ -1,0 +1,232 @@
+#summary Example: computing homogenized elasticity coefficient.
+
+The homogenized elasticity coefficient corresponding to the microstructure
+
+[http://sfepy.googlecode.com/svn/web/examples/osteonT1_Ym_33.png]
+
+is computed here. The 'channels' in the microstructure have reduced stiffness tensor by factor of 10, making thus the material heterogeneous. The figure shows a 3x3 repetition of the reference periodic cell, the FE mesh in the channels is not displayed.
+
+The example is implemented in a stand-alone file containing both the problem description and the appplication.
+
+Run
+{{{
+$ python examples/rs_correctors.py
+}}}
+
+Below is the output you should get:
+
+{{{
+$ python examples/rs_correctors.py
+>>>
+First, this file will be read in place of an input
+(problem description) file.
+Press 'q' to quit the example, press any other key to continue...
+sfe: warning: other missing: ['functions', 'modules', 'lcbc_[0-9]+|lcbcs', 'nbc_[0-9]+|nbcs', 'options']
+sfe: warning: left over: ['is3D', 'matchYPlane', 'iterSym', 'matchGridLine', 'createPis', 'matchZPlane', 'matchZLine', 'nm', 'matchGridPlane', 'getPars', 'geom', 'main', 'solveSteadyCorrectors_rs', 'coefE', 'sys', 'defineRegions', 'dim', 'buildOpPi', 'matIds', 'matchXLine', 'matchXPlane', 'matchYLine']
+ProblemConf
+  is3D:
+    False
+  lcbcs:
+    {}
+  matchYPlane:
+    <function matchYPlane at 0xb6cf4f7c>
+  _fileName:
+    examples/rs_correctors.py
+  variables:
+    {'variable_4': Struct:uc, 'variable_3': Struct:Pi, 'variable_2': Struct:vc, 'variable_1': Struct:Pi2, 'variable_0': Struct:Pi1}
+  iterSym:
+    <function iterSym at 0x894a064>
+  solvers:
+    {'solver_0': Struct:ls, 'solver_1': Struct:newton}
+  matchGridLine:
+    <function matchGridLine at 0xb6cf4e2c>
+  createPis:
+    <function createPis at 0x8949fb4>
+  matchZPlane:
+    <function matchZPlane at 0xb6cf4fb4>
+  functions:
+    None
+  matchZLine:
+    <function matchZLine at 0xb6cf4ed4>
+  nm:
+    <module 'numpy' from '/home/share/software/usr/lib/python2.4/site-packages/numpy/__init__.pyc'>
+  nbc_[0-9]+|nbcs:
+    None
+  matchGridPlane:
+    <function matchGridPlane at 0xb6cf4f0c>
+  regions:
+    {'region_1': Struct:Ym, 'region_0': Struct:Right, 'region_3': Struct:Corners, 'region_2': Struct:Bottom, 'region_5': Struct:Y, 'region_4': Struct:Yc, 'region_7': Struct:Left, 'region_6': Struct:Top}
+  getPars:
+    <function getPars at 0x8949f44>
+  geom:
+    2_3
+  main:
+    <function main at 0x894a0d4>
+  opt:
+    Struct
+  solveSteadyCorrectors_rs:
+    <function solveSteadyCorrectors_rs at 0x894a02c>
+  integrals:
+    {'integral_1': Struct:i3}
+  coefE:
+    <function coefE at 0x894a09c>
+  sys:
+    <module 'sys' (built-in)>
+  funmod:
+    <module 'rs_correctors' from '/home/eldaran/projects/sfepy/examples/rs_correctors.py'>
+  fe:
+    Struct
+  equations:
+    {'eq_1': 'dw_lin_elastic.i3.Y( m.D, vc, uc )\n       = - dw_lin_elastic_r.i3.Y( m.D, vc, Pi )'}
+  defineRegions:
+    <function defineRegions at 0x8949454>
+  epbcs:
+    {'epbc_11': Struct:periodic_y, 'epbc_10': Struct:periodic_x}
+  dim:
+    2
+  buildOpPi:
+    <function buildOpPi at 0x8949f7c>
+  nbcs:
+    {}
+  fields:
+    {'field_2': Struct:pressure_m, 'field_1': Struct:displacement}
+  matIds:
+    [11, 39, 6, 8, 27, 28, 9, 2, 4, 14, 12, 17, 45, 28, 15]
+  modules:
+    None
+  fileName_mesh:
+    examples/osteonT1_11.mesh
+  matchXLine:
+    <function matchXLine at 0xb6cf4e64>
+  materials:
+    {'material_1': {'function': 'getPars', 'region': 'Y', 'extraArgs': {'matIds': [11, 39, 6, 8, 27, 28, 9, 2, 4, 14, 12, 17, 45, 28, 15]}, 'name': 'm', 'mode': 'function'}}
+  shapeOpt:
+    Struct
+  matchXPlane:
+    <function matchXPlane at 0xb6cf4f44>
+  ebcs:
+    {'ebc_0': Struct:fixed_u}
+  matchYLine:
+    <function matchYLine at 0xb6cf4e9c>
+  options:
+    None
+  lcbc_[0-9]+|lcbcs:
+    None
+>>>
+...the read input.
+['q'/other key to quit/continue...]
+>>>
+Now the input will be used to create a ProblemDefinition instance.
+['q'/other key to quit/continue...]
+sfe: reading mesh...
+sfe: ...done in 0.07 s
+sfe: setting up domain edges...
+sfe: ...done in 0.02 s
+sfe: creating regions...
+sfe:     leaf Right region_0
+sfe:     op Ym region_1
+sfe:     leaf Bottom region_2
+sfe:     leaf Corners region_3
+sfe:     leaf Y region_5
+sfe:     leaf Top region_6
+sfe:     leaf Left region_7
+sfe:     op Yc region_4
+sfe: ...done in 0.26 s
+sfe: using solvers:
+               nls: newton
+                ls: ls
+ProblemDefinition
+  domain:
+    Domain:examples/osteonT1_11
+  tsConf:
+    None
+  nlsConf:
+    Struct:newton
+  fields:
+    Fields
+  lsConf:
+    Struct:ls
+  materials:
+    Materials
+  solverConfs:
+    {'newton': Struct:newton, 'ls': Struct:ls}
+  conf:
+    ProblemConf
+>>>
+...the ProblemDefinition instance.
+['q'/other key to quit/continue...]
+>>>
+The homogenized elastic coefficient $E_{ijkl}$ is expressed
+using $\Pi$ operators, computed now. In fact, those operators are permuted
+coordinates of the mesh nodes.
+['q'/other key to quit/continue...]
+[[[-0.866  0.    -0.846 ...,  0.     0.861  0.   ]
+  [-0.5  0.  -0.5 ...,  0.  -0.4  0. ]]
+ [[ 0.    -0.866  0.    ...,  0.775  0.     0.861]
+  [ 0.    -0.5    0.    ...,  0.459  0.    -0.4  ]]]
+>>>
+...the $\Pi$ operators.
+['q'/other key to quit/continue...]
+>>>
+Next, $E_{ijkl}$ needs so called steady state correctors $\bar{\omega}^{rs}$,
+computed now. The results will be saved in: osteonT1_11_out_*.vtk
+['q'/other key to quit/continue...]
+sfe: equation "eq_1":
+sfe: dw_lin_elastic.i3.Y( m.D, vc, uc )
+       = - dw_lin_elastic_r.i3.Y( m.D, vc, Pi )
+sfe: describing geometries...
+sfe: ...done in 0.34 s
+sfe: setting up dof connectivities...
+sfe: ...done in 0.02 s
+sfe: matrix shape: (2290, 2290)
+sfe: assembling matrix graph...
+sfe: ...done in 0.01 s
+sfe: matrix structural nonzeros: 32052 (6.11e-03% fill)
+sfe: updating materials...
+sfe:     m
+sfe: ...done in 0.02 s
+ sfe: nls: iter: 0, residual: 1.196128e+00 (rel: 1.000000e+00)
+sfe:   rezidual:    0.07 [s]
+sfe:      solve:    0.05 [s]
+sfe:     matrix:    0.03 [s]
+sfe: nls: iter: 1, residual: 2.123846e-15 (rel: 1.775601e-15)
+sfe: nls: iter: 0, residual: 1.784461e-01 (rel: 1.000000e+00)
+sfe:   rezidual:    0.06 [s]
+sfe:      solve:    0.05 [s]
+sfe:     matrix:    0.04 [s]
+sfe: nls: iter: 1, residual: 1.369567e-15 (rel: 7.674961e-15)
+sfe: nls: iter: 0, residual: 1.784461e-01 (rel: 1.000000e+00)
+sfe:   rezidual:    0.06 [s]
+sfe:      solve:    0.05 [s]
+sfe:     matrix:    0.04 [s]
+sfe: nls: iter: 1, residual: 1.346749e-15 (rel: 7.547095e-15)
+sfe: nls: iter: 0, residual: 1.209732e+00 (rel: 1.000000e+00)
+sfe:   rezidual:    0.06 [s]
+sfe:      solve:    0.05 [s]
+sfe:     matrix:    0.04 [s]
+sfe: nls: iter: 1, residual: 2.013200e-15 (rel: 1.664170e-15)
+Struct:Steady RS correctors
+  statesRS:
+    [[[ 0.     0.     0.059 ...,  0.004 -0.022  0.055]
+      [  0.000e+00   0.000e+00  -9.699e-05 ...,  -7.341e-02   1.024e-01
+      -2.026e-02]]
+     [ [  0.000e+00   0.000e+00  -9.699e-05 ...,  -7.341e-02   1.024e-01
+      -2.026e-02]
+      [ 0.     0.    -0.005 ..., -0.066 -0.012  0.193]]]
+  name:
+    Steady RS correctors
+  di:
+    DofInfo:dofInfo
+>>>
+...the $\bar{\omega}^{rs}$ correctors.
+['q'/other key to quit/continue...]
+>>>
+Finally, $E_{ijkl}$ can be computed.
+['q'/other key to quit/continue...]
+>>>
+The homogenized elastic coefficient $E_{ijkl}$, symmetric storage
+with rows, columns in 11, 22, 12 ordering:
+[[  1.874e+00   1.305e+00  -4.354e-05]
+ [  1.305e+00   1.874e+00  -6.431e-06]
+ [ -4.354e-05  -6.431e-06   2.847e-01]]
+}}}
