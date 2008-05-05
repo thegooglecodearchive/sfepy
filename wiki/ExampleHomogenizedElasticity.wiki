@@ -12,6 +12,7 @@ Run
 {{{
 $ python examples/rs_correctors.py
 }}}
+The script is interactive, press 'q' to quit or other key to continue...
 
 Below is the output you should get:
 
@@ -20,7 +21,7 @@ $ python examples/rs_correctors.py
 >>>
 First, this file will be read in place of an input
 (problem description) file.
-Press 'q' to quit the example, press any other key to continue...
+Press 'q' to quit the example, press any another key to continue...
 sfe: warning: other missing: ['functions', 'modules', 'lcbc_[0-9]+|lcbcs', 'nbc_[0-9]+|nbcs', 'options']
 sfe: warning: left over: ['is3D', 'matchYPlane', 'iterSym', 'matchGridLine', 'createPis', 'matchZPlane', 'matchZLine', 'nm', 'matchGridPlane', 'getPars', 'geom', 'main', 'solveSteadyCorrectors_rs', 'coefE', 'sys', 'defineRegions', 'dim', 'buildOpPi', 'matIds', 'matchXLine', 'matchXPlane', 'matchYLine']
 ProblemConf
