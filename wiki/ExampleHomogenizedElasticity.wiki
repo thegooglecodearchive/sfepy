@@ -12,7 +12,7 @@ Run
 {{{
 $ python examples/rs_correctors.py
 }}}
-The script is interactive, press 'q' to quit or other key to continue...
+The script is interactive, press 'q' to quit or other key to continue. You can browse its code [http://hg.sympy.org/sfepy/file/9fb79783f0ac/examples/rs_correctors.py here].
 
 Below is the output you should get:
 
