@@ -3,6 +3,10 @@
 
 See also [http://ui505p06-mbs.ntc.zcu.cz/sfe/Examples]
 
+== Computing homogenized elasticity ==
+
+To allow for materials with complex microstructure and at the same time to avoid a full computation on the microscopic scale (not feasible), the homogenization method is a suitable tool. This [ExampleHomogenizedElasticity example] illustrates computing the homogenized elasticity coefficients.
+
 == Schroedinger ==
 
 The special-purpose script schroedinger.py implicitly uses input/schroed.py input file.
