@@ -47,3 +47,14 @@ X Error of failed request:  GLXBadContext
   Current serial number in output stream:  24
 }}}
 It's probably a bug that should be reported to either paraview or mesa, or whatever.
+
+=Update=
+
+In Paraview 3.3 (development version):
+{{{
+view.UseOffscreenRenderingForScreenshots = 0
+view.WriteImage( "image.png", "vtkPNGWriter", 1 )
+}}}
+works, if one runs the script with pvpython instead of regular python!
+
+A complete script coming soon...
