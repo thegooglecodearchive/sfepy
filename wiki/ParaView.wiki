@@ -58,3 +58,6 @@ view.WriteImage( "image.png", "vtkPNGWriter", 1 )
 works, if one runs the script with pvpython instead of regular python!
 
 A complete script coming soon...
+
+Example report generated automatically using Paraview Python scripting facilities:
+[http://sfepy.googlecode.com/svn/web/docs/bones_report.pdf bones_report.pdf]
