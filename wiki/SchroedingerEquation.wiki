@@ -1,5 +1,7 @@
 #summary Examples of schroedinger.py
 
+The outputs below were generated using the revision [http://hg.sympy.org/sfepy/rev/752f93f900de 752f93f900de].
+
 = 2D =
 
 Create a mesh:
