@@ -4,7 +4,7 @@ The outputs below were generated using the revision [http://hg.sympy.org/sfepy/r
 
 = 2D =
 
-Create a mesh:
+Create a mesh (you need [http://www.geuz.org/gmsh/ gmsh] for that):
 
 {{{
 $ ./schroedinger.py --mesh --2d
@@ -226,7 +226,7 @@ Solution saved to mesh.vtk
 
 = 3D =
 
-Create a 3D mesh:
+Create a 3D mesh (you need [http://tetgen.berlios.de/ tetgen] for that):
 
 {{{
 $ ./schroedinger.py --mesh
