@@ -226,7 +226,7 @@ Solution saved to mesh.vtk
 
 = 3D =
 
-Create a 3D mesh (you need [http://tetgen.berlios.de/ tetgen] for that):
+Create a 3D mesh (you need [http://tetgen.berlios.de/ tetgen] for that -- it is non-free, but you can use it for academic purposes -- if you have a good free 3D mesh generator, please let us know):
 
 {{{
 $ ./schroedinger.py --mesh
