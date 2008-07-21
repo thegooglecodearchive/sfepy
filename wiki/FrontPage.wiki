@@ -1,6 +1,6 @@
 #summary A wiki for the frontpage (this line will not be visible on the front page).
 
-== SfePy ==
+== !SfePy ==
 
 Simple finite elements in Python.
 
