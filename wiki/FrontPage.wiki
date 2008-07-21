@@ -1,5 +1,9 @@
 #summary A wiki for the frontpage (this line will not be visible on the front page).
 
+== SfePy ==
+
+Simple finite elements in Python.
+
 This is a site for !SfePy (http://sfepy.kme.zcu.cz) developers.
 
 === News ===
