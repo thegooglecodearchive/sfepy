@@ -15,7 +15,7 @@ Following the discussion [http://code.google.com/p/sfepy/issues/detail?id=43 at 
   * e.g.: save_data(), transform_variables(), do not use data_save(), variable_transform() etc.
  * variables like V, c, A, b, x should be tolerated only locally when expressing mathematical ideas
 
-Robert has also these additional recommendation:
+Robert has also these additional recommendations:
 
  * a = 1 instead of a=1
  * do not to use single letter names
