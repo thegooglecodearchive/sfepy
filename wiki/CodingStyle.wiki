@@ -6,7 +6,7 @@ All the code in !SfePy should try to adhere to python style guidelines, see
 
 This is *new in the development* version , see [http://hg.sympy.org/sfepy http://hg.sympy.org/sfepy].
 
-Following the discussion in the [http://code.google.com/p/sfepy/issues/detail?id=43 issue 43] there are some additional recommendations:
+Following the discussion in the issue 43 there are some additional recommendations:
 
  * prefer whole words to abbreviations in public APIs - there is completion after all:
   * yes: equation, transform_variables(), filename
