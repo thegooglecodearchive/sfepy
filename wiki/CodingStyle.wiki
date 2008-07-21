@@ -24,5 +24,5 @@ Robert has also these additional recommendations:
 
 Ondřej likes this:
 
- * you can use single letter names in loops, why not
- * write functions as f(x, y, z, word=True)
+ * write functions as f(x, y, z, word=True) as this follows the PEP and most (if not all) other Python libraries
+ * you can use single letter names in loops and generators, why not (but this is really minor)
