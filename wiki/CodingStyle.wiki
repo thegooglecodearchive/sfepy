@@ -14,7 +14,7 @@ Following the discussion [http://code.google.com/p/sfepy/issues/detail?id=43 at 
  * functions have usually form {{{<action>_<subject>()}}}
   * e.g.: save_data(), transform_variables(), do not use data_save(), variable_transform() etc.
  * variables like V, c, A, b, x should be tolerated only locally when expressing mathematical ideas
- * abc = 1 instead of abc=1 except keyword arguments (Robert: why this '=' should be special?)
+ * abc = 1 instead of abc=1 except keyword arguments (Robert: why this '=' should be special? I do not see why this is so in the PEP.)
 
 Robert has also these additional recommendations:
 
