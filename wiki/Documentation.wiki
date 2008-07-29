@@ -11,13 +11,17 @@ Some (a bit rusty) documentation is also at [http://ui505p06-mbs.ntc.zcu.cz/sfe/
 
 Below is a list of documents related to !SfePy.
 
+ * [http://www.scipy.org/EuroSciPy2008 EuroSciPy2008], Leipzig, Germany, July 26-27, 2008
+  * updated slides of PANM 14 (see below) + some new pages
+  * [http://sfepy.googlecode.com/svn/web/docs/euroscipy2008_slides.pdf euroscipy2008_slides.pdf]
+ * 5th International Workshop on Parallel Matrix Algorithms and Applications (PMAA'08). Neuchâtel, Switzerland, June 20-22, 2008
+  * [http://sfepy.googlecode.com/svn/web/docs/pmaa08.pdf pmaa08.pdf]
+ * Seminar on Programs and Algorithms of Numerical Mathematics 14 (PANM 14), Dolní Maxov, Czech Republic, June 1-6, 2008
+  * [http://sfepy.googlecode.com/svn/web/docs/panm2008_slides.pdf panm2008_slides.pdf]
  * Poster presented at [http://www.math.ch/colloqnum08/ Colloque Numérique Suisse / Schweizer Numerik Kolloquium]:
   * [http://sfepy.googlecode.com/svn/web/docs/cns2008_abstract.pdf cns2008_abstract.pdf]
   * [http://sfepy.googlecode.com/svn/web/docs/cns2008_poster.pdf cns2008_poster.pdf]
- * Seminar on Programs and Algorithms of Numerical Mathematics 14 (PANM 14), Dolní Maxov, Czech Republic, June 1-6, 2008
-  * [http://sfepy.googlecode.com/svn/web/docs/panm2008_slides.pdf panm2008_slides.pdf]
- * 5th International Workshop on Parallel Matrix Algorithms and Applications (PMAA'08). Neuchâtel, Switzerland, June 20-22, 2008
-  * [http://sfepy.googlecode.com/svn/web/docs/pmaa08.pdf pmaa08.pdf]
+
 == Installation notes ==
 
 * using umpfpack on fedora 8 (contributed by David Huard)
