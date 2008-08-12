@@ -33,3 +33,12 @@ Below is a list of documents related to !SfePy.
   library_dirs=/usr/lib64
   include_dirs = /usr/include/suitesparse
 }}}
+
+* Intel Mac (thanks to Dominique Orban for his advice):
+
+  To build !SfePy on an Intel Mac the following options need to be set in site_cfg.py:
+
+  opt_flags = '-g -O2 -fPIC -DPIC -fno-strict-aliasing -fno-common -dynamic'
+  link_flags = '-dynamiclib -undefined dynamic_lookup -fPIC -DPIC'
+
+  (revision http://hg.sympy.org/sfepy/rev/609196c918be is needed)
