@@ -34,6 +34,11 @@ Below is a list of documents related to !SfePy.
   include_dirs = /usr/include/suitesparse
 }}}
 
+  Comment by david.huard,  Mar 26, 2008:
+
+  Of course, suitesparse and suitesparse-devel must be installed.
+
+
 * Intel Mac (thanks to Dominique Orban for his advice):
 
   To build !SfePy on an Intel Mac the following options need to be set in site_cfg.py:
