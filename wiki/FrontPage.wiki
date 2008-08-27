@@ -12,6 +12,16 @@ This is a site for !SfePy (http://sfepy.kme.zcu.cz) developers.
 
  * *26.03.2008* Version 00.41.03 released (works on 64 bits, support for various mesh formats, new solvers and other improvements), see [http://sfepy.googlecode.com/svn/web/releases/004103_RELEASE_NOTES.txt 004103_RELEASE_NOTES.txt]
 
+=== Key Features ===
+
+ * 2D/3D linear elasticity, Poisson equation, Stokes, simple Navier-Stokes problems, Darcy flow and other problems with PDEs containing the implemented terms
+ * fading memory terms
+ * acoustic band gaps in phononic materials (similar to forbidden frequency ranges in photonic crystals, see http://en.wikipedia.org/wiki/Photonic_crystal)
+ * Schroedinger equation
+ * development:
+   * problems in complex domain (e.g. acoustics)
+   * finite deformations: hyperelastic neo-Hookean material in the total Lagrangian formulation
+
 === Mailing Lists ===
 Developer/user discussions: [http://groups.google.com/group/sfepy-devel sfepy-devel]
 
