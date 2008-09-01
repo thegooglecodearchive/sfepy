@@ -20,7 +20,7 @@ This is a site for !SfePy (http://sfepy.kme.zcu.cz) developers.
  * Schroedinger equation
  * development:
    * problems in complex domain (e.g. acoustics)
-   * finite deformations: hyperelastic neo-Hookean material in the total Lagrangian formulation
+   * finite deformations: hyperelastic neo-Hookean, Mooney-Rivlin materials in the total Lagrangian formulation
 
 See [Examples].
 
