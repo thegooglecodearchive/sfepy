@@ -47,6 +47,7 @@ sfepy:   rezidual:    0.00 [s]
 sfepy:      solve:    0.00 [s]
 sfepy:     matrix:    0.01 [s]
 sfepy: nls: iter: 3, residual: 1.379673e-14 (rel: 6.898363e-14)
+}}}
 
 Then look at 'pressure_displacement.png':
 
