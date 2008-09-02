@@ -8,7 +8,7 @@ This is a site for !SfePy (http://sfepy.kme.zcu.cz) developers.
 
 === News ===
 
- * *02.09.2008* Version 00.50.00 released (finite strain elasticity: total Lagrangian (TL) formulation, solving problems in complex numbers, generalized equations to allow linear combination of terms, run-time type of state term arguments, refactoring to follow Python coding style guidelines, ...), see [http://sfepy.googlecode.com/svn/web/releases/005000_RELEASE_NOTES.txt]
+ * *02.09.2008* Version 00.50.00 released (finite strain elasticity: total Lagrangian (TL) formulation, solving problems in complex numbers, generalized equations to allow linear combination of terms, run-time type of state term arguments, refactoring to follow Python coding style guidelines, ...), see [http://sfepy.googlecode.com/svn/web/releases/005000_RELEASE_NOTES.txt 005000_RELEASE_NOTES.txt]
 
  * *01.07.2008* Version 00.46.02 released (alternative short syntax for specifying essential boundary conditions, variables and regions, manufactured solutions tests using !SymPy and other improvements), see [http://sfepy.googlecode.com/svn/web/releases/004602_RELEASE_NOTES.txt 004602_RELEASE_NOTES.txt]
 
