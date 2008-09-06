@@ -24,6 +24,8 @@ Below is a list of documents related to !SfePy.
 
 == Installation notes ==
 
+!SfePy should work both with bleeding edge (SVN) and last released versions of its dependencies, see INSTALL file in the tarball. Submit an issue, please, in case this does not hold.
+
 * using umpfpack on fedora 8 (contributed by David Huard)
 
   entry in numpy site.cfg:
