@@ -26,9 +26,9 @@ Regions serve to select a certain part of the computational domain (= selection 
     * elements by <efunction>
     * r.<name of another region>
 
-    <expr> is a logical expression like {{{(y <= 0.00001) & (x < 0.11)}}}
-    <function> is e.g. {{{afunction( x, y, z, otherArgs )}}}
-    <efunction> is e.g. {{{efunction( domain )}}}
+     * <expr> is a logical expression like {{{(y <= 0.00001) & (x < 0.11)}}}
+     * <function> is e.g. {{{afunction( x, y, z, otherArgs )}}}
+     * <efunction> is e.g. {{{efunction( domain )}}}
 
   Region operations:
     * node-wise: +n, -n, *n (union, set difference, intersection)
