@@ -49,7 +49,7 @@ region_<number> = {
 
    Example definitions, long syntax:
 
-   {{{#!python
+   {{{
     region_20 = {
         'name' : 'Left',
         'select' : 'nodes in (x < -0.499)'
@@ -72,7 +72,7 @@ region_<number> = {
 
    Example definitions, short syntax:
 
-   {{{#!python
+   {{{
     regions = {
         'Left' : ('nodes in (x < -0.499)', {}),
         'Right' : ('nodes in (x > 0.499)', {}),
