@@ -36,7 +36,7 @@ Regions serve to select a certain part of the computational domain (= selection 
 
  * Region definition syntax:
 
-   A region is defined by the following dictionary ([] denote optional keys):
+   Long syntax: a region is defined by the following dictionary ([] denote optional keys):
 
    {{{
 region_<number> = {
@@ -47,7 +47,7 @@ region_<number> = {
 }
    }}}
 
-   Example definitions, long syntax:
+   Example definitions:
 
    {{{
     region_20 = {
