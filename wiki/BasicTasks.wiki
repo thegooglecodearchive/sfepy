@@ -3,12 +3,8 @@
 = Basic Tasks =
 
 Jump to:
- * [Documentation#Running_tests running tests]
- * [Documentation#Computations_and_examples computations and examples]
- * [Documentation#Equations equations and terms]
- * [Documentation#Integrals defining term integrals]
- * [Documentation#Regions region description].
- * [Documentation#Solvers configuring solvers]
+ * [BasicTasks#Running_tests running tests]
+ * [BasicTasks#Computations_and_examples computations and examples]
 
 == Running tests ==
 
