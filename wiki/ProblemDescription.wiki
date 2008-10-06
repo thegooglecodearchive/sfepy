@@ -34,8 +34,8 @@ Regions serve to select a certain part of the computational domain (= selection 
     * <efunction> is e.g. {{{efunction( domain )}}}
 
   Region operations:
-    * node-wise: +n, -n, *n (union, set difference, intersection)
-    * element-wise: +e, -e, *e (union, set difference, intersection)
+    * node-wise: {{{+n, -n, *n}}} (union, set difference, intersection)
+    * element-wise: {{{+e, -e, *e}}} (union, set difference, intersection)
 
  * Region definition syntax:
 
