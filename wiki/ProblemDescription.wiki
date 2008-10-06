@@ -1,0 +1,86 @@
+#summary Elements of a problem description file.
+
+= Problem Description =
+
+Here we discuss the basic items that users have to specify in their input files.
+
+Jump to:
+ * [ProblemDescription#Regions regions]
+ * [ProblemDescription#Integrals integrals]
+ * [ProblemDescription#Equations_and_terms equations and terms]
+ * [ProblemDescription#Configuring_solvers configuring solvers]
+
+== Regions ==
+
+Regions serve to select a certain part of the computational domain (= selection of nodes and elements of a FE mesh). They are used to define the boundary conditions, the domains of terms and materials etc.
+
+ * Region selection syntax:
+
+  Entity selections:
+    * all
+    * nodes of surface
+    * nodes in <expr>
+    * nodes by <function>
+    * node <id>
+    * elements of group <integer>
+    * elements by <efunction>
+    * r.<name of another region>
+
+    <expr> is a logical expression like {{{(y <= 0.00001) & (x < 0.11)}}}
+    <function> is e.g. {{{afunction( x, y, z, otherArgs )}}}
+    <efunction> is e.g. {{{efunction( domain )}}}
+
+  Region operations:
+    * node-wise: +n, -n, *n (union, set difference, intersection)
+    * element-wise: +e, -e, *e (union, set difference, intersection)
+
+ * Region definition syntax:
+
+   A region is defined by the following dictionary ([] denote optional keys):
+
+   {{{
+region_<number> = {
+    'name' : <string>,
+    'select' : <selection string>,
+    ['forbid'] : group <integer>[, <integer>]* # forbid elements of listed groups
+    ['can_cells'] : <boolean> # determines whether a region can have cells (volume in 3D)
+}
+   }}}
+
+   Example definitions, long syntax:
+
+   {{{#!python
+    region_20 = {
+        'name' : 'Left',
+        'select' : 'nodes in (x < -0.499)'
+    }
+    region_21 = {
+        'name' : 'Right',
+        'select' : 'nodes in (x > 0.499)'
+    }
+    region_31 = {
+        'name' : 'Gamma1',
+        'select' : """(elements of group 1 *n elements of group 4)
+                      +n
+                      (elements of group 2 *n elements of group 4)
+                      +n
+                      ((r.Left +n r.Right) *n elements of group 4)
+                   """,
+        'forbid' : 'group 1 2'
+    }
+   }}}
+
+   Example definitions, short syntax:
+
+   {{{#!python
+    regions = {
+        'Left' : ('nodes in (x < -0.499)', {}),
+        'Right' : ('nodes in (x > 0.499)', {}),
+        'Gamma1' : ("""(elements of group 1 *n elements of group 4)
+                       +n
+                       (elements of group 2 *n elements of group 4)
+                       +n
+                       ((r.Left +n r.Right) *n elements of group 4)""",
+                     {'forbid' : 'group 1 2'}),
+    }
+   }}}
