@@ -6,7 +6,9 @@ Here we discuss the basic items that users have to specify in their input files.
 
 Jump to:
  * [ProblemDescription#Regions regions]
- * [ProblemDescription#Integrals integrals]
+ * [ProblemDescription#Fields,_variables_and_integrals fields, variables and integrals]
+ * [ProblemDescription#Boundary_conditions boundary conditions]
+ * [ProblemDescription#Materials materials]
  * [ProblemDescription#Equations_and_terms equations and terms]
  * [ProblemDescription#Configuring_solvers configuring solvers]
 
@@ -85,3 +87,96 @@ region_<number> = {
                      {'forbid' : 'group 1 2'}),
     }
    }}}
+
+== Fields, variables and integrals ==
+ * fields correspond to FE spaces
+   * example: P1 elements in 2D on a whole domain Omega
+ {{{
+ field_1 = {
+    'name' : 'temperature',
+    'dim' : (1,1),
+    'domain' : 'Omega',
+    'bases' : {'Omega' : '2_3_P1'}
+}
+ }}}
+ * variables use the FE approximation given by the specified field:
+   * example, long syntax:
+{{{
+variable_1 = {
+    'name' : 't',
+    'kind' : 'unknown field',
+    'field' : 'temperature',
+    'order' : 0, # order in the global vector of unknowns
+}
+
+variable_2 = {
+    'name' : 's',
+    'kind' : 'test field',
+    'field' : 'temperature',
+    'dual' : 't',
+}
+}}}
+   * example, short syntax:
+{{{
+variables = {
+    't' : ('unknown field', 'temperature', 0),
+    's' : ('test field', 'temperature', 't'),
+}
+}}}
+ * integrals (quadrature rules):
+ {{{
+integral_1 = {
+    'name' : 'i1',
+    'kind' : 'v',
+    'quadrature' : 'gauss_o2_d2', # <quadrature name>
+}
+
+import numpy as nm
+N = 2
+integral_2 = {
+    'name' : 'i2',
+    'kind' : 'v',
+    'quadrature' : 'custom', # <quadrature name>
+    'vals'    : zip(nm.linspace( 1e-10, 0.5, N ),
+                    nm.linspace( 1e-10, 0.5, N )),
+    'weights' : [1./N] * N,
+}
+ }}}
+  * available quadratures are in sfe/fem/quadratures.py - it is still preliminary and incomplete
+  * naming convention: <family>_o<order>_d<dimension>
+
+== Equations_and_terms ==
+
+Equations can be built by combining terms listed in [http://sfepy.googlecode.com/svn/web/docs/sfepy_manual.pdf sfepy_manual.pdf].
+
+Examples:
+
+  * Laplace equation:
+{{{
+equations = {
+    'Temperature' : """dw_laplace.i1.Omega( coef.val, s, t ) = 0"""
+}
+}}}
+ * Navier-Stokes equations:
+{{{
+equations = {
+    'balance' :
+    """+ dw_div_grad.i2.Omega( fluid.viscosity, v, w )
+       + dw_convect.i2.Omega( v, w )
+       - dw_grad.i1.Omega( v, r ) = 0""",
+    'incompressibility' :
+    """dw_div.i1.Omega( q, w ) = 0""",
+}
+}}}
+
+== Configuring solvers ==
+
+TODO
+
+== Boundary conditions ==
+
+TODO
+
+== Materials ==
+
+TODO
