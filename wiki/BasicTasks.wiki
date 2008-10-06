@@ -1,4 +1,4 @@
-#summary How to solve problems with !SfePy
+#summary How to solve problems with SfePy
 
 = Basic Tasks =
 
