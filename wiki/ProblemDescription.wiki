@@ -6,7 +6,7 @@ Here we discuss the basic items that users have to specify in their input files.
 
 Jump to:
  * [ProblemDescription#Regions regions]
- * [ProblemDescription#Fields_variables_and_integrals fields, variables and integrals]
+ * [ProblemDescription#Fields\,_variables_and_integrals fields, variables and integrals]
  * [ProblemDescription#Boundary_conditions boundary conditions]
  * [ProblemDescription#Materials materials]
  * [ProblemDescription#Equations_and_terms equations and terms]
