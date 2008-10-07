@@ -3,6 +3,7 @@
 = Problem Description =
 
 Here we discuss the basic items that users have to specify in their input files.
+For complete examples, see the problem description files in the 'input/' directory of !SfePy
 
 Jump to:
  * [ProblemDescription#Regions regions]
@@ -168,7 +169,7 @@ ebc_1 = {
 {{{
 ebcs = {
     'name' : (<region_name>, {<dof_specification> : <value>[,
-                              <dof_specification> : <value>, ...]},...}
+                              <dof_specification> : <value>, ...]},...)
 }
 }}}
   * example:
@@ -179,11 +180,22 @@ ebcs = {
     'phi' : ('Surface', {'phi.all' : 0.0}),
 }
 }}}
-}}}
 
 == Materials ==
 
-TODO
+Materials are used to define constitutive parameters (e.g. stiffness, permeability, or viscosity), and other non-field arguments of terms (e.g. known traction or volume forces). 
+Depending on a particular term, the parameters can be constants, functions defined over FE mesh nodes, functions defined in the elements, etc.
+
+ * example:
+{{{
+material_2 = {
+    'name' : 'coef',
+    'mode' : 'here',
+    'region' : 'Omega',
+    'K' : [[1.0, 0.0, 0.0], [0.0, 10.0, 0.0], [0.0, 0.0, 1.0]],
+    'val' : 1.0,
+}
+}}}
 
 == Equations and terms ==
 
