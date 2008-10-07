@@ -13,7 +13,7 @@ Jump to:
  * [ProblemDescription#Materials materials]
  * [ProblemDescription#Equations_and_terms equations and terms]
  * [ProblemDescription#Configuring_solvers configuring solvers]
- * [ProblemDescription#Miscellaneous miscellaneous
+ * [ProblemDescription#Miscellaneous miscellaneous]
 
 == FE mesh ==
 
