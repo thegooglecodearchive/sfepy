@@ -23,7 +23,7 @@ This is a site for !SfePy (http://sfepy.kme.zcu.cz) developers.
  * problems in complex domain (e.g. acoustics)
  * finite deformations: hyperelastic neo-Hookean, Mooney-Rivlin materials in the total Lagrangian formulation
 
-See [Examples].
+See [Examples] and [Documentation].
 
 === Mailing Lists ===
 Developer/user discussions: [http://groups.google.com/group/sfepy-devel sfepy-devel]
