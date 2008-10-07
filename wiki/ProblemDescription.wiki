@@ -145,7 +145,47 @@ integral_2 = {
   * available quadratures are in sfe/fem/quadratures.py - it is still preliminary and incomplete
   * naming convention: <family>_o<order>_d<dimension>
 
-== Equations_and_terms ==
+== Boundary conditions ==
+
+ * Dirichlet (essential) boundary conditions, long syntax:
+{{{
+ebc_<number> = {
+    'name' : <string>,
+    'region' : <region_name>,
+    'dofs' : {<dof_specification> : <value>[,
+              <dof_specification> : <value>, ...]}
+}
+}}}
+  * example:
+{{{
+ebc_1 = {
+    'name' : 'ZeroSurface',
+    'region' : 'Surface',
+    'dofs' : {'u.all' : 0.0, 'phi.all' : 0.0},
+}
+}}}
+ * Dirichlet (essential) boundary conditions, short syntax:
+{{{
+ebcs = {
+    'name' : (<region_name>, {<dof_specification> : <value>[,
+                              <dof_specification> : <value>, ...]},...}
+}
+}}}
+  * example:
+{{{
+ebcs = {
+    'u1' : ('Left', {'u.all' : 0.0}),
+    'u2' : ('Right', {'u.0' : 0.1}),
+    'phi' : ('Surface', {'phi.all' : 0.0}),
+}
+}}}
+}}}
+
+== Materials ==
+
+TODO
+
+== Equations and terms ==
 
 Equations can be built by combining terms listed in [http://sfepy.googlecode.com/svn/web/docs/sfepy_manual.pdf sfepy_manual.pdf].
 
@@ -170,13 +210,5 @@ equations = {
 }}}
 
 == Configuring solvers ==
-
-TODO
-
-== Boundary conditions ==
-
-TODO
-
-== Materials ==
 
 TODO
