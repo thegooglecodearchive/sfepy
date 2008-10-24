@@ -17,47 +17,35 @@ $ vim state.pvsm
 }}}
 Then create a script `t.py`:
 {{{
-from sfe.base.base import pause
+from sfepy.base.base import pause
 from paraview import servermanager as sm
 c = sm.Connect()
 sm.LoadState("state.pvsm")
 view = sm.GetRenderView()
 view.StillRender()
 pause()
+view.WriteImage("image.png", "vtkPNGWriter", 1)
 }}}
 And execute the script using (adjust the path to your installation of paraview):
 {{{
 $ export P=/home/ondra/ext/paraview-3.2.1-Linux-x86/lib/paraview-3.2/
 $ LD_LIBRARY_PATH=$P PYTHONPATH=$P python2.5 t.py
 }}}
-A simple window will popup showing the result. The `pause()` command is necessary, as the windows is automatically closed when the script finishes.
-
-==More Advanced Stuff==
-
-In theory, adding this to the end of the script:
-{{{
-view.WriteImage("image.png", "vtkPNGWriter", 1)
-}}}
-should save the image into a file. However, I get:
-{{{
-X Error of failed request:  GLXBadContext
-  Major opcode of failed request:  159 (GLX)
-  Minor opcode of failed request:  5 (X_GLXMakeCurrent)
-  Serial number of failed request:  24
-  Current serial number in output stream:  24
-}}}
-It's probably a bug that should be reported to either paraview or mesa, or whatever.
-
-=Update=
-
-In Paraview 3.3 (development version):
-{{{
-view.UseOffscreenRenderingForScreenshots = 0
-view.WriteImage( "image.png", "vtkPNGWriter", 1 )
-}}}
-works, if one runs the script with pvpython instead of regular python!
-
-A complete script coming soon...
+A simple window will popup showing the result. The `pause()` command is necessary, as the windows is automatically closed when the script finishes. You can use Python's `raw_input()` instead.
 
 Example report generated automatically using Paraview Python scripting facilities:
 [http://sfepy.googlecode.com/svn/web/docs/bones_report.pdf bones_report.pdf]
+
+=== Animating Legacy VTK Files ===
+
+Tested with Paraview 3.3.0:
+
+1. Name your .vtk files as {{{<basename>.<number>.vtk}}}, where {{{<number>}}} is e.g. 00, 01, ... , 99.
+
+2. Start paraview, in menu 'File->Open'. The files should be listed as a group called {{{<basename>...vtk}}}.
+
+3. Press 'Apply'.
+
+4. Set-up the scene.
+
+5. Press the animation play button, or in menu 'Animation->Play'.
