@@ -15,8 +15,11 @@ For example in Debian:
 !SfePy is known to work on various flavours of Linux, and on Intel Macs. Not
 tested on Windows.
 
+!SfePy should work both with bleeding edge (SVN) and last released versions of its dependencies, see INSTALL file in the tarball. Submit an issue, please, in case this does not hold.
+
 == Generic installation instruction ==
 
+ # Download the [Download latest source release] or the development version from our mercurial repository [http://hg.sympy.org/sfepy].
  # Look at site_cfg_template.py and follow the instructions therein.
  # (Optionally) edit the Makefile: compiler, swig command, ...
  # 'make'
@@ -27,7 +30,6 @@ If all went well, proceed with [BasicTasks running tests and examples].
 
 == Miscellaneous notes ==
 
-!SfePy should work both with bleeding edge (SVN) and last released versions of its dependencies, see INSTALL file in the tarball. Submit an issue, please, in case this does not hold.
 
 * using umpfpack on fedora 8 (contributed by David Huard)
 
