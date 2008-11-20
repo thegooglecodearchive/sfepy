@@ -1,0 +1,54 @@
+#summary Installing !SfePy.
+
+== Requirements ==
+
+Installation prerequisites:
+  * latest released or SVN version of numpy and scipy (with umfpack support), swig
+
+Dependencies:
+  * matplotlib, pyparsing, umfpack, pytables
+  * schroedinger.py requires pysparse
+
+For example in Debian:
+  $ apt-get install python-tables python-pyparsing python-matplotlib python-scipy
+
+!SfePy is known to work on various flavours of Linux, and on Intel Macs. Not
+tested on Windows.
+
+== Generic installation instruction ==
+
+ # Look at site_cfg_template.py and follow the instructions therein.
+ # (Optionally) edit the Makefile: compiler, swig command, ...
+ # 'make'
+
+See also INSTALL and RELEASE_NOTES files in the tarball.
+
+If all went well, proceed with [BasicTasks running tests and examples].
+
+== Miscellaneous notes ==
+
+!SfePy should work both with bleeding edge (SVN) and last released versions of its dependencies, see INSTALL file in the tarball. Submit an issue, please, in case this does not hold.
+
+* using umpfpack on fedora 8 (contributed by David Huard)
+
+  entry in numpy site.cfg:
+
+{{{
+  [umfpack]
+  library_dirs=/usr/lib64
+  include_dirs = /usr/include/suitesparse
+}}}
+
+  Comment by david.huard,  Mar 26, 2008:
+
+  Of course, suitesparse and suitesparse-devel must be installed.
+
+
+* Intel Mac (thanks to Dominique Orban for his advice):
+
+  To build !SfePy on an Intel Mac the following options need to be set in site_cfg.py:
+
+  opt_flags = '-g -O2 -fPIC -DPIC -fno-strict-aliasing -fno-common -dynamic'
+  link_flags = '-dynamiclib -undefined dynamic_lookup -fPIC -DPIC'
+
+  (revision http://hg.sympy.org/sfepy/rev/609196c918be is needed)
