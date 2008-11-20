@@ -1,4 +1,4 @@
-#summary Installing !SfePy.
+#summary How to install SfePy.
 
 == Requirements ==
 
