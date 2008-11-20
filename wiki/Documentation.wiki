@@ -22,31 +22,3 @@ Below is a list of documents related to !SfePy.
  * Poster presented at [http://www.math.ch/colloqnum08/ Colloque Numérique Suisse / Schweizer Numerik Kolloquium]:
   * [http://sfepy.googlecode.com/svn/web/docs/cns2008_abstract.pdf cns2008_abstract.pdf]
   * [http://sfepy.googlecode.com/svn/web/docs/cns2008_poster.pdf cns2008_poster.pdf]
-
-== Installation notes ==
-
-!SfePy should work both with bleeding edge (SVN) and last released versions of its dependencies, see INSTALL file in the tarball. Submit an issue, please, in case this does not hold.
-
-* using umpfpack on fedora 8 (contributed by David Huard)
-
-  entry in numpy site.cfg:
-
-{{{
-  [umfpack]
-  library_dirs=/usr/lib64
-  include_dirs = /usr/include/suitesparse
-}}}
-
-  Comment by david.huard,  Mar 26, 2008:
-
-  Of course, suitesparse and suitesparse-devel must be installed.
-
-
-* Intel Mac (thanks to Dominique Orban for his advice):
-
-  To build !SfePy on an Intel Mac the following options need to be set in site_cfg.py:
-
-  opt_flags = '-g -O2 -fPIC -DPIC -fno-strict-aliasing -fno-common -dynamic'
-  link_flags = '-dynamiclib -undefined dynamic_lookup -fPIC -DPIC'
-
-  (revision http://hg.sympy.org/sfepy/rev/609196c918be is needed)
