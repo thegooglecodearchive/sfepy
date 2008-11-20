@@ -19,7 +19,7 @@ tested on Windows.
 
 == Generic installation instruction ==
 
- # Download the [Download latest source release] or the development version from our mercurial repository [http://hg.sympy.org/sfepy].
+ # Download the [http://code.google.com/p/sfepy/downloads/list latest source release] or the development version from our mercurial repository [http://hg.sympy.org/sfepy].
  # Look at site_cfg_template.py and follow the instructions therein.
  # (Optionally) edit the Makefile: compiler, swig command, ...
  # 'make'
