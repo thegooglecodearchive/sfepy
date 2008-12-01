@@ -10,6 +10,7 @@ Jump to:
  * [ProblemDescription#Regions regions]
  * [ProblemDescription#Fields_variables_and_integrals fields, variables and integrals]
  * [ProblemDescription#Boundary_conditions boundary conditions]
+ * [ProblemDescription#Initial_conditions initial conditions]
  * [ProblemDescription#Materials materials]
  * [ProblemDescription#Equations_and_terms equations and terms]
  * [ProblemDescription#Configuring_solvers configuring solvers]
@@ -193,6 +194,41 @@ ebcs = {
     'u1' : ('Left', {'u.all' : 0.0}),
     'u2' : ('Right', {'u.0' : 0.1}),
     'phi' : ('Surface', {'phi.all' : 0.0}),
+}
+}}}
+
+== Initial conditions ==
+
+Initial conditions are applied prior to the boundary conditions - no special care must be used for the boundary dofs.
+
+ * long syntax:
+{{{
+ic_<number> = {
+    'name' : <string>,
+    'region' : <region_name>,
+    'dofs' : {<dof_specification> : <value>[,
+              <dof_specification> : <value>, ...]}
+}
+}}}
+  * example:
+{{{
+ic_1 = {
+    'name' : 'ic',
+    'region' : 'Omega',
+    'dofs' : {'T.0' : 5.0},
+}
+}}}
+ * short syntax:
+{{{
+ics = {
+    'name' : (<region_name>, {<dof_specification> : <value>[,
+                              <dof_specification> : <value>, ...]},...)
+}
+}}}
+  * example:
+{{{
+ics = {
+    'ic' : ('Omega', {'T.0' : 5.0}),
 }
 }}}
 
