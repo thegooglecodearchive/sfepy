@@ -1,0 +1,5 @@
+#summary Source code.
+
+See the [Downloads] page.
+
+You may also go to the original [http://code.google.com/p/sfepy/source/checkout Source tab].
