@@ -1,4 +1,4 @@
-#Download instructions and files.
+#summary Download instructions and files.
 
 [http://code.google.com/p/sfepy/downloads/list (All downloads)]
 
@@ -20,4 +20,14 @@
 
   * latest snapshot:
 
-    http://git.sympy.org/?p=sfepy.git;a=snapshot;h=HEAD;sf=tgz 
+    http://git.sympy.org/?p=sfepy.git;a=snapshot;h=HEAD;sf=tgz
+
+* Old mercurial repository:*
+
+  * download the repository:
+{{{
+    hg clone http://hg.sympy.org/sfepy
+}}}
+
+  * web access :
+    http://hg.sympy.org/sfepy
