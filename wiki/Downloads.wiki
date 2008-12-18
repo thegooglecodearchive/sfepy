@@ -1,1 +1,23 @@
+# Download instructions and files.
+
 [http://code.google.com/p/sfepy/downloads/list (All downloads)]
+
+*Latest released sources:*
+
+  http://sfepy.googlecode.com/files/sfepy-release-2008.4.tgz
+
+*Git repository:*
+
+  * download the repository:
+
+{{{
+    git clone git://git.sympy.org/sfepy.git
+}}}
+
+  * web access :
+
+    http://git.sympy.org/?p=sfepy.git
+
+  * latest snapshot:
+
+    http://git.sympy.org/?p=sfepy.git;a=snapshot;h=HEAD;sf=tgz 
