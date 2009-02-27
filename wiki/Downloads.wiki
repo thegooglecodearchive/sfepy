@@ -20,13 +20,3 @@ git clone git://git.sympy.org/sfepy.git
   * latest snapshot:
 
     http://git.sympy.org/?p=sfepy.git;a=snapshot;h=HEAD;sf=tgz
-
-* Old mercurial repository:*
-
-  * download the repository:
-{{{
-hg clone http://hg.sympy.org/sfepy
-}}}
-
-  * web access :
-    http://hg.sympy.org/sfepy
