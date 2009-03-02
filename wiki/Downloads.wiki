@@ -4,7 +4,7 @@
 
 *Latest released sources:*
 
-  http://sfepy.googlecode.com/files/sfepy-release-2008.4.tgz
+  http://sfepy.googlecode.com/files/sfepy-release-2009.1.tgz
 
 *Git repository:*
 
