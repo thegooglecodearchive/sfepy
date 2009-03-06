@@ -20,12 +20,16 @@ This is a site for !SfePy (http://sfepy.kme.zcu.cz) developers.
 
 === Key Features ===
 
- * 2D/3D linear elasticity, Poisson equation, Stokes, simple Navier-Stokes problems, Darcy flow and other problems with PDEs containing the implemented terms
- * fading memory terms
- * acoustic band gaps in phononic materials (similar to forbidden frequency ranges in photonic crystals, see http://en.wikipedia.org/wiki/Photonic_crystal)
- * Schroedinger equation
+ * solving many problems described by PDEs:
+  * linear problems: linear elasticity, Poisson equation, Stokes, Darcy flow 
+  * nonlinear problems: simple Navier-Stokes problems, finite deformations: hyperelastic neo-Hookean, Mooney-Rivlin materials in the total Lagrangian formulation
+ * other PDEs containing the implemented terms, both 2D and 3D
  * problems in complex domain (e.g. acoustics)
- * finite deformations: hyperelastic neo-Hookean, Mooney-Rivlin materials in the total Lagrangian formulation
+ * fading memory terms
+ * particular applications (see the [http://sfepy.kme.zcu.cz/ Projects page])
+  * acoustic band gaps in phononic materials (similar to forbidden frequency ranges in photonic crystals, see http://en.wikipedia.org/wiki/Photonic_crystal)
+  * Schroedinger equation
+  * homogenization of porous media (modelling of muscle tissue, bones, engineering porous materials)
 
 See [Examples] and [Documentation].
 
@@ -35,8 +39,9 @@ Developer/user discussions: [http://groups.google.com/group/sfepy-devel sfepy-de
 Issues announcements list: [http://groups.google.com/group/sfepy-issues sfepy-issues]
 
 === Sources ===
-Mercurial repository: http://hg.sympy.org/sfepy
+
+See the [Downloads] page.
 
 === IRC channel ===
 
-#sfepy at Freenode.
+#sfepy at freenode.
