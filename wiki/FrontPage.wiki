@@ -8,6 +8,8 @@ This is a site for !SfePy (http://sfepy.kme.zcu.cz) developers.
 
 === News ===
 
+ * *12.05.2009* Version 2009.2 released (new top level scripts (_isfepy_ - customized IPython shell, _postproc.py_ - mayavi2 based result viewer, _probe.py_), automatic html documentation generation via doxygen, new solvers, new mesh readers, extended syntax of equations for boundary traces of variables, short syntax for almost all input elements and other improvements), see [http://sfepy.googlecode.com/svn/web/releases/2009.1_RELEASE_NOTES.txt 2009.2_RELEASE_NOTES.txt]
+
  * *02.03.2009* Version 2009.1 released (new solvers, new mesh readers, unified homogenization framework, dispersion analysis, phase velocity computation for phononic materials and other improvements), see [http://sfepy.googlecode.com/svn/web/releases/2009.1_RELEASE_NOTES.txt 2009.1_RELEASE_NOTES.txt]
 
  * *04.12.2008* Version 2008.4 released (framework for running parametric studies, greatly improved support for time-dependent problems, live plotting using multiprocessing module, type of term arguments determined fully at run-time, new terms and other improvements), see [http://sfepy.googlecode.com/svn/web/releases/2008.4_RELEASE_NOTES.txt 2008.4_RELEASE_NOTES.txt] Version numbering was changed to a "year.release" scheme. Also the http://sfepy.kme.zcu.cz site was substantially updated.
