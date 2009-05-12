@@ -3,11 +3,14 @@
 == Requirements ==
 
 Installation prerequisites:
-  * latest released or SVN version of numpy and scipy (with umfpack support), swig
+  * recent numpy, scipy (with umfpack wrapper, or umfpack scikit), swig
 
 Dependencies:
   * matplotlib, pyparsing, umfpack, pytables
-  * schroedinger.py requires pysparse
+  * schroedinger.py requires pysparse, gmsh (2D) , tetgen (3D)
+  * log.py (live plotting) requires multiprocessing, matplotlib with GTKAgg
+  * isfepy requires ipython
+  * postproc.py requires mayavi2
 
 For example in Debian:
   $ apt-get install python-tables python-pyparsing python-matplotlib python-scipy
