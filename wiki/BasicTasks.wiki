@@ -3,15 +3,40 @@
 = Basic Tasks =
 
 Jump to:
+ * [BasicTasks#Quick_start quick start]
  * [BasicTasks#Running_tests running tests]
  * [BasicTasks#Computations_and_examples computations and examples]
+
+== Quick start ==
+
+Basic usage:
+ * {{{$ ./simple.py input/poisson.py}}} ... creates simple.vtk
+ * {{{$ ./simple.py input/pfdpm_permeability.py}}} ... creates perf_symm944t.vtk
+ * {{{$ ./runTests.py}}} ... see Testing below
+ * {{{$ ./isfepy}}} ... follow the help printed on its startup
+
+Surface extraction:
+ * {{{$ ./findSurf.py database/t.1.node -}}} ... creates surf_t.1.mesh
+
+Applications:
+ * phononic materials:
+   * {{{$ ./eigen.py -p input/phono/band_gaps.py}}} ... see input/phono/output/
+ * schroedinger.py (order is important below):
+   # {{{$ ./schroedinger.py --2d --mesh}}}
+   # {{{$ ./schroedinger.py --2d --hydrogen}}}
+   # {{{$ ./postproc.py mesh.vtk}}}
+
+Stand-alone examples:
+ * {{{$ python examples/rs_correctors.py}}}
+ * {{{$ python examples/compare_elastic_materials.py}}}
+ * {{{$ python examples/live_plot.py}}}
 
 == Running tests ==
 
 The tests are run by the 'runTests.py' script.
 
 {{{
-# ./runTests.py -h
+$ ./runTests.py -h
 
 usage: runTests.py [options] [testFileName]
 
