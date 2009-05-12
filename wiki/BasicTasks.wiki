@@ -12,7 +12,7 @@ Jump to:
 Basic usage:
  * {{{$ ./simple.py input/poisson.py}}} ... creates simple.vtk
  * {{{$ ./simple.py input/pfdpm_permeability.py}}} ... creates perf_symm944t.vtk
- * {{{$ ./runTests.py}}} ... see Testing below
+ * {{{$ ./runTests.py}}} ... see [BasicTasks#Running_tests running tests]
  * {{{$ ./isfepy}}} ... follow the help printed on its startup
 
 Surface extraction:
