@@ -1,7 +1,7 @@
 ﻿#summary Example of usage
 #labels Featured
 
-See also [http://sfepy.kme.zcu.cz/cgi-bin/moin.cgi/SfePy/Examples]
+See also [http://sfepy.kme.zcu.cz/index.cgi/Examples]
 
 == Comparing various elastic material models ==
 
