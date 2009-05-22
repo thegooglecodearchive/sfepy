@@ -20,3 +20,7 @@ git clone git://git.sympy.org/sfepy.git
   * latest snapshot:
 
     http://git.sympy.org/?p=sfepy.git;a=snapshot;h=HEAD;sf=tgz
+
+*Experimental femhub installation:*
+
+  !SfePy can now be used within [http://code.google.com/p/femhub/ femhub], see the [http://code.google.com/p/femhub/wiki/ExampleSfePy example]. It is not fully capable yet, but installing femhub is probably the easiest way to try !SfePy, as all the dependencies are handled automatically.
