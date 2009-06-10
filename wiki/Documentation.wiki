@@ -10,6 +10,15 @@
 
 == Publications & Presentations ==
 
+
+Short introduction of !SfePy and its scientific applications
+ * [http://sfepy.googlecode.com/svn/web/docs/sfepy_slides_handout.pdf sfepy_slides_handout.pdf]
+ * problem description files described in Section Example in the presentation (should work with recent git sources...):
+   * stationary Laplace equation: [http://sfepy.googlecode.com/svn/web/docs/example_laplace.py example_laplace.py]
+   * non-stationary Laplace equation: [http://sfepy.googlecode.com/svn/web/docs/example_laplace_time.py example_laplace_time.py]
+   * mesh for both the examples: [http://sfepy.googlecode.com/svn/web/docs/simple.mesh simple.mesh] (medit mesh format), [http://sfepy.googlecode.com/svn/web/docs/simple.vtk simple.vtk] (VTK format, not required by the examples)
+
+
 Below is a list of documents related to !SfePy.
 
  * [http://www.scipy.org/EuroSciPy2008 EuroSciPy2008], Leipzig, Germany, July 26-27, 2008
