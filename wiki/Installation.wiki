@@ -1,4 +1,4 @@
-#summary This page shows how to install *SfePy*.
+#summary This page shows how to install SfePy.
 
 <wiki:toc max_depth="3" />
 
@@ -109,7 +109,7 @@ $ python
 
 ==Installing Sfepy==
 
-Now download the latest *sfepy* tarball release (or the latest development version from [http://git.sympy.org/?p=sfepy.git;a=snapshot;h=HEAD;sf=tgz? this link]).
+Now download the latest *sfepy* tarball release (or the latest development version from [http://git.sympy.org/?p=sfepy.git;a=snapshot;h=HEAD;sf=tgz this link]).
 
 Uncompress the archive and enter the sfepy dir, then type
 
