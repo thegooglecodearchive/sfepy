@@ -1,5 +1,8 @@
-#summary How to install SfePy.
+#summary This page shows how to install *SfePy*.
 
+<wiki:toc max_depth="3" />
+
+=Installation=
 == Requirements ==
 
 Installation prerequisites:
@@ -31,6 +34,22 @@ See also INSTALL and RELEASE_NOTES files in the tarball.
 
 If all went well, proceed with [BasicTasks running tests and examples].
 
+== Check the Sfepy installation ==
+
+After installing sfepy you can chek if all the functionlities are working by running the automated test. From the source dir type:
+
+{{{
+./runTests.py
+}}}
+
+If some test fails, please run it in debug mode:
+
+{{{
+./runTests.py --debug test/failing_test_name.py
+}}}
+
+and report the output to the `sfepy-devel` mailing list.
+
 == Miscellaneous notes ==
 
 
@@ -57,3 +76,53 @@ If all went well, proceed with [BasicTasks running tests and examples].
   link_flags = '-dynamiclib -undefined dynamic_lookup -fPIC -DPIC'
 
   (revision http://hg.sympy.org/sfepy/rev/609196c918be is needed)
+
+=Installation on Ubuntu (tested on Jaunty Jackalope 9.04)=
+==Prerequisites==
+
+Firstly you have to install the dependencies packages:
+{{{
+sudo aptitude install python-scipy python-matplotlib python-tables python-pyparsing libsuitesparse-dev 
+}}}
+
+Then download and install the `umfpack scikit`s in some local dir. In the following example it will be installed in `$HOME/local`:
+
+{{{
+svn checkout http://svn.scipy.org/svn/scikits/trunk/umfpack
+cd umfpack
+python setup.py --prefix=${HOME}/local
+}}}
+
+Add to your `.bashrc` the line:
+
+{{{
+export PYTHONPATH="${HOME}/local"
+}}}
+
+then re-open a terminal and if the scikits was installed correctly importing `scikits.umfpack` in python should give no error:
+
+{{{
+$ python
+>>> import scikits.umfpack
+>>> 
+}}}
+
+==Installing Sfepy==
+
+Now download the latest *sfepy* tarball release (or the latest development version from [http://git.sympy.org/?p=sfepy.git;a=snapshot;h=HEAD;sf=tgz? this link]).
+
+Uncompress the archive and enter the sfepy dir, then type
+
+{{{
+make
+}}}
+
+after a few minutes the compilation finishes.
+
+Finally you can test sfepy with:
+
+{{{
+./runTests.py
+}}}
+
+If some test fails see [#Check_the_Sfepy_installation Check the Sfepy installation] section for further details.
