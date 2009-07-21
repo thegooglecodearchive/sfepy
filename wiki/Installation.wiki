@@ -90,7 +90,7 @@ Then download and install the `umfpack scikit`s in some local dir. In the follow
 {{{
 svn checkout http://svn.scipy.org/svn/scikits/trunk/umfpack
 cd umfpack
-python setup.py --prefix=${HOME}/local
+python setup.py install --prefix=${HOME}/local
 }}}
 
 Add to your `.bashrc` the line:
