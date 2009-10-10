@@ -239,13 +239,30 @@ Depending on a particular term, the parameters can be constants, functions defin
 
  * example:
 {{{
-material_2 = {
-    'name' : 'coef',
-    'mode' : 'here',
-    'region' : 'Omega',
-    'K' : [[1.0, 0.0, 0.0], [0.0, 10.0, 0.0], [0.0, 0.0, 1.0]],
-    'val' : 1.0,
+material_10 = {
+    'name' : 'm',
+    'region' : 'SomeRegion',
+    'values' : {
+        # This gets tiled to all physical QPs (constant function)
+        'val' : [0.0, -1.0, 0.0],
+        # This does not - '.' denotes a special value, e.g. a flag.
+        '.val0' : [0.0, 0.1, 0.0],
+    },
 }
+
+material_3 = {
+    'name' : 'm',
+    'region' : 'SomeRegion,
+    'function' : 'some_function',
+}
+
+def some_function(ts, coor, region, ig, mode=None):
+    out = {}
+    if mode == 'qp':
+        out['val'] = <array of shape (coor.shape[0], n_row, n_col)>
+    else: # special mode
+        out['val0'] = True
+
 }}}
 
 == Equations and terms ==
