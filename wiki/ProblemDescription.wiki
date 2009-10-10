@@ -14,6 +14,7 @@ Jump to:
  * [ProblemDescription#Materials materials]
  * [ProblemDescription#Equations_and_terms equations and terms]
  * [ProblemDescription#Configuring_solvers configuring solvers]
+ * [ProblemDescription#Functions functions]
  * [ProblemDescription#Miscellaneous miscellaneous]
 
 == FE mesh ==
@@ -330,6 +331,7 @@ options = {
 }}}
 
 == Functions ==
+
 Functions are a way of customizing !SfePy behavior. They make it possible to define material properties, boundary conditions, parametric sweeps, and other items in an arbitrary manner. Functions are normal Python functions declared in the Problem Definition file, so they can invoke the full power of Python. In order for !SfePy to make use of the functions, they must be declared using the function keyword. See below for examples.
 
 {{{
