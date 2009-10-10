@@ -252,7 +252,7 @@ material_10 = {
 
 material_3 = {
     'name' : 'm',
-    'region' : 'SomeRegion,
+    'region' : 'SomeRegion',
     'function' : 'some_function',
 }
 
@@ -326,6 +326,43 @@ solver_1 = {
 options = {
     'nls' : 'newton',
     'ls' : 'ls',
+}
+}}}
+
+== Functions ==
+Functions are a way of customizing !SfePy behavior. They make it possible to define material properties, boundary conditions, parametric sweeps, and other items in an arbitrary manner. Functions are normal Python functions declared in the Problem Definition file, so they can invoke the full power of Python. In order for !SfePy to make use of the functions, they must be declared using the function keyword. See below for examples.
+
+{{{
+def get_pars(ts, coors, mode=None, region=None, ig=None, extra_arg=None):
+    if mode == 'special':
+        if extra_arg == 'hello!':
+            ic = 0
+        else:
+            ic = 1
+        return {('x_%s' % ic) : coors[:,ic]}
+
+def get_p_edge(ts, coors, bc=None):
+    if bc.name == 'p_left':
+        return nm.sin(nm.pi * coors[:,1])
+    else:
+        return nm.cos(nm.pi * coors[:,1])
+
+def get_circle(coors, domain=None):
+    r = nm.sqrt(coors[:,0]**2.0 + coors[:,1]**2.0)
+    return nm.where(r < 0.2)[0]
+
+functions = {
+    'get_pars1' : (lambda ts, coors, mode=None, region=None, ig=None:
+                   get_pars(ts, coors, mode, region, ig, extra_arg='hello!'),),
+    'get_p_edge' : (get_p_edge,),
+    'get_circle' : (get_circle,),
+}
+
+# Just another way of adding a function, besides 'functions' keyword.
+function_1 = {
+    'name' : 'get_pars2',
+    'function' : lambda ts, coors,mode=None,  region=None, ig=None:
+        get_pars(ts, coors, mode, region, ig, extra_arg='hi!'),
 }
 }}}
 
