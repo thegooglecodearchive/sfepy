@@ -3,7 +3,7 @@
 
 = Documentation ==
 
-*Note:* We are now slowly moving the documentation to [http://docs.sfepy.org/doc] (latest release docs) and [http://docs.sfepy.org/doc] (current development version docs). The site content is auto-generated using [http://sphinx.pocoo.org/ Sphinx].
+*Note:* We are now slowly moving the documentation to [http://docs.sfepy.org/doc] (latest release docs) and [http://docs.sfepy.org/doc-devel] (current development version docs). The site content is auto-generated using [http://sphinx.pocoo.org/ Sphinx].
 
  * [Installation Installing] !SfePy.
  * How to [BasicTasks solve problems] with !SfePy.
