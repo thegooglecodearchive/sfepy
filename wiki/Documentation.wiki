@@ -3,7 +3,7 @@
 
 = Documentation ==
 
-The SfePy documentation is prepared using [http://sphinx.pocoo.org/ Sphinx].
+The !SfePy documentation is prepared using [http://sphinx.pocoo.org/ Sphinx].
 
  * [http://docs.sfepy.org/doc] - the documentation for the latest release
  * [http://docs.sfepy.org/doc-devel] - the documentation for the current development version
