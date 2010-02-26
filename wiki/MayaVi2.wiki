@@ -1,4 +1,5 @@
 #summary Installing and using MayaVi2.
+#labels Deprecated
 
 === Installation ===
 
