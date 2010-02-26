@@ -2,7 +2,9 @@
 
 [http://code.google.com/p/sfepy/downloads/list (All downloads)]
 
-*Installation instructions:* [http://docs.sfepy.org/doc/introduction.html#installation]
+*Installation instructions:*
+
+  http://docs.sfepy.org/doc/introduction.html#installation
 
 *Latest released sources:*
 
