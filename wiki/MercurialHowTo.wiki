@@ -1,4 +1,5 @@
 #summary pieces of mercurial knowledge
+#labels Deprecated
 
 creating initial local copy:
 {{{
