@@ -1,4 +1,5 @@
 #summary How to solve problems with SfePy
+#labels Deprecated
 
 = Basic Tasks =
 
