@@ -1,10 +1,7 @@
 #summary Coding style used in SfePy.
 
-
 All the code in !SfePy should try to adhere to python style guidelines, see
 [http://www.python.org/dev/peps/pep-0008/ http://www.python.org/dev/peps/pep-0008/].
-
-This is *new in the development* version , see [http://hg.sympy.org/sfepy http://hg.sympy.org/sfepy].
 
 Following the discussion in the issue 43 there are some additional recommendations:
 
@@ -14,17 +11,13 @@ Following the discussion in the issue 43 there are some additional recommendatio
  * functions have usually form {{{<action>_<subject>()}}}
   * e.g.: save_data(), transform_variables(), do not use data_save(), variable_transform() etc.
  * variables like V, c, A, b, x should be tolerated only locally when expressing mathematical ideas
- * abc = 1 instead of abc=1 except keyword arguments (Robert: why this '=' should be special? I do not see why this is so in the PEP.)
 
-Robert has also these additional recommendations:
+Really minor recommendations:
 
- * do not to use single letter names
-  * if you can, not even for loop variables - use e.g. ir, ic, ... instead of i, j for rows and columns
- * {{{function( arg1, arg2, arg3 = value )}}} than {{{function(arg1, arg2, arg3=value)}}}, as IMHO the extra spaces make the text more readable (ok even without syntax highlighting).
+ * avoid single letter names, if you can
+  * not even for loop variables - use e.g. ir, ic, ... instead of i, j for rows and columns
+  * not even in generators, as they "leak" (this is fixed in Python 3.x)
 
-Ondřej likes this:
+These are recommendations only, we will not refuse code just on the ground that it uses slightly different formatting, as long as it follows the PEP.
 
- * write functions as f(x, y, z, word=True) as this follows the PEP and most (if not all) other Python libraries
- * you can use single letter names in loops and generators, why not (but this is really minor)
-
-These are recommendations only, we will not refuse code just on the ground that it uses slightly different formatting.
+*Note*: some old parts of the code might not follow the PEP, yet. We fix them progressively as we update the code.
