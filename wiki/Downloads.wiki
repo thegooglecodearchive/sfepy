@@ -2,6 +2,8 @@
 
 [http://code.google.com/p/sfepy/downloads/list (All downloads)]
 
+Installation instructions: [http://docs.sfepy.org/doc/introduction.html#installation]
+
 *Latest released sources:*
 
   http://sfepy.googlecode.com/files/sfepy-release-2009.4.tgz
