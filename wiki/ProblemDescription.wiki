@@ -1,4 +1,5 @@
 #summary Elements of a problem description file.
+#labels Deprecated
 
 = Problem Description =
 
