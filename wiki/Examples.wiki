@@ -6,7 +6,7 @@ See also [http://sfepy.kme.zcu.cz/index.cgi/Examples]
 Application projects (= well documented complex examples):
  - simulating mechanical behaviour of a fish (carp) heart: [http://docs.sfepy.org/fish_heart/]
 
-This page is in reconstruction now. The old stuff was moved to [OldExamples].
+This page is in reconstruction now. The old stuff was moved to OldExamples.
 
 == Comparing various elastic material models ==
 
