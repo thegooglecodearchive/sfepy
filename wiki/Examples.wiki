@@ -3,6 +3,9 @@
 
 See also [http://sfepy.kme.zcu.cz/index.cgi/Examples]
 
+Application projects (= well documented complex examples):
+ - Biomechanics: [http://docs.sfepy.org/fish_heart/]
+
 == Comparing various elastic material models ==
 
 {{{
