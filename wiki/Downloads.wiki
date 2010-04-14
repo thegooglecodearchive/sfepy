@@ -13,9 +13,9 @@
 *Git repository:*
 
   * download the repository:
-{{{
-git clone git://git.sympy.org/sfepy.git
-}}}
+   {{{
+   git clone git://git.sympy.org/sfepy.git
+   }}}
 
   * web access :
 
@@ -28,6 +28,10 @@ git clone git://git.sympy.org/sfepy.git
 *Git playground:*
 
   * some experimental branches http://github.com/rc/sfepy/tree/master
+    * clone the repository:
+    {{{
+    git clone git://github.com/rc/sfepy.git
+    }}}
 
 *Experimental femhub installation:*
 
