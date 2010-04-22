@@ -5,7 +5,7 @@
 Welcome to this primer on SfePy. To get you started, a step-by-step walk-through of the process to solve a simple mechanics problem is presented. The typical process to solve a problem using SfePy is followed: a model is meshed, a problem definition file is drafted, SfePy is run to solve the problem and finally the results of the analysis are illustrated. 
 
 
-== Problem definition ==
+== Problem statement ==
 
 A popular test to measure the tensile strength of concrete or asphalt materials is the indirect tensile strength test pictured below.  
 
@@ -46,14 +46,14 @@ http://groups.google.com/group/sfepy-devel/web/mesh4.png
 
 That's it, we're done with the meshing. Save the mesh in a format that SfePy recognizes. For now use the medit .mesh format e.g. its2D.mesh.
 
+If you open its2D.mesh using a text editor you will notice that Gmsh saves the mesh in a 3-D format and includes some extra geometry items that we can delete. I've reformatted the mesh file to a 2-D format and deleted the _Edges_ block. Click on the following link to download the reformatted mesh file.
 
+http://groups.google.com/group/sfepy-devel/web/its2D.mesh
+    
+The mesh contains 55 vertices (nodes) and 83 triangle elements. The mesh file provides the coordinates of the nodes and the element connectivities. The next step in the process is developing the SfePy problem definition file.
 
+= Problem definition =
 
-  
-
-  
-
- 
 
 
 
