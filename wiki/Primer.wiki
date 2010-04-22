@@ -32,7 +32,7 @@ The indirect tensile test specimen has a diameter of 150 mm. Using Gmsh add thre
 
 http://groups.google.com/group/sfepy-devel/web/mesh1.png
 
-Next add a Circle arc connecting two of the points as shown below.
+Next add a Circle arc connecting two of the points to form the quarter circle segment.
 
 http://groups.google.com/group/sfepy-devel/web/mesh2.png 
 
@@ -46,7 +46,8 @@ http://groups.google.com/group/sfepy-devel/web/mesh4.png
 
 That's it, we're done with the meshing. Save the mesh in a format that SfePy recognizes. For now use the medit .mesh format e.g. its2D.mesh.
 
-If you open its2D.mesh using a text editor you will notice that Gmsh saves the mesh in a 3-D format and includes some extra geometry items that we can delete. I've reformatted the mesh file to a 2-D format and deleted the _Edges_ block. Click on the following link to download the reformatted mesh file.
+If you open the its2D.mesh file using a text editor you will notice that Gmsh saves the mesh in a 3-D format and includes some extra geometry items that we can delete. I've reformatted the mesh file to a 2-D format and deleted the _Edges_ block. Click on the following link to download the reformatted mesh file.
+
 
 http://groups.google.com/group/sfepy-devel/web/its2D.mesh
     
