@@ -2,14 +2,18 @@
 
 = Introduction =
 
-Welcome to this primer on _SfePy_. To get you started, a step-by-step walk-through of the process to solve a simple mechanics problem is presented. The typical process to solve a problem using _SfePy_ is followed: a model is meshed, a problem definition file is drafted, SfePy is run to solve the problem and finally the results of the analysis are illustrated. 
+Welcome to this primer on *SfePy*. To get you started, a step-by-step walk-through of the process to solve a simple mechanics problem is presented. The typical process to solve a problem using _SfePy_ is followed: a model is meshed, a problem definition file is drafted, SfePy is run to solve the problem and finally the results of the analysis are illustrated. 
 
 
-== Problem definition =
+== Problem definition =+
 
 A popular test to measure the tensile strength of concrete or asphalt materials is the indirect tensile strength test pictured below.  
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+http://groups.google.com/group/sfepy-devel/web/ITS.png
+
+In this test a circular cylindrical specimen is loaded across its diameter to failure. The test is usually done by loading the specimen at a constant deformation rate of 50 mm/minute (say) and measuring the load response. When the tensile stress that develops in the specimen under loading exceeds its tensile strength then the specimen will fail. To model this problem using finite elements the indirect tensile test can be simplified to represent a diametrically point loaded disk as shown below.    
+
+http://groups.google.com/group/sfepy-devel/web/ITS2D.png
+
+The tensile and compressive stresses that develop in the centre of the specimen as a result of the point loads P are a function of the diameter (D) and thickness (t) of the specimen. These are:
+
