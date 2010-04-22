@@ -2,10 +2,10 @@
 
 = Introduction =
 
-Welcome to this primer on *SfePy*. To get you started, a step-by-step walk-through of the process to solve a simple mechanics problem is presented. The typical process to solve a problem using _SfePy_ is followed: a model is meshed, a problem definition file is drafted, SfePy is run to solve the problem and finally the results of the analysis are illustrated. 
+Welcome to this primer on _SfePy_ . To get you started, a step-by-step walk-through of the process to solve a simple mechanics problem is presented. The typical process to solve a problem using _SfePy_ is followed: a model is meshed, a problem definition file is drafted, _SfePy_ is run to solve the problem and finally the results of the analysis are illustrated. 
 
 
-== Problem definition =+
+== Problem definition ==
 
 A popular test to measure the tensile strength of concrete or asphalt materials is the indirect tensile strength test pictured below.  
 
@@ -15,5 +15,11 @@ In this test a circular cylindrical specimen is loaded across its diameter to fa
 
 http://groups.google.com/group/sfepy-devel/web/ITS2D.png
 
-The tensile and compressive stresses that develop in the centre of the specimen as a result of the point loads P are a function of the diameter (D) and thickness (t) of the specimen. These are:
+The tensile and compressive stresses that develop in the centre of the specimen as a result of the point loads P are a function of the diameter (D) and thickness (t) of the cylindrical specimen. These are, respectively:
 
+<wiki:gadget url="http://mathml-gadget.googlecode.com/svn/trunk/mathml-gadget.xml" border="0" up_content="sigma_{t} = (2 cdot P) / (pi cdot t cdot D)"/>
+
+<wiki:gadget url="http://mathml-gadget.googlecode.com/svn/trunk/mathml-gadget.xml" border="0" up_content="sigma_{c} = (6 cdot P) / (pi cdot t cdot D)"/>
+
+
+*Still under construction - check back later*
