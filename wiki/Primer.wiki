@@ -27,18 +27,33 @@ These solutions may be approximated using finite element analyses. To solve this
 
 Assuming plane strain conditions, the indirect tensile test may be modeled using a 2-D finite element mesh. Furthermore, the geometry of the model is symmetrical about the x- and y-axes passing through the centre of the circle. To take advantage of this symmetry only one quarter of the 2-D model will be meshed and boundary conditions will be established to indicate this symmetry. The meshing program Gmsh is used in this tutorial to very quickly mesh the model.
 
-The indirect tensile test specimen has a diameter of 150 mm. Using Gmsh add three new points (geometry elementary entities) at the following coordinates:
+The indirect tensile test specimen has a diameter of 150 mm. Using Gmsh add three new Points (geometry elementary entities) at the following coordinates:
 (0.0 0.0), (75.0,0.0) and (0.0,75.0). Next add two straight lines connecting the points as shown below.
 
 http://groups.google.com/group/sfepy-devel/web/mesh1.png
 
-Next add a circle arc connecting two of the points as shown below.
+Next add a Circle arc connecting two of the points as shown below.
 
 http://groups.google.com/group/sfepy-devel/web/mesh2.png 
 
+Still under Geometry add a Ruled surface.
 
+http://groups.google.com/group/sfepy-devel/web/mesh3.png  
    
+With the geometry of the model defined, add a mesh by clicking on the 2D button under the Mesh functions.
 
+http://groups.google.com/group/sfepy-devel/web/mesh4.png
+
+That's it, we're done with the meshing. Save the mesh in a format that SfePy recognizes. For now use the medit .mesh format e.g. its2D.mesh.
+
+
+
+
+  
+
+  
+
+ 
 
 
 
