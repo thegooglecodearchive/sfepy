@@ -66,7 +66,17 @@ The programming of the problem description file is well documented in the [http:
 
 http://groups.google.com/group/sfepy-devel/web/its2D_1.py
 
-Download and open the file in your favorite python editor. Note that you will need to change the location of the output directory to somewhere on your drive. For the analysis we will assume that the material of the test specimen is linear elastic and isotropic. We define two material constants i.e. Young's modulus and Poisson's ratio.   
+Download and open the file in your favorite python editor. Note that you will need to change the location of the output directory to somewhere on your drive. For the analysis we will assume that the material of the test specimen is linear elastic and isotropic. We define two material constants i.e. Young's modulus and Poisson's ratio. The material is assumed to be asphalt concrete having a Young's modulus of 2,000 MPa and a Poisson's ration of 0.4. 
+
+The following block of code defines regions on your mesh: 
+{{{
+regions = {
+    'Omega' : ('all', {}),
+    'Left' : ('nodes in (x < 0.001)', {}),
+    'Bottom' : ('nodes in (y < 0.001)', {}),
+    'Top' : ('node 2', {}),
+}
+}}}  
 
 
 *Still under construction - check back later*
