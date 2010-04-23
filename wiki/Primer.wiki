@@ -78,5 +78,14 @@ regions = {
 }
 }}}  
 
+Four regions are defined:
+# Omega: all the elements in the mesh
+# Left: the y-axis
+# Bottom: the x-axis
+# Top: the topmost node. This is where the load is applied.
+
+ 
+
+
 
 *Still under construction - check back later*
