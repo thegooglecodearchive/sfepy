@@ -114,7 +114,15 @@ ebcs = {
     'Load' : ('Top', {'u.0' : 0.0, 'u.1' : -1.0}),
 }
 }}}
-    
+
+Now the power of the regions entity becomes apparent. To ensure symmetry about the x-axis, the vertical or y-displacement of the nodes in the _Bottom_ region are prevented or set to zero. Similarly, for symmetry about the y-axis, any horizontal or displacement in the x-direction of the nodes in the _Left_ region or y-axis is prevented. Finally, to indicate the response of the load, the topmost node (number 2) is given a displacement of 1 mm downwards in the vertical or y-direction and displacement of this node in the x-direction is restricted.
+
+That's it - we are now ready to solve the problem.
+
+= Running SfePy =  
+
+
+        
 
 
 *Still under construction - check back later*
