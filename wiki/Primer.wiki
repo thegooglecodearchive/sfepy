@@ -51,6 +51,7 @@ If you open the its2D.mesh file using a text editor you'll notice that Gmsh save
 
 http://groups.google.com/group/sfepy-devel/web/its2D.mesh
     
+
 You'll notice that the mesh contains 55 vertices (nodes) and 83 triangle elements. The mesh file provides the coordinates of the nodes and the element connectivities. It is important to note that node and element numbering in SfePy start at 0 and not 1 as is the case in Gmsh and other meshing programs. For example, a demo version of medit can be downloaded from the following site:
 
 http://www.ann.jussieu.fr/~frey/software.html
