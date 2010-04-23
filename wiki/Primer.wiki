@@ -84,8 +84,37 @@ Four regions are defined:
   # Bottom: the x-axis
   # Top: the topmost node. This is where the load is applied.
 
- 
+Having defined the regions these can be used in other parts of your code. For example, consider the definition of the asphalt material:
 
+{{{
+material_1 = {
+    'name' : 'Asphalt',
+    'region' : 'Omega',
+    'values' : {
+        'lam' : youngpoisson_to_lame(young, poisson)[0],
+        'mu' : youngpoisson_to_lame(young, poisson)[1],
+    },
+}
+}}} 
+
+Since the material is defined on Omega it applies to the entire model. We provided the material constants in terms of Young's modulus and Poisson's ration, but the linear elastic isotropic equation used requires as input Lamé’s parameters. The _youngpoisson_to_lame_ function is thus used for conversion. Note that to use this function it was necessary to import the function into the code, which was done up front:
+
+{{{
+from sfepy.mechanics.matcoefs import youngpoisson_to_lame
+}}}   
+
+Check out [http://docs.sfepy.org/doc-devel/src/sfepy/mechanics/matcoefs.html the sfepy.mechanics.matcoefs module] for other useful functions.
+
+The boundary conditions are defined as follows:
+
+{{{
+ebcs = {
+    'XSym' : ('Bottom', {'u.1' : 0.0}),
+    'YSym' : ('Left', {'u.0' : 0.0}),
+    'Load' : ('Top', {'u.0' : 0.0, 'u.1' : -1.0}),
+}
+}}}
+    
 
 
 *Still under construction - check back later*
