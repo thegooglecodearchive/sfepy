@@ -45,14 +45,20 @@ With the geometry of the model defined, add a mesh by clicking on the 2D button 
 
 http://groups.google.com/group/sfepy-devel/web/mesh4.png
 
-That's it, we're done with the meshing. Save the mesh in a format that SfePy recognizes. For now use the medit .mesh format e.g. its2D.mesh.
+That's it, we're done with the meshing. Save the mesh in a format that SfePy recognizes. For now use the medit .mesh format e.g. its2D.mesh. (Hint: check the drop down in the save dialog for the different formats Gmsh can save to) 
 
-If you open the its2D.mesh file using a text editor you will notice that Gmsh saves the mesh in a 3-D format and includes some extra geometry items that we can delete. I've reformatted the mesh file to a 2-D format and deleted the _Edges_ block. Click on the following link to download the reformatted mesh file.
+If you open the its2D.mesh file using a text editor you will notice that Gmsh saves the mesh in a 3-D format and includes some extra geometry items that we can delete. I've reformatted the mesh file to a 2-D format and deleted the _Edges_ block. Note that when you do this the file cannot be reopened by Gmsh so it is always a good idea to also save your meshes in Gmsh's native format as well (Shift-Ctrl-S). Click on the following link to download the reformatted mesh file that will be used in the tutorial.
 
 http://groups.google.com/group/sfepy-devel/web/its2D.mesh
     
+You'll notice that the mesh contains 55 vertices (nodes) and 83 triangle elements. The mesh file provides the coordinates of the nodes and the element connectivities. It is important to note that node and element numbering in SfePy start at 0 and not 1 as is the case in Gmsh and other meshing programs. For example, a demo version of medit can be downloaded from the following site:
 
-The mesh contains 55 vertices (nodes) and 83 triangle elements. The mesh file provides the coordinates of the nodes and the element connectivities. The next step in the process is developing the SfePy problem definition file.
+http://www.ann.jussieu.fr/~frey/software.html
+
+After loading your mesh file with medit you can see the node and element numbering by pressing P and F respectively. The numbering in medit starts at 1. Node and element numbers can also be viewed in Gmsh - under the mesh option under the Visibility tab enable the node and surface labels. Note that the surface labels as numbered in Gmsh follow on from the line numbering. So to get the corresponding element number in SfePy you'll need to subtract the number of lines in the Gmsh file + 1. Confused yet? Luckily, SfePy provides some useful mesh functions to indicate which elements are connected to which nodes. Nodes and elements can also be identified by defining regions - but more on this later.   
+
+The next step in the process is developing the SfePy problem definition file.
+
 
 = Problem definition =
 
