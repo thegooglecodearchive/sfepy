@@ -60,9 +60,11 @@ After loading your mesh file with medit you can see the node and element numberi
 
 The next step in the process is developing the SfePy problem definition file.
 
+= Problem description =
 
-= Problem definition =
+The programming of the problem description file is well documented in the [http://docs.sfepy.org/doc/users_guide.html SfePy user's guide]. The problem description file used in the tutorial can be downloaded here:
 
+http://groups.google.com/group/sfepy-devel/web/its2D_1.py
 
 
 
