@@ -17,7 +17,7 @@ http://groups.google.com/group/sfepy-devel/web/ITS2D.png
 
 The tensile and compressive stresses that develop in the centre of the specimen as a result of the point loads P are a function of the diameter (D) and thickness (t) of the cylindrical specimen. These are, respectively:
 
-<wiki:gadget url="http://mathml-gadget.googlecode.com/svn/trunk/mathml-gadget.xml" border="0" up_content="sigma_{t} = (2 cdot P) / (pi cdot t cdot D)"/>
+<wiki:gadget url="http://mathml-gadget.googlecode.com/svn/trunk/mathml-gadget.xml" border="0" up_content="sigma_{t} = (2 cdot P) / (pi cdot t cdot D)"/> 
 
 <wiki:gadget url="http://mathml-gadget.googlecode.com/svn/trunk/mathml-gadget.xml" border="0" up_content="sigma_{c} = (6 cdot P) / (pi cdot t cdot D)"/>
 
@@ -123,7 +123,7 @@ That's it - we are now ready to solve the problem.
 
 One option to solve the problem is to run the SfePy _simple.py_ script from the command shell:
 {{{
-  ./simple.py its2D_1.py
+  $ ./simple.py its2D_1.py
 }}}
 
 If you have the _its2D_1.py_ file in another directory make sure you include the path to this file as well. 
@@ -140,14 +140,14 @@ Notice that the y-displacement of node 2 is -1.0 as we set it as a boundary cond
 SfePy includes a script (_postproc.py_) to quickly view the solution. To run this script you need to have [http://code.enthought.com/projects/mayavi/docs/development/html/mayavi/index.html Mayavi] installed. From the command line issue the following (with the correct paths):
 
 {{{
-  ./postproc.py its2D.vtk
+  $ ./postproc.py its2D.vtk
 }}} 
 
 The solution will be displayed as follows:
 
 http://groups.google.com/group/sfepy-devel/web/its2D_1.png
 
-The figure shows the [average???] displacements in the model but we are more interested in the stresses. To get these we need to modify the problem description file.    
+The figure shows the average displacements in the model but we are more interested in the stresses. To get these we need to modify the problem description file.    
 
 = Post-processing =
 
@@ -180,16 +180,49 @@ options.update({'post_process_hook' : 'stress_strain',})
 
 The updated file imports all of the previous definitions in _its2D_1.py_. The stress function (_de_cauchy_stress_) requires as input the stiffness tensor - thus it was necessary to update the materials accordingly. The problem options were also updated to call the stress_strain function as a _post_process_hook_.
 
-Run SfePy to solve the updated problem (assuring the correct paths):
+Run SfePy to solve the updated problem and view the solution (assuring the correct paths):
 
 {{{
-  ./simple.py its2D_2.py   
-  ./postproc.py its2D.vtk
+  $ ./simple.py its2D_2.py   
+  $ ./postproc.py its2D.vtk
 }}}
 
-In addition to the node displacements, the vtk output now also includes the stress and strain averaged in the elements:
+In addition to the node displacements, the vtk output now also includes the stresses and strains averaged in the elements:
 
 http://groups.google.com/group/sfepy-devel/web/its2D_2.png
+
+Remember the objective was to determine the stresses at the centre of the specimen under a load P. The solution as currently derived is expressed in terms of a global displacement vector (u). The global (residual) force vector (f) is a function of the global displacement vector and the global stiffness stiffness matrix (K) as: f = Ku.  
+
+In addition to solving problems using the _simple.py_ script you can also run SfePy interactively. This requires that [http://ipython.scipy.org/moin/ ipython] be installed. To run SfePy interactively, run the following command:
+
+{{{
+  $ ./isfepy
+}}}
+
+Once isfepy loads up, issue the following command:
+
+{{{
+In [1]: pb,vec,data=pde_solve('/home/grassy/its2D_2.py')
+}}}
+
+The problem is solved and the problem definition and solution is provided in the pb and vec variables - see for yourself:
+
+{{{
+In [2]: pb
+Out[2]: ProblemDefinition
+
+In [3]: vec
+Out[3]: 
+array([ 0.        ,  0.        ,  0.22608933, ..., -0.12051821,
+        0.05335311, -0.0677574 ])
+
+}}}
+
+
+
+ 
+
+
 
 
 *Still under construction - check back later*
