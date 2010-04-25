@@ -123,11 +123,32 @@ That's it - we are now ready to solve the problem.
 
 = Running SfePy =  
 
-One option to solve the problem is to run the _simple.py_ script from the command shell:
+One option to solve the problem is to run the SfePy _simple.py_ script from the command shell:
 {{{
   ./simple.py its2D_1.py
 }}}
+
+If you have the _its2D_1.py_ file in another directory make sure you include the path to this file as well. 
+
+SfePy solves the problem and outputs the solution to the output path (output_dir) provided in the script. The output file will be in the format you specified (in our case, vtk) and the name of the output file will be the same as that used for the mesh file except with the vtk extension i.e. its2D.vtk.
+
+The vtk format is an ascii format. Open the file using a text editor. You'll notice that the output file includes separate sections:
+  * POINTS (these are the model nodes)
+  * CELLS (the model element connectivity)
+  * VECTORS (the node displacements in the x-, y- and z- directions.
         
+Notice that the y-displacement of node 2 is -1.0 as we set it as a boundary condition. 
+
+SfePy includes a script (_postproc.py_)to quickly view the solution. To run this script you need to have [http://code.enthought.com/projects/mayavi/docs/development/html/mayavi/index.html Mayavi] installed. From the command line issue the following (with the correct paths):
+
+{{{
+  ./postproc.py its2D.vtk
+}}} 
+
+The solution will be displayed as follows:
+
+http://groups.google.com/group/sfepy-devel/web/its2D_1.png
+
 
 
 *Still under construction - check back later*
