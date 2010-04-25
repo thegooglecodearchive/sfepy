@@ -331,7 +331,7 @@ In [8]: pb.mtx_a.shape
 Out[8]: (93, 93)
 }}}  
 
-One would expect the shape of the global stiffness matrix to be [110,110] i.e. to have the same number of rows and columns as _vec_. This matrix has in fact been reduced by the *fixed* degrees of freedom imposed by the boundary conditions set at the nodes on symmetry axes. To _restore_ the matrix, temporarily remove the imposed boundary conditions:
+One would expect the shape of the global stiffness matrix to be (110,110) i.e. to have the same number of rows and columns as _vec_. This matrix has in fact been reduced by the *fixed* degrees of freedom imposed by the boundary conditions set at the nodes on symmetry axes. To _restore_ the matrix, temporarily remove the imposed boundary conditions:
 
 {{{
 In [9]: pb.time_update(conf_ebc={},conf_epbc={},conf_lcbc={})
@@ -403,7 +403,7 @@ To view the residual force vector, we can save it to a vtk file:
 In [14]: pb.save_state('file.vtk',f)
 }}}
 
-Run the _postproc.py_ script on _file.vtk_ shows the average nodal forces:
+Running the _postproc.py_ script on _file.vtk_ shows the average nodal forces:
 
 http://groups.google.com/group/sfepy-devel/web/its2D_3.png
 
@@ -478,8 +478,9 @@ In [17]: f[2]
 Out[17]: array([ 375.26022639, -604.89425239])
 }}}
 
-Great we have the P in our original equation i.e. 604.894 Newton.
+Great we have the load P in our original equation i.e. 604.894 Newton.
 
+Previously we had calculated the stresses in the model but these were averaged in the elements. 
 
 
 
