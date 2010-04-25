@@ -153,6 +153,44 @@ The figure shows the [average???] displacements in the model but we are more int
 
 = Post-processing =
 
+SfePy provides functions to calculate stresses and strains. We'll include a function to calculate these and update the problem material definition and options to call this function as a _post_process_hook_. Save this file as [http://groups.google.com/group/sfepy-devel/web/its2D_2.py its2D_2.py]. 
+
+{{{
+from its2D_1 import *
+
+from sfepy.mechanics.matcoefs import stiffness_tensor_youngpoisson
+
+def stress_strain(out, pb, state, extend = False):
+    '''
+    Calculate and output strain and stress for given displacements.
+    '''
+    from sfepy.base.base import Struct
+    from sfepy.fem.evaluate import eval_term_op
+
+    strain = eval_term_op(state, 'de_cauchy_strain.i1.Omega(u)', pb)
+    stress = eval_term_op(state, 'de_cauchy_stress.i1.Omega(Asphalt.D,u)', pb)
+
+    out['cauchy_strain'] = Struct(name = 'output_data', mode = 'cell', data = strain, dofs = None)
+    out['cauchy_stress'] = Struct(name = 'output_data', mode = 'cell', data = stress, dofs = None)
+
+    return out
+
+materials['Asphalt'][1].update({'D' : stiffness_tensor_youngpoisson(2, young, poisson)})
+
+options.update({'post_process_hook' : 'stress_strain',})}}}
+
+The updated file imports all of the previous definitions in _its2D_1.py_. The stress function (_de_cauchy_stress_) requires as input the stiffness tensor - thus it was necessary to update the materials accordingly. The problem options were also updated to call the stress_strain function as a _post_process_hook_.
+
+Run SfePy to solve the updated problem (assuring the correct paths):
+
+{{{
+  ./simple.py its2D_2.py   
+  ./postproc.py its2D.vtk
+}}}
+
+In addition to the node displacements, the vtk output now also includes the stress and strain averaged in the elements:
+
+http://groups.google.com/group/sfepy-devel/web/its2D_2.png
 
 
 
