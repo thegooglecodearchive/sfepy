@@ -45,7 +45,7 @@ With the geometry of the model defined, add a mesh by clicking on the 2D button 
 
 http://groups.google.com/group/sfepy-devel/web/mesh4.png
 
-That's it, we're done with the meshing. Save the mesh in a format that SfePy recognizes. For now use the medit .mesh format e.g. its2D.mesh. (Hint: check the drop down in the save dialog for the different formats Gmsh can save to) 
+That's it, we're done with the meshing. Save the mesh in a format that SfePy recognizes. For now use the medit .mesh format e.g. its2D.mesh. (Hint: check the drop down in the _Save As_ dialog for the different formats Gmsh can save to) 
 
 If you open the its2D.mesh file using a text editor you'll notice that Gmsh saves the mesh in a 3-D format and includes some extra geometry items that we can delete. I've reformatted the mesh file to a 2-D format and deleted the _Edges_ block. Note that when you do this the file cannot be reopened by Gmsh so it is always a good idea to also save your meshes in Gmsh's native format as well (Shift-Ctrl-S). Click on the following link to download the reformatted mesh file that will be used in the tutorial.
 
@@ -67,6 +67,8 @@ The programming of the problem description file is well documented in the [http:
 http://groups.google.com/group/sfepy-devel/web/its2D_1.py
 
 Download and open the file in your favorite python editor. Note that you will need to change the location of the output directory to somewhere on your drive. For the analysis we will assume that the material of the test specimen is linear elastic and isotropic. We define two material constants i.e. Young's modulus and Poisson's ratio. The material is assumed to be asphalt concrete having a Young's modulus of 2,000 MPa and a Poisson's ration of 0.4. 
+
+Note - be consistent in your choice and use of units. In the tutorial we are using Newton (N), millimeters (mm) and megaPascal (MPa).
 
 The following block of code defines regions on your mesh: 
 {{{
@@ -121,7 +123,10 @@ That's it - we are now ready to solve the problem.
 
 = Running SfePy =  
 
-
+One option to solve the problem is to run the _simple.py_ script from the command shell:
+{{{
+  ./simple.py its2D_1.py
+}}}
         
 
 
