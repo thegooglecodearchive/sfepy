@@ -89,13 +89,11 @@ Four regions are defined:
 Having defined the regions these can be used in other parts of your code. For example, consider the definition of the asphalt material:
 
 {{{
-material_1 = {
-    'name' : 'Asphalt',
-    'region' : 'Omega',
-    'values' : {
+materials = {
+    'Asphalt' : ('Omega', {
         'lam' : youngpoisson_to_lame(young, poisson)[0],
         'mu' : youngpoisson_to_lame(young, poisson)[1],
-    },
+    }),
 }
 }}} 
 
@@ -177,7 +175,8 @@ def stress_strain(out, pb, state, extend = False):
 
 materials['Asphalt'][1].update({'D' : stiffness_tensor_youngpoisson(2, young, poisson)})
 
-options.update({'post_process_hook' : 'stress_strain',})}}}
+options.update({'post_process_hook' : 'stress_strain',})
+}}}
 
 The updated file imports all of the previous definitions in _its2D_1.py_. The stress function (_de_cauchy_stress_) requires as input the stiffness tensor - thus it was necessary to update the materials accordingly. The problem options were also updated to call the stress_strain function as a _post_process_hook_.
 
@@ -191,7 +190,6 @@ Run SfePy to solve the updated problem (assuring the correct paths):
 In addition to the node displacements, the vtk output now also includes the stress and strain averaged in the elements:
 
 http://groups.google.com/group/sfepy-devel/web/its2D_2.png
-
 
 
 *Still under construction - check back later*
