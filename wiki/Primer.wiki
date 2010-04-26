@@ -633,7 +633,11 @@ Horizontal tensile stress = 3.15061639733 MPa/mm
 Vertical compressive stress = 9.41731045904 MPa/mm
 }}}
 
-It appears as if the analytical solution for is tending towards pi.
+It appears as if the analytical solution for the horizontal tensile stress under a 1 mm displacement is tending towards pi. 
+
+To wrap this tutorial up let's explore SfePy's probing functions.  
+
+= Probing =
 
 
 
