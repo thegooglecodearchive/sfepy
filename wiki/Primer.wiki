@@ -58,7 +58,7 @@ http://www.ann.jussieu.fr/~frey/software.html
 
 After loading your mesh file with medit you can see the node and element numbering by pressing P and F respectively. The numbering in medit starts at 1 as shown below: 
 
-http://groups.google.com/group/sfepy-devel/web/its2D_1.png
+http://groups.google.com/group/sfepy-devel/web/its2D_4.png
 
 Node and element numbers can also be viewed in Gmsh - under the mesh option under the Visibility tab enable the node and surface labels. Note that the surface labels as numbered in Gmsh follow on from the line numbering. So to get the corresponding element number in SfePy you'll need to subtract the number of lines in the Gmsh file + 1. Confused yet? Luckily, SfePy provides some useful mesh functions to indicate which elements are connected to which nodes. Nodes and elements can also be identified by defining regions - but more on this later.   
 
