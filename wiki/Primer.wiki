@@ -478,7 +478,7 @@ In [17]: f[2]
 Out[17]: array([ 375.26022639, -604.89425239])
 }}}
 
-Great we have the load P in our original equation i.e. 604.894 Newton.
+Great we have the vertical load or force apparent at node 2 i.e. 604.894 Newton. Since we modeled the problem using *symmetry*, the actual load applied to achieve the nodal displacement of 1 mm is 2 x 604.894 = -1209.7885 N. The the horizontal tensile stress at the center of the specimen is 5.1345 MPa/mm and the vertical compressive stress is 15.4035 MPa/mm.  
 
 Previously we had calculated the stresses in the model but these were averaged in the elements. 
 
