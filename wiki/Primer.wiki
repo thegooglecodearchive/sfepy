@@ -719,171 +719,89 @@ from its2D_1 import *
 from sfepy.mechanics.matcoefs import stiffness_tensor_youngpoisson
 
 def stress_strain(out, pb, state, extend = False):
-
     from sfepy.base.base import Struct
-
     from sfepy.fem.evaluate import eval_term_op
 
-
-
     strain = eval_term_op(state, 'de_cauchy_strain.i1.Omega(u)', pb)
-
     stress = eval_term_op(state, 'de_cauchy_stress.i1.Omega(Asphalt.D,u)', pb)
-
     out['cauchy_strain'] = Struct(name = 'output_data', mode = 'cell', data = strain, dofs = None)
-
     out['cauchy_stress'] = Struct(name = 'output_data', mode = 'cell', data = stress, dofs = None)
 
     return out
 
+
 def gen_lines(problem):
 
     from sfepy.fem.probes import LineProbe
-
-
-
     mesh = problem.domain.mesh
-
     ps0 = [[0.0,  0.0],[ 0.0,  0.0]]
-
     ps1 = [[75.0, 0.0],[ 0.0, 75.0]]
 
-
-
     # Use adaptive probe with 10 inital points.
-
     n_point = -10
 
-
-
     labels = ['%s -> %s' % (p0, p1) for p0, p1 in zip(ps0, ps1)]
-
     probes = []
-
     for ip in xrange(len(ps0)):
-
         p0, p1 = ps0[ip], ps1[ip]
-
         probes.append(LineProbe(p0, p1, n_point, mesh))
-
-
 
     return probes, labels
 
+
 def probe_hook(data, probe, label, problem):
-
     import matplotlib.pyplot as plt
-
     import matplotlib.font_manager as fm
 
-
-
     def get_it(name, var_name):
-
         var = problem.variables[var_name]
-
-
-
         if name == var_name:
-
             indx = problem.variables.di.indx[var.name]
-
             var.data_from_state(data[name].data, indx)
-
-
-
         else:
-
             var.data_from_data(data[name].data)
-
-
-
         pars, vals = probe(var)
-
         vals = vals.squeeze()
 
         return pars, vals
 
-
-
     results = {}
-
     results['u'] = get_it('u', 'u')
-
     results['cauchy_strain'] = get_it('cauchy_strain', 's')
-
     results['cauchy_stress'] = get_it('cauchy_stress', 's')
-
-
-
     fig = plt.figure()
-
     plt.clf()
-
     fig.subplots_adjust(hspace=0.4)
-
-
-
     plt.subplot(311)
-
     pars, vals = results['u']
-
     for ic in range(vals.shape[1]):
-
         plt.plot(pars, vals[:,ic], label=r'$u_{%d}$' % (ic + 1),
-
                  lw=1, ls='-', marker='+', ms=3)
-
     plt.ylabel('displacements')
-
     plt.xlabel('probe %s' % label, fontsize=8)
-
     plt.legend(loc='best', prop=fm.FontProperties(size=10))
-
-
 
     sym_indices = ['11', '22', '12']
 
-
-
     plt.subplot(312)
-
     pars, vals = results['cauchy_strain']
-
     for ic in range(vals.shape[1]):
-
         plt.plot(pars, vals[:,ic], label=r'$e_{%s}$' % sym_indices[ic],
-
                  lw=1, ls='-', marker='+', ms=3)
-
     plt.ylabel('Cauchy strain')
-
     plt.xlabel('probe %s' % label, fontsize=8)
-
     plt.legend(loc='best', prop=fm.FontProperties(size=8))
-
-
 
     plt.subplot(313)
-
     pars, vals = results['cauchy_stress']
-
     for ic in range(vals.shape[1]):
-
         plt.plot(pars, vals[:,ic], label=r'$\sigma_{%s}$' % sym_indices[ic],
-
                  lw=1, ls='-', marker='+', ms=3)
-
     plt.ylabel('Cauchy stress')
-
     plt.xlabel('probe %s' % label, fontsize=8)
-
     plt.legend(loc='best', prop=fm.FontProperties(size=8))
 
-
-
     return plt.gcf(), results
-
 
 materials['Asphalt'][1].update({'D' : stiffness_tensor_youngpoisson(2, young, poisson)})
 fields.update({'sym_tensor'  : ((3,1), 'real', 'Omega', {'Omega' : '2_3_P0'}),})
@@ -891,11 +809,8 @@ variables.update({'s' : ('parameter field', 'sym_tensor', None),})
 
 options.update({
     'output_format'     : 'h5', # VTK reader cannot read cell data yet for probing
-
     'post_process_hook' : 'stress_strain',
-
     'gen_probes'        : 'gen_lines',
-
     'probe_hook'        : 'probe_hook',
 })
 }}}
@@ -926,13 +841,11 @@ http://groups.google.com/group/sfepy-devel/web/its2D_01.png
 
 Finally, a shout out to all the members of SfePy and especially Robert and Logan for their assistance - guys, thanks for your patience! I have tried to capture in this tutorial most of what I learnt during my first few weeks after being introduced to SfePy. I continue to learn everyday and realize that I've only scratched the surface. In the spirit of SfePy, I encourage you to contribute to the project. Please edit this tutorial as you see fit.
 
-Andre Smit
+Andre Smit \
 Austin, TX
  
 
   
-
-
 
 
 
