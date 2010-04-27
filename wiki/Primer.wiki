@@ -639,7 +639,20 @@ To wrap this tutorial up let's explore SfePy's probing functions.
 
 = Probing =
 
+As a bonus for sticking to the end of this tutorial see the following problem definition file that provides SfePy functions to quickly and neatly _probe_ the solution.
 
+http://groups.google.com/group/sfepy-devel/web/its2D_4.py
+
+Probing applies interpolation to output the solution along specified paths. For the tutorial, line probing is done along the x- and y-axes of the model. The figures that follow show the displacements, normal stresses and strains as well as shear stresses and strains along the probe paths.
+
+http://groups.google.com/group/sfepy-devel/web/its2D_0.png
+
+http://groups.google.com/group/sfepy-devel/web/its2D_01.png
+
+
+= Acknowledgements =
+
+Finally, 
 
 
 *Still under construction - check back later*
