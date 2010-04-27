@@ -680,7 +680,7 @@ array([  0,   2,   3,   4,   7,  10,  13,  16,  19,  22,  25,  28,  31,
 
 As you can see _n_els_ provides the number of elements connected to each of the nodes i.e. node 0 has 2, node 3 has 3, etc. Some of the nodes have 7 elements connected! If the _ret_offsets_ boolean is set to True then _n_els_ returns the cumulative number of elements offset from the previous. The _iconn_ array indicates which elements are connected (separated by 0).  
 
-Running _its2D_3.py through SfePy provides the following solution:
+Running _its2D_3.py_ through SfePy provides the following solution:
 {{{
 Analytical solution
 ===================
@@ -729,9 +729,7 @@ def stress_strain(out, pb, state, extend = False):
 
     return out
 
-
 def gen_lines(problem):
-
     from sfepy.fem.probes import LineProbe
     mesh = problem.domain.mesh
     ps0 = [[0.0,  0.0],[ 0.0,  0.0]]
@@ -846,6 +844,4 @@ Austin, TX
  
 
   
-
-
 
