@@ -841,6 +841,17 @@ Finally, a shout out to all the members of SfePy and especially Robert and Logan
 
 Andre Smit \
 Austin, TX
- 
+
+To do:
+
+- Fix vtk references
+
+- to prevent the wiki engine to think that SomeWord is a link, it is possible to write it as !SomeWord. So maybe you want change SfePy -> !SfePy, NumPy -> !Numpy etc.
+
+- one could alternatively use problem.solve() in place of eval_term_op() in stress_strain().
+
+- it is advisable to weight the contributions of each node in nodal_stress() by the areas (volumes in 3D) of the elements it is in. In fact, Variable.data_from_qp() would do that for you! Yes, another undocumented function :].
+
+- the zeros in iconn correspond to element groups - an element is referred to by (ig, iel) - the group number and its index within a group. You get different groups either when having both triangles and rectangles in one mesh, and/or by using several element groups ids in the mesh file - for medit meshes it is the last number in each row of the element connectivity. This number corresponds to the one in 'elements of group <integer>' region selector. 
 
   
