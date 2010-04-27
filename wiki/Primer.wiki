@@ -270,7 +270,7 @@ In addition to the node displacements, the vtk output now also includes the stre
 
 http://groups.google.com/group/sfepy-devel/web/its2D_2.png
 
-Remember the objective was to determine the stresses at the centre of the specimen under a load P. The solution as currently derived is expressed in terms of a global displacement vector (u). The global (residual) force vector (f) is a function of the global displacement vector and the global stiffness stiffness matrix (K) as: f = Ku.  
+Remember the objective was to determine the stresses at the centre of the specimen under a load P. The solution as currently derived is expressed in terms of a global displacement vector (u). The global (residual) force vector (f) is a function of the global displacement vector and the global stiffness matrix (K) as: f = Ku.  
 
 In addition to solving problems using the _simple.py_ script you can also run SfePy interactively. This requires that [http://ipython.scipy.org/moin/ ipython] be installed. To run SfePy interactively, run the following command:
 
