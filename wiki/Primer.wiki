@@ -2,7 +2,7 @@
 
 = Introduction =
 
-Welcome to this primer on SfePy. To get you started, a step-by-step walk-through of the process to solve a simple mechanics problem is presented. The typical process to solve a problem using SfePy is followed: a model is meshed, a problem definition file is drafted, SfePy is run to solve the problem and finally the results of the analysis are illustrated. 
+Welcome to this primer on !SfePy. To get you started, a step-by-step walk-through of the process to solve a simple mechanics problem is presented. The typical process to solve a problem using !SfePy is followed: a model is meshed, a problem definition file is drafted, !SfePy is run to solve the problem and finally the results of the analysis are illustrated. 
 
 
 == Problem statement ==
@@ -45,7 +45,7 @@ With the geometry of the model defined, add a mesh by clicking on the 2D button 
 
 http://groups.google.com/group/sfepy-devel/web/mesh4.png
 
-That's it, we're done with the meshing. Save the mesh in a format that SfePy recognizes. For now use the medit .mesh format e.g. its2D.mesh. (Hint: check the drop down in the _Save As_ dialog for the different formats Gmsh can save to) 
+That's it, we're done with the meshing. Save the mesh in a format that !SfePy recognizes. For now use the medit .mesh format e.g. its2D.mesh. (Hint: check the drop down in the _Save As_ dialog for the different formats Gmsh can save to) 
 
 If you open the its2D.mesh file using a text editor you'll notice that Gmsh saves the mesh in a 3-D format and includes some extra geometry items that we can delete. I've reformatted the mesh file to a 2-D format and deleted the _Edges_ block. Note that when you do this the file cannot be reopened by Gmsh so it is always a good idea to also save your meshes in Gmsh's native format as well (Shift-Ctrl-S). Click on the following link to download the reformatted mesh file that will be used in the tutorial.
 
@@ -60,15 +60,15 @@ After loading your mesh file with medit you can see the node and element numberi
 
 http://groups.google.com/group/sfepy-devel/web/its2D_4.png
 
-Thus the node at the center of the model in SfePy numbering is 0, and elements 76 and 77 are connected to this node.
+Thus the node at the center of the model in !SfePy numbering is 0, and elements 76 and 77 are connected to this node.
 
-Node and element numbers can also be viewed in Gmsh - under the mesh option under the Visibility tab enable the node and surface labels. Note that the surface labels as numbered in Gmsh follow on from the line numbering. So to get the corresponding element number in SfePy you'll need to subtract the number of lines in the Gmsh file + 1. Confused yet? Luckily, SfePy provides some useful mesh functions to indicate which elements are connected to which nodes. Nodes and elements can also be identified by defining regions - but more on this later.   
+Node and element numbers can also be viewed in Gmsh - under the mesh option under the Visibility tab enable the node and surface labels. Note that the surface labels as numbered in Gmsh follow on from the line numbering. So to get the corresponding element number in !SfePy you'll need to subtract the number of lines in the Gmsh file + 1. Confused yet? Luckily, SfePy provides some useful mesh functions to indicate which elements are connected to which nodes. Nodes and elements can also be identified by defining regions - but more on this later.   
 
-The next step in the process is developing the SfePy problem definition file.
+The next step in the process is developing the !SfePy problem definition file.
 
 = Problem description =
 
-The programming of the problem description file is well documented in the [http://docs.sfepy.org/doc/users_guide.html SfePy user's guide]. The problem description file used in the tutorial follows: 
+The programming of the problem description file is well documented in the [http://docs.sfepy.org/doc/users_guide.html !SfePy user's guide]. The problem description file used in the tutorial follows: 
 
 {{{
 # 04/22/2010 
@@ -197,15 +197,15 @@ Now the power of the regions entity becomes apparent. To ensure symmetry about t
 
 That's it - we are now ready to solve the problem.
 
-= Running SfePy =  
+= Running !SfePy =  
 
-One option to solve the problem is to run the SfePy _simple.py_ script from the command shell:
+One option to solve the problem is to run the !SfePy _simple.py_ script from the command shell:
 
 {{{
   $ ./simple.py its2D_1.py
 }}}
 
-For the purpose of this tutorial it is assumed that the problem definition file (its2D_1.py) is in the same directory as the _simple.py) script. If you have the _its2D_1.py_ file in another directory then make sure you include the path to this file as well. 
+For the purpose of this tutorial it is assumed that the problem definition file (its2D_1.py) is in the same directory as the _simple.py_ script. If you have the _its2D_1.py_ file in another directory then make sure you include the path to this file as well. 
 
 SfePy solves the problem and outputs the solution to the output path (output_dir) provided in the script. The output file will be in the format you specified (in our case, vtk) and the name of the output file will be the same as that used for the mesh file except with the vtk extension i.e. its2D.vtk.
 
@@ -297,7 +297,7 @@ array([ 0.        ,  0.        ,  0.22608933, ..., -0.12051821,
 
 }}}
 
-_vec_ is a [http://numpy.scipy.org/ NumPy] array. If an array is too large to be printed then NumPy automatically skips the central part of the array and only prints the corners. To disable this behaviour and force NumPy to print the entire array, you can change the printing options using _set_printoptions_:
+_vec_ is a [http://numpy.scipy.org/ !NumPy] array. If an array is too large to be printed then NumPy automatically skips the central part of the array and only prints the corners. To disable this behaviour and force NumPy to print the entire array, you can change the printing options using _set_printoptions_:
 
 {{{
 In [4]: nm.set_printoptions(threshold=nm.nan)
@@ -707,11 +707,11 @@ Vertical compressive stress = 9.41731045904 MPa/mm
 
 It appears as if the analytical solution for the horizontal tensile stress under a 1 mm displacement is tending towards pi. 
 
-To wrap this tutorial up let's explore SfePy's probing functions.  
+To wrap this tutorial up let's explore !SfePy's probing functions.  
 
 = Probing =
 
-As a bonus for sticking to the end of this tutorial see the following problem definition file that provides SfePy functions to quickly and neatly _probe_ the solution.
+As a bonus for sticking to the end of this tutorial see the following problem definition file that provides !SfePy functions to quickly and neatly _probe_ the solution.
 
 {{{
 from its2D_1 import *
@@ -837,7 +837,7 @@ http://groups.google.com/group/sfepy-devel/web/its2D_01.png
 
 = Acknowledgements =
 
-Finally, a shout out to all the members of SfePy and especially Robert and Logan for their assistance - guys, thanks for your patience! I have tried to capture in this tutorial most of what I learnt during my first few weeks after being introduced to SfePy. I continue to learn everyday and realize that I've only scratched the surface. In the spirit of SfePy, I encourage you to contribute to the project. Please edit this tutorial as you see fit.
+Finally, a shout out to all the members of SfePy and especially Robert and Logan for their assistance - guys, thanks for your patience! I have tried to capture in this tutorial most of what I learnt during the first few weeks after being introduced to !SfePy. I continue to learn everyday and realize that I've only scratched the surface. In the spirit of !SfePy, I encourage you to contribute to the project. Please edit this tutorial as you see fit.
 
 Andre Smit \
 Austin, TX
