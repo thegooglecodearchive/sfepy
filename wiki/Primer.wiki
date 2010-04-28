@@ -1,4 +1,4 @@
-#summary A beginner's tutorial on using !SfePy.
+#summary A beginner's tutorial on using SfePy.
 
 = Introduction =
 
