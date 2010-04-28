@@ -872,13 +872,12 @@ http://groups.google.com/group/sfepy-devel/web/its2D_01.png
 Finally, a shout out to all the members of !SfePy and especially Robert and Logan for their assistance - guys, thanks for your patience! I have tried to capture in this tutorial most of what I learnt during the first few weeks after being introduced to !SfePy. I continue to learn everyday and realize that I've only scratched the surface. In the spirit of !SfePy, I encourage you to contribute to the project. Please edit this tutorial as you see fit.
 
 Andre Smit
-
 Austin, TX
+27 April 2010 (original posting)
 
 Notes:
 
   # one could alternatively use pb.solve() in place of eval_term_op() in stress_strain().
-
   # it is advisable to weight the contributions of each node in nodal_stress() by the areas (volumes in 3D) of the elements it is in. In fact, Variable.data_from_qp() would do that for you! Yes, another undocumented function :].
 
 
