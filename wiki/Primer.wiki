@@ -68,7 +68,7 @@ The next step in the process is developing the !SfePy problem definition file.
 
 = Problem description =
 
-The programming of the problem description file is well documented in the [http://docs.sfepy.org/doc/users_guide.html !SfePy user's guide]. The problem description file used in the tutorial follows: 
+The programming of the problem description file is well documented in the [http://docs.sfepy.org/doc/users_guide.html SfePy user's guide]. The problem description file used in the tutorial follows: 
 
 {{{
 # 04/22/2010 
@@ -297,7 +297,7 @@ array([ 0.        ,  0.        ,  0.22608933, ..., -0.12051821,
 
 }}}
 
-_vec_ is a [http://numpy.scipy.org/ !NumPy] array. If an array is too large to be printed then !NumPy automatically skips the central part of the array and only prints the corners. To disable this behaviour and force !NumPy to print the entire array, you can change the printing options using _set_printoptions_:
+_vec_ is a [http://numpy.scipy.org/ NumPy] array. If an array is too large to be printed then !NumPy automatically skips the central part of the array and only prints the corners. To disable this behaviour and force !NumPy to print the entire array, you can change the printing options using _set_printoptions_:
 
 {{{
 In [4]: nm.set_printoptions(threshold=nm.nan)
