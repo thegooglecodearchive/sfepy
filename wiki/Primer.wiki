@@ -1,4 +1,5 @@
 #summary A beginner's tutorial on using SfePy.
+#labels Featured
 
 = Introduction =
 
