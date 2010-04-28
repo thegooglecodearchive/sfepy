@@ -706,6 +706,8 @@ array([  0,   2,   3,   4,   7,  10,  13,  16,  19,  22,  25,  28,  31,
 
 As you can see _n_els_ provides the number of elements connected to each of the nodes i.e. node 0 has 2, node 3 has 3, etc. Some of the nodes have 7 elements connected! If the _ret_offsets_ boolean is set to True then _n_els_ returns the cumulative number of elements offset from the previous. The _iconn_ array indicates which elements are connected, separated by 0. The zeros in _iconn_ correspond to element groups - an element is referred to by (ig, iel) - the group number and its index within a group. You get different groups either when having both triangles and rectangles in one mesh, and/or by using several element groups ids in the mesh file. 
 
+Note that the contribution of the nodes have been weighted against the areas of the connected elements.
+
 Running _its2D_3.py_ through !SfePy provides the following solution:
 {{{
 Load to give 1 mm displacement = 1209.78850478 Newton 
@@ -723,14 +725,16 @@ Vertical compressive stress = 15.6461807296 MPa/mm
 Not bad for such a coarse mesh. Re-running the problem using a [http://sfepy-devel.googlegroups.com/web/big.mesh finer mesh] gives the following solution: 
 
 {{{
+Load to give 1 mm displacement = 740.778789327 Newton 
+
 Analytical solution
 ===================
 Horizontal tensile stress = 3.14396282824 MPa/mm
 Vertical compressive stress = 9.43188848472 MPa/mm
 FEM solution
 ============
-Horizontal tensile stress = 3.15061639733 MPa/mm
-Vertical compressive stress = 9.41731045904 MPa/mm
+Horizontal tensile stress = 3.14846573813 MPa/mm
+Vertical compressive stress = 9.41900696084 MPa/mm
 }}}
 
 It appears as if the analytical solution for the horizontal tensile stress under a 1 mm displacement is tending towards pi. 
@@ -875,7 +879,7 @@ Notes:
 
   # one could alternatively use pb.solve() in place of eval_term_op() in stress_strain().
 
-- it is advisable to weight the contributions of each node in nodal_stress() by the areas (volumes in 3D) of the elements it is in. In fact, Variable.data_from_qp() would do that for you! Yes, another undocumented function :].
+  # it is advisable to weight the contributions of each node in nodal_stress() by the areas (volumes in 3D) of the elements it is in. In fact, Variable.data_from_qp() would do that for you! Yes, another undocumented function :].
 
 
   
