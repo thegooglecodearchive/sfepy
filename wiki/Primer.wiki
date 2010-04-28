@@ -678,7 +678,7 @@ array([  0,   2,   3,   4,   7,  10,  13,  16,  19,  22,  25,  28,  31,
        232, 237, 243, 249])
 }}} 
 
-As you can see _n_els_ provides the number of elements connected to each of the nodes i.e. node 0 has 2, node 3 has 3, etc. Some of the nodes have 7 elements connected! If the _ret_offsets_ boolean is set to True then _n_els_ returns the cumulative number of elements offset from the previous. The _iconn_ array indicates which elements are connected (separated by 0).  
+As you can see _n_els_ provides the number of elements connected to each of the nodes i.e. node 0 has 2, node 3 has 3, etc. Some of the nodes have 7 elements connected! If the _ret_offsets_ boolean is set to True then _n_els_ returns the cumulative number of elements offset from the previous. The _iconn_ array indicates which elements are connected, separated by 0. The zeros in _iconn_ correspond to element groups - an element is referred to by (ig, iel) - the group number and its index within a group. You get different groups either when having both triangles and rectangles in one mesh, and/or by using several element groups ids in the mesh file - for medit meshes it is the last number in each row of the element connectivity. This number corresponds to the one in 'elements of group <integer>' region selector. 
 
 Running _its2D_3.py_ through !SfePy provides the following solution:
 {{{
@@ -849,6 +849,5 @@ To do:
 
 - it is advisable to weight the contributions of each node in nodal_stress() by the areas (volumes in 3D) of the elements it is in. In fact, Variable.data_from_qp() would do that for you! Yes, another undocumented function :].
 
-- the zeros in iconn correspond to element groups - an element is referred to by (ig, iel) - the group number and its index within a group. You get different groups either when having both triangles and rectangles in one mesh, and/or by using several element groups ids in the mesh file - for medit meshes it is the last number in each row of the element connectivity. This number corresponds to the one in 'elements of group <integer>' region selector. 
 
   
