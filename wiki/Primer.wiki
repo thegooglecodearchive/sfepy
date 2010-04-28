@@ -1,4 +1,4 @@
-#summary A beginner's tutorial on using SfePy.
+#summary A beginner's tutorial on using !SfePy.
 
 = Introduction =
 
@@ -21,7 +21,7 @@ The tensile and compressive stresses that develop in the centre of the specimen 
 
 <wiki:gadget url="http://mathml-gadget.googlecode.com/svn/trunk/mathml-gadget.xml" border="0" up_content="sigma_{c} = (6 cdot P) / (pi cdot t cdot D)"/>
 
-These solutions may be approximated using finite element analyses. To solve this problem using SfePy the first step is meshing a suitable model.
+These solutions may be approximated using finite element analyses. To solve this problem using !SfePy the first step is meshing a suitable model.
 
 = Meshing = 
 
@@ -52,7 +52,7 @@ If you open the its2D.mesh file using a text editor you'll notice that Gmsh save
 http://groups.google.com/group/sfepy-devel/web/its2D.mesh
     
 
-You'll notice that the mesh contains 55 vertices (nodes) and 83 triangle elements. The mesh file provides the coordinates of the nodes and the element connectivities. It is important to note that node and element numbering in SfePy start at 0 and not 1 as is the case in Gmsh and other meshing programs. For example, a demo version of medit can be downloaded from the following site:
+You'll notice that the mesh contains 55 vertices (nodes) and 83 triangle elements. The mesh file provides the coordinates of the nodes and the element connectivities. It is important to note that node and element numbering in !SfePy start at 0 and not 1 as is the case in Gmsh and other meshing programs. For example, a demo version of medit can be downloaded from the following site:
 
 http://www.ann.jussieu.fr/~frey/software.html
 
@@ -62,7 +62,7 @@ http://groups.google.com/group/sfepy-devel/web/its2D_4.png
 
 Thus the node at the center of the model in !SfePy numbering is 0, and elements 76 and 77 are connected to this node.
 
-Node and element numbers can also be viewed in Gmsh - under the mesh option under the Visibility tab enable the node and surface labels. Note that the surface labels as numbered in Gmsh follow on from the line numbering. So to get the corresponding element number in !SfePy you'll need to subtract the number of lines in the Gmsh file + 1. Confused yet? Luckily, SfePy provides some useful mesh functions to indicate which elements are connected to which nodes. Nodes and elements can also be identified by defining regions - but more on this later.   
+Node and element numbers can also be viewed in Gmsh - under the mesh option under the Visibility tab enable the node and surface labels. Note that the surface labels as numbered in Gmsh follow on from the line numbering. So to get the corresponding element number in !SfePy you'll need to subtract the number of lines in the Gmsh file + 1. Confused yet? Luckily, !SfePy provides some useful mesh functions to indicate which elements are connected to which nodes. Nodes and elements can also be identified by defining regions - but more on this later.   
 
 The next step in the process is developing the !SfePy problem definition file.
 
@@ -207,7 +207,7 @@ One option to solve the problem is to run the !SfePy _simple.py_ script from the
 
 For the purpose of this tutorial it is assumed that the problem definition file (its2D_1.py) is in the same directory as the _simple.py_ script. If you have the _its2D_1.py_ file in another directory then make sure you include the path to this file as well. 
 
-SfePy solves the problem and outputs the solution to the output path (output_dir) provided in the script. The output file will be in the format you specified (in our case, vtk) and the name of the output file will be the same as that used for the mesh file except with the vtk extension i.e. its2D.vtk.
+!SfePy solves the problem and outputs the solution to the output path (output_dir) provided in the script. The output file will be in the vtk format by default if this is not explicitly specified and the name of the output file will be the same as that used for the mesh file except with the vtk extension i.e. its2D.vtk.
 
 The vtk format is an ascii format. Open the file using a text editor. You'll notice that the output file includes separate sections:
   * POINTS (these are the model nodes)
@@ -216,7 +216,7 @@ The vtk format is an ascii format. Open the file using a text editor. You'll not
         
 Notice that the y-displacement of node 2 is -1.0 as we set it as a boundary condition. 
 
-SfePy includes a script (_postproc.py_) to quickly view the solution. To run this script you need to have [http://code.enthought.com/projects/mayavi/docs/development/html/mayavi/index.html Mayavi] installed. From the command line issue the following (with the correct paths):
+!SfePy includes a script (_postproc.py_) to quickly view the solution. To run this script you need to have [http://code.enthought.com/projects/mayavi/docs/development/html/mayavi/index.html Mayavi] installed. From the command line issue the following (with the correct paths):
 
 {{{
   $ ./postproc.py its2D.vtk
@@ -230,7 +230,7 @@ The figure shows the average displacements in the model but we are more interest
 
 = Post-processing =
 
-SfePy provides functions to calculate stresses and strains. We'll include a function to calculate these and update the problem material definition and options to call this function as a _post_process_hook_. Save this file as [http://groups.google.com/group/sfepy-devel/web/its2D_2.py its2D_2.py]. 
+!SfePy provides functions to calculate stresses and strains. We'll include a function to calculate these and update the problem material definition and options to call this function as a _post_process_hook_. Save this file as [http://groups.google.com/group/sfepy-devel/web/its2D_2.py its2D_2.py]. 
 
 {{{
 from its2D_1 import *
@@ -259,7 +259,7 @@ options.update({'post_process_hook' : 'stress_strain',})
 
 The updated file imports all of the previous definitions in _its2D_1.py_. The stress function (_de_cauchy_stress_) requires as input the stiffness tensor - thus it was necessary to update the materials accordingly. The problem options were also updated to call the stress_strain function as a _post_process_hook_.
 
-Run SfePy to solve the updated problem and view the solution (assuring the correct paths):
+Run !SfePy to solve the updated problem and view the solution (assuring the correct paths):
 
 {{{
   $ ./simple.py its2D_2.py   
@@ -272,7 +272,7 @@ http://groups.google.com/group/sfepy-devel/web/its2D_2.png
 
 Remember the objective was to determine the stresses at the centre of the specimen under a load P. The solution as currently derived is expressed in terms of a global displacement vector (u). The global (residual) force vector (f) is a function of the global displacement vector and the global stiffness matrix (K) as: f = Ku.  
 
-In addition to solving problems using the _simple.py_ script you can also run SfePy interactively. This requires that [http://ipython.scipy.org/moin/ ipython] be installed. To run SfePy interactively, run the following command:
+In addition to solving problems using the _simple.py_ script you can also run !SfePy interactively. This requires that [http://ipython.scipy.org/moin/ ipython] be installed. To run !SfePy interactively, run the following command:
 
 {{{
   $ ./isfepy
@@ -297,7 +297,7 @@ array([ 0.        ,  0.        ,  0.22608933, ..., -0.12051821,
 
 }}}
 
-_vec_ is a [http://numpy.scipy.org/ !NumPy] array. If an array is too large to be printed then NumPy automatically skips the central part of the array and only prints the corners. To disable this behaviour and force NumPy to print the entire array, you can change the printing options using _set_printoptions_:
+_vec_ is a [http://numpy.scipy.org/ !NumPy] array. If an array is too large to be printed then !NumPy automatically skips the central part of the array and only prints the corners. To disable this behaviour and force !NumPy to print the entire array, you can change the printing options using _set_printoptions_:
 
 {{{
 In [4]: nm.set_printoptions(threshold=nm.nan)
@@ -680,7 +680,7 @@ array([  0,   2,   3,   4,   7,  10,  13,  16,  19,  22,  25,  28,  31,
 
 As you can see _n_els_ provides the number of elements connected to each of the nodes i.e. node 0 has 2, node 3 has 3, etc. Some of the nodes have 7 elements connected! If the _ret_offsets_ boolean is set to True then _n_els_ returns the cumulative number of elements offset from the previous. The _iconn_ array indicates which elements are connected (separated by 0).  
 
-Running _its2D_3.py_ through SfePy provides the following solution:
+Running _its2D_3.py_ through !SfePy provides the following solution:
 {{{
 Analytical solution
 ===================
@@ -823,7 +823,7 @@ Notice that the output_format has been defined as _h5_. To apply probing first s
   $ ./simple.py its2D_4.py
 }}}
 
-This will write the solution to the output directory indicated. Then run the SfePy _probe.py_ script on the solution:
+This will write the solution to the output directory indicated. Then run the !SfePy _probe.py_ script on the solution:
 
 {{{
   $ ./probe.py its2D_4.py its2D.h5
@@ -837,16 +837,13 @@ http://groups.google.com/group/sfepy-devel/web/its2D_01.png
 
 = Acknowledgements =
 
-Finally, a shout out to all the members of SfePy and especially Robert and Logan for their assistance - guys, thanks for your patience! I have tried to capture in this tutorial most of what I learnt during the first few weeks after being introduced to !SfePy. I continue to learn everyday and realize that I've only scratched the surface. In the spirit of !SfePy, I encourage you to contribute to the project. Please edit this tutorial as you see fit.
+Finally, a shout out to all the members of !SfePy and especially Robert and Logan for their assistance - guys, thanks for your patience! I have tried to capture in this tutorial most of what I learnt during the first few weeks after being introduced to !SfePy. I continue to learn everyday and realize that I've only scratched the surface. In the spirit of !SfePy, I encourage you to contribute to the project. Please edit this tutorial as you see fit.
 
-Andre Smit \
+Andre Smit
+
 Austin, TX
 
 To do:
-
-- Fix vtk references
-
-- to prevent the wiki engine to think that SomeWord is a link, it is possible to write it as !SomeWord. So maybe you want change SfePy -> !SfePy, NumPy -> !Numpy etc.
 
 - one could alternatively use problem.solve() in place of eval_term_op() in stress_strain().
 
