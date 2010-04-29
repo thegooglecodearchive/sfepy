@@ -1,6 +1,8 @@
 #summary A beginner's tutorial on using SfePy.
 #labels Featured
 
+<wiki:toc max_depth="1" />
+
 = Introduction =
 
 Welcome to this primer on !SfePy. To get you started, a step-by-step walk-through of the process to solve a simple mechanics problem is presented. The typical process to solve a problem using !SfePy is followed: a model is meshed, a problem definition file is drafted, !SfePy is run to solve the problem and finally the results of the analysis are illustrated. 
