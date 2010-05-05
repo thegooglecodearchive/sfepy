@@ -68,7 +68,7 @@ regions = {
     'Omega' : ('all', {}),
     'Tail' : ('nodes in (x < -94)', {}),
     'TopFixed' : ('nodes in (z > 9.999) & (x > 54)', {}),
-    'BotFixed' : ('nodes in (< > 0.001) & (x > 54)', {}),
+    'BotFixed' : ('nodes in (z < 0.001) & (x > 54)', {}),
 }
 }}}
 
