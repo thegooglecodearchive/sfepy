@@ -14,7 +14,8 @@ In addition, this tutorial assumes you have a working copy of !SfePy with MED re
 
 We are using the following notations:
   * `<sfepy_root>`: the root directory of the !SfePy source code
-  * `<work_dir>`: the working directory where you are r
+  * `<work_dir>`: the working directory where you plan to save your files
+  * `$`: the terminal prompt (system dependent)
 
 = Step 1: Using Salome =
 
