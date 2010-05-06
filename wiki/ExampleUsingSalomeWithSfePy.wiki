@@ -111,7 +111,7 @@ to
 {{{
 ebcs = {
     'TopFixed' : ('TopFixed', {'u.all' : 0.0}),
-    'BotFixed' : ('BoxFixed', {'u.all' : 0.0}),
+    'BotFixed' : ('BotFixed', {'u.all' : 0.0}),
     'Displaced' : ('Tail', {'u.2' : 10, 'u.[0,1]' : 0.0}),
 }
 }}}
