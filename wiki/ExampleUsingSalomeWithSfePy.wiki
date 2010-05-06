@@ -141,4 +141,4 @@ You should get the following plot. Notice how the fish is bending its tail in re
 
 http://sfepy-devel.googlegroups.com/web/salome_tut.png
 
-Now you should be able to use meshes created in Salome with SfePy.
+Now you should be able to use meshes created in Salome with !SfePy!
