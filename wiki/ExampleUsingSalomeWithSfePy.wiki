@@ -2,7 +2,7 @@
 
 = Introduction =
 
-[http://www.salome-platform.org/ Salome] is a powerful open-source tool for generating meshes for numerical simulation and post processing the results. This is a short tutorial on using Salome as a preprocessor for preparing meshes for use with !SfePy. 
+[http://www.salome-platform.org/ Salome] is a powerful open-source tool for generating meshes for numerical simulation and post processing the results. This is a short tutorial on using Salome as a preprocessor for preparing meshes for use with !SfePy.
 
 == Tutorial prerequisites ==
 
@@ -21,6 +21,10 @@ We are using the following notations:
 Salome has its own set of tutorials and community resources. It is suggested you look around on http://www.salome-platform.org to familiarize yourself with the available resources. 
 
 This tutorial follows the EDF Exercise 1 available from the [http://www.salome-platform.org/user-section/salome-tutorials Salome Tutorial Site]. Go ahead and complete this tutorial now. We will use the result from there in the following.
+
+This is the mesh you should end up with:
+
+http://www.salome-platform.org/user-section/salome-tutorials/edf-exercise-1/EDF1_screen10.png
 
 = Step 2: Exporting mesh from Salome =
 
@@ -50,7 +54,7 @@ filename_mesh = 'Mesh_Partition_Hexa.med'
 
 == Region specification ==
 
-Next, we have to define sensible Regions for the mesh. Change the lines
+Next, we have to define sensible Regions for the mesh. We will apply a displacement to the Tail and keep the Top and Bottom of the fish fixed. Change the lines
 
 {{{
 regions = {
@@ -72,7 +76,6 @@ regions = {
 }
 }}}
 
-We will apply a force to the Tail and keep the Top and Bottom of the fish fixed.
 
 == Field specification ==
 
@@ -96,6 +99,8 @@ fields = {
 
 == Boundary condition specifications ==
 
+In this section, we tell !SfePy to fix the top and bottom parts of the "head" of the fish and move the tail 10 units to the side (z direction).
+
 Change the lines
 
 {{{
@@ -115,3 +120,21 @@ ebcs = {
     'Displaced' : ('Tail', {'u.2' : 10, 'u.[0,1]' : 0.0}),
 }
 }}}
+
+= Step 5: Run !SfePy =
+
+Save your changes to `linear_elastic.py`. Now it's time to run the !SfePy calculation. In your `<work_dir>` in your terminal type ($ indicates your terminal prompt):
+
+{{{
+$ <sfepy_root>/simple.py linear_elastic.py
+}}}
+
+This will run the SfePy calculation. Some progress information is printed to your screen and the residual (a measure of the convergence of the solution) is printed for each iteration of the solver. The solver terminates when this residual is less than a certain value. It should be after 1 iteration since we are using the linear solver. The results will be saved to `Mesh_Partition_Hexa.vtk`.
+
+Now we can view the results of our work. In your terminal, type:
+
+{{{
+$ <sfepy_root>/postproc.py --vector-mode=warp_norm -s 1 Mesh_Partition_Hexa.vtk
+}}}
+
+You should get the following plot. Notice how the fish is bending its tail in response to the applied displacement. 
