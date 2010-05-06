@@ -130,7 +130,7 @@ Save your changes to `linear_elastic.py`. Now it's time to run the !SfePy calcul
 $ <sfepy_root>/simple.py linear_elastic.py
 }}}
 
-This will run the !SfePy calculation. Some progress information is printed to your screen and the residual (a measure of the convergence of the solution) is printed for each iteration of the solver. The solver terminates when this residual is less than a certain value. It should be after 1 iteration since we are solving a linear problem. The results will be saved to `Mesh_Partition_Hexa.vtk`.
+This will run the !SfePy calculation. Some progress information is printed to your screen and the residual (a measure of the convergence of the solution) is printed for each iteration of the solver. The solver terminates when this residual is less than a certain value. It should only take 1 iteration since we are solving a linear problem. The results will be saved to `Mesh_Partition_Hexa.vtk`.
 
 Now we can view the results of our work. In your terminal, type:
 
