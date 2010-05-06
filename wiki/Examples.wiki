@@ -1,10 +1,14 @@
 ﻿#summary Example of usage
 #labels Featured
 
-See also [http://sfepy.kme.zcu.cz/index.cgi/Examples]
+Examples on this wiki:
+
+ * How to use Salome for generating meshes: [ExampleUsingSalomeWithSfePy]
 
 Application projects (= well documented complex examples):
- - simulating mechanical behaviour of a fish (carp) heart: [http://docs.sfepy.org/fish_heart/]
+ * simulating mechanical behaviour of a fish (carp) heart: [http://docs.sfepy.org/fish_heart/]
+
+See also [http://sfepy.kme.zcu.cz/index.cgi/Examples]
 
 This page is in reconstruction now. The old stuff was moved to OldExamples.
 
