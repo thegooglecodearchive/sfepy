@@ -138,3 +138,7 @@ $ <sfepy_root>/postproc.py --vector-mode=warp_norm -s 1 Mesh_Partition_Hexa.vtk
 }}}
 
 You should get the following plot. Notice how the fish is bending its tail in response to the applied displacement. 
+
+http://sfepy-devel.googlegroups.com/web/salome_tut.png
+
+Now you should be able to use meshes created in Salome with SfePy.
