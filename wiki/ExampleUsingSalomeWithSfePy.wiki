@@ -135,10 +135,10 @@ This will run the !SfePy calculation. Some progress information is printed to yo
 Now we can view the results of our work. In your terminal, type:
 
 {{{
-$ <sfepy_root>/postproc.py --vector-mode=warp_norm -s 1 Mesh_Partition_Hexa.vtk
+$ <sfepy_root>/postproc.py --wireframe --vector-mode=warp_norm -s 2 Mesh_Partition_Hexa.vtk
 }}}
 
-You should get the following plot. Notice how the fish is bending its tail in response to the applied displacement. 
+You should get the following plot. The undeformed mesh is displayed with a wireframe for comparison. Notice how the fish is bending its tail in response to the applied displacement. 
 
 http://sfepy-devel.googlegroups.com/web/salome_tut.png
 
