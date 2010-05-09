@@ -28,7 +28,7 @@ This page contains instructions for installing !SfePy onto Windows using [http:/
     * Detailed installation notes
       # Double click on the file beginning with "msysGit-fullinstall" to start the installation process
       # Choose an installation directory
-        * probably the default, C:\msysgit, is best unless you have a reason to change it
+        * Probably the default, C:\msysgit, is best unless you have a reason to change it
       # After clicking ok, the msysgit files will be extracted and then a terminal window will open showing git being compiled
   # Open an msys terminal (or use the one that opens after installing msysgit)
     * The msys terminal is opened with C:\msysgit\msys.bat
