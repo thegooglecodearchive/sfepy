@@ -85,7 +85,7 @@ This page contains instructions for installing !SfePy onto Windows using [http:/
       * In msys, type `cd /c/src; git clone git://git.sympy.org/sfepy.git`
   # Compile !SfePy C extensions
     * In msys, change to the !SfePy directory you download in the preceding step with the `cd` command
-    * Type `python build_ext --inplace`
+    * Type `python build_ext --inplace --compiler=mingw32`
   # Run !SfePy tests
     * Congratulations! You should (hopefully) now have a working copy of !SfePy on Windows.
     * Please help aid !SfePy development by running the builtin tests
