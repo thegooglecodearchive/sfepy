@@ -80,7 +80,7 @@ This page contains instructions for installing !SfePy onto Windows using [http:/
     * Congratulations, you should now have a working UMFPACK scikit on Windows!
   # Decide which version of !SfePy to use
     * If you want to use the stable released version, grab the tarball from the _Downloads_ tab at and extract it in `C:/src`
-      * In msys, type `cd /c/src; curl -O http://sfepy.googlecode.com/files/sfepy-release-2010.1.tgz; tar zxf sfepy-release-2010.1.tgz`
+      * In msys, type `cd /c/src; curl -O http://sfepy.googlecode.com/files/sfepy-release-2010.2.tgz; tar zxf sfepy-release-2010.2.tgz`
     * If you want to use the latest features and contribute to the development of !Sfepy, clone the git development repository
       * In msys, type `cd /c/src; git clone git://git.sympy.org/sfepy.git`
   # Compile !SfePy C extensions
