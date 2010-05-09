@@ -1,0 +1,19 @@
+#summary This page contains instructions for install SfePy onto Windows using python(x,y).
+
+= Introduction =
+
+This page contains instructions for installing !SfePy onto Windows using [http://www.pythonxy.com python(x,y)]. We will also use [http://code.google.com/p/msysgit msysgit] to install the UMFPACK scikit to speed performance.
+
+
+= Overview of steps for installing !SfePy onto Windows using python(x,y) =
+  # Download and install current release of python(x,y) from the _Downloads_ tab at http://www.pythonxy.com/
+    * Version at time of writing is 2.6.5.1
+  # Download and install msysgit from _Downloads_ tab at http://code.google.com/p/msysgit/
+    * Version at time of writing is 1.7.0.2
+    * Make sure to get the file that begins with "msysGit-fullinstall"
+    * Detailed installation notes
+      # Double click on the file beginning with "msysGit-fullinstall" to start the installation process
+      # Choose an installation directory
+        * probably the default, C:\msysgit, is best unless you have a reason to change it
+      # After clicking ok, the msysgit files will be extracted and then a terminal window will open showing git being compiled
+  # Open an msys terminal (or use the one that opens after installing msysgit)
