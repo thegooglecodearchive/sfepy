@@ -5,7 +5,7 @@
 This page contains instructions for installing !SfePy onto Windows using [http://www.pythonxy.com python(x,y)]. We will also use [http://code.google.com/p/msysgit msysgit] to install the UMFPACK scikit to speed performance. You will probably need a few gigabytes of free disk space due to the installed size of python(x,y) and msysgit. This procedure was tested for Windows XP 32-bit machines. It should work in theory for any Windows machine supported by python(x,y) and msysgit, but your milage may vary.
 
 
-= Overview of steps for installing !SfePy onto Windows using python(x,y) =
+= Steps to installing !SfePy onto Windows using python(x,y) =
   # Download and install current release of python(x,y) from the _Downloads_ tab at http://www.pythonxy.com/
     * Version at time of writing is 2.6.5.1
     * Detailed installation notes
@@ -14,7 +14,7 @@ This page contains instructions for installing !SfePy onto Windows using [http:/
       # Click _I Agree_ at license notification window
       # In the _Python_ subtree of the _Choose components_ window, additionally select the following packages:
         # ETS
-        # SymPy
+        # !SymPy
       # You can optionally select the following packages:
         # Sphinx - needed to rebuild the documentation
         # winpdb - a graphical python debugger - useful for solving problems with !SfePy runs
@@ -22,6 +22,7 @@ This page contains instructions for installing !SfePy onto Windows using [http:/
       # In the _Other_ subtree of the _Choose components_ window, additionally select SWIG
       # Choose an installation directory
         * Probably C:\pythonxy is good unless you have a reason to change it
+      # It will take a few minutes to install python(x,y)
   # Download and install msysgit from _Downloads_ tab at http://code.google.com/p/msysgit/
     * Version at time of writing is 1.7.0.2
     * Make sure to get the file that begins with "msysGit-fullinstall"
@@ -32,3 +33,14 @@ This page contains instructions for installing !SfePy onto Windows using [http:/
       # After clicking ok, the msysgit files will be extracted and then a terminal window will open showing git being compiled
   # Open an msys terminal (or use the one that opens after installing msysgit)
     * The msys terminal is opened with C:\msysgit\msys.bat
+  # Decide where to put !SfePy and UMFPACK scikit sources
+    * Probably C:\src is good
+    * In msys, this path would be /c/src
+  # Create the source directory
+    * In the msys window, type the following commands:
+      # mkdir /c/src
+      # cd /c/src
+  # Download the UMFPACK scikit source code
+    * For this task, we will use the svn support built in to git
+    * In the msys window, type the following commands:
+      # git svn clone http://svn.scipy.org/svn/scikits/trunk/umfpack umfpack-scikit
