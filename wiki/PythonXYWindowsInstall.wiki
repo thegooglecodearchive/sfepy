@@ -33,6 +33,10 @@ This page contains instructions for installing !SfePy onto Windows using [http:/
       # After clicking ok, the msysgit files will be extracted and then a terminal window will open showing git being compiled
   # Open an msys terminal (or use the one that opens after installing msysgit)
     * The msys terminal is opened with C:\msysgit\msys.bat
+  # Install pyparsing using easy_install
+    * In the msys terminal, type the following command:
+      * `easy_install http://pypi.python.org/packages/source/p/pyparsing/pyparsing-1.5.2.tar.gz`
+      * Note: `easy_install pyparsing` should also work, but appears to have a problem so it may be better to enter the full URL as above
   # Decide where to put !SfePy and UMFPACK scikit sources
     * Probably `C:\src` is good
     * In msys, this path would be /c/src
