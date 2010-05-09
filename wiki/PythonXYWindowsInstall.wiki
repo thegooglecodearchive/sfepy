@@ -21,7 +21,7 @@ This page contains instructions for installing !SfePy onto Windows using [http:/
       # You can optionally choose whether or not to install Eclipse - it is not needed by !SfePy
       # In the _Other_ subtree of the _Choose components_ window, additionally select SWIG
       # Choose an installation directory
-        * Probably C:\pythonxy is good unless you have a reason to change it
+        * Probably `C:\pythonxy` is good unless you have a reason to change it
       # It will take a few minutes to install python(x,y)
   # Download and install msysgit from _Downloads_ tab at http://code.google.com/p/msysgit/
     * Version at time of writing is 1.7.0.2
@@ -29,18 +29,18 @@ This page contains instructions for installing !SfePy onto Windows using [http:/
     * Detailed installation notes
       # Double click on the file beginning with "msysGit-fullinstall" to start the installation process
       # Choose an installation directory
-        * Probably the default, C:\msysgit, is best unless you have a reason to change it
+        * Probably the default, `C:\msysgit`, is best unless you have a reason to change it
       # After clicking ok, the msysgit files will be extracted and then a terminal window will open showing git being compiled
   # Open an msys terminal (or use the one that opens after installing msysgit)
     * The msys terminal is opened with C:\msysgit\msys.bat
   # Decide where to put !SfePy and UMFPACK scikit sources
-    * Probably C:\src is good
+    * Probably `C:\src` is good
     * In msys, this path would be /c/src
   # Create the source directory
     * In the msys window, type the following commands:
-      # mkdir /c/src
-      # cd /c/src
+      # `mkdir /c/src`
+      # `cd /c/src`
   # Download the UMFPACK scikit source code
     * For this task, we will use the svn support built in to git
     * In the msys window, type the following commands:
-      # git svn clone http://svn.scipy.org/svn/scikits/trunk/umfpack umfpack-scikit
+      # `git svn clone http://svn.scipy.org/svn/scikits/trunk/umfpack umfpack-scikit`
