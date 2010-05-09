@@ -2,8 +2,13 @@
 
 = Introduction =
 
-This page contains instructions for installing !SfePy onto Windows using [http://www.pythonxy.com python(x,y)]. We will also use [http://code.google.com/p/msysgit msysgit] to install the UMFPACK scikit to speed performance. You will probably need a few gigabytes of free disk space due to the installed size of python(x,y) and msysgit. This procedure was tested for Windows XP 32-bit machines. It should work in theory for any Windows machine supported by python(x,y) and msysgit, but your milage may vary.
+This page contains instructions for installing !SfePy onto Windows using [http://www.pythonxy.com python(x,y)]. We will also use [http://code.google.com/p/msysgit msysgit] to install the UMFPACK scikit to speed performance. 
 
+You will probably need a few gigabytes of free disk space due to the installed size of python(x,y) and msysgit. 
+
+This procedure was tested for Windows XP 32-bit machines. It should work in theory for any Windows machine supported by python(x,y) and msysgit, but your milage may vary.
+
+There are many steps, but hopefully it is straightforward to follow this procedure. If you have any questions or difficulties please feel free to ask on the sfepy-devel mailing list. Also, if you have any suggestions for improving or streamlining this process, it would be very beneficial as well!
 
 = Steps to installing !SfePy onto Windows using python(x,y) =
   # Download and install current release of python(x,y) from the _Downloads_ tab at http://www.pythonxy.com/
