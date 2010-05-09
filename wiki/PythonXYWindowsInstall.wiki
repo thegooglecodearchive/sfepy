@@ -66,6 +66,11 @@ This page contains instructions for installing !SfePy onto Windows using [http:/
     * In msys, type:
       # `cd UMFPACK`
       # `make library`
-
-    
-    
+  # Now we need to make a `site.cfg` in the umfpack-scikit directory corresponding to our current setup
+    * In msys, type:
+      # `cd /c/src/umfpack-scikit`
+      # `cp site.cfg.example site.cfg`
+    * Using your favorite text editor, change the all the paths to point to the UMFPACK and AMD directories (non-msys paths)
+      * E.g., `include_dirs = /Users/stefan/src/UMFPACK/Include` -> `include_dirs = c:/src/umfpack-scikit/src/UMFPACK/Include`
+  # Now it's time to install the UMFPACK scikit!
+    * In msys, type: `python setup.py install`
