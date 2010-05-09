@@ -62,10 +62,13 @@ This page contains instructions for installing !SfePy onto Windows using [http:/
     * Find the line that reads `UMFPACK_CONFIG = `
     * Modify this line to the following:
       * `UMFPACK_CONFIG = -DNCHOLMOD -DNBLAS`
+      * Note: we are disabling BLAS and CHOLMOD to make it easier to compile UMFPACK. This may have some performance penalty associated with it. If you have experience compiling BLAS/LAPACK/ATLAS on Windows, please send us a message on the sfepy-devel mailing list!
   # Now change to the UMFPACK directory and make the library:
     * In msys, type:
       # `cd UMFPACK`
       # `make library`
+  # Copy `UFconfig.h` to `UMFPACK/Include`
+    * In msys, type: `cp ../UFconfig/UFconfig.h Include/`
   # Now we need to make a `site.cfg` in the umfpack-scikit directory corresponding to our current setup
     * In msys, type:
       # `cd /c/src/umfpack-scikit`
@@ -74,3 +77,4 @@ This page contains instructions for installing !SfePy onto Windows using [http:/
       * E.g., `include_dirs = /Users/stefan/src/UMFPACK/Include` -> `include_dirs = c:/src/umfpack-scikit/src/UMFPACK/Include`
   # Now it's time to install the UMFPACK scikit!
     * In msys, type: `python setup.py install`
+    * Congratulations, you should now have a working UMFPACK scikit on Windows!
