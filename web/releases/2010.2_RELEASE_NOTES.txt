@@ -1,0 +1,502 @@
+# created: 20.07.2007 (-1)
+# last revision: 06.05.2010
+
+from 2010.1 to 2010.2
+=====================
+
+- new mesh readers:
+  - MED (Salome, PythonOCC) format
+  - Gambit NEU mesh format
+  - UserMeshIO class:
+    - creating, writing meshes by user-supplied functions
+- mechanics:
+  - ElasticConstants class - conversion formulas for elastic constants
+  - StressTransform class to convert various stress tensors
+  - basic tensor transformations
+- updated documentation:
+  - new sections in developer guide
+  - updated tutorial
+  - many new docstrings
+- solvers:
+  - semi-smooth Newton method
+  - allow registering custom solvers
+- examples:
+  - usage of functions to define various parameter
+  - usage of probes
+- scripts:
+  - simple.py: new --log, --quiet options
+  - postproc.py: new --wireframe, --group-names options
+  - extractor.py: new --same-dir, --to, --step options
+  - split homogen.py:
+    - HomogenizationApp moved to sfepy/homogenization/homogen_app.py
+- new tests:
+  - test region construction
+  - test quadratures using symbolic integration
+  - test semi-smooth Newton solver
+- miscellaneous updates:
+  - automatic order of variables
+  - refactor integrals and quadratures
+  - improve printing of Struct instances
+  - IPython-enabled debug()
+  - fixed probes in 2D
+  - split Material.time_update() to allow easier setting of data
+  - region selection of several nodes or elements by their ids
+  - update dump_to_vtk() for stationary results (no time stepper)
+  - update import_file(), load_classes() for package namespaces
+  - update all terms for the new Term constructor
+  - refactor dof connectivity setup, info, active dof info
+  - refactor term argument checking
+  - update equations and terms construction
+  - update HomogenizationEngine to allow inter-coefficient dependencies
+  - update term and cache table generation
+  - run tests in alphabetical order
+  - fix paths to meshes and other data in system-wide installation
+  - new get_lattice_volume()
+  - many small bug fixes
+- new terms:
+  - dw_stokes_w (Stokes term weighted by scalar function)
+  - dq_biot_stress (Biot stress term in QP)
+  - dq_cauchy_strain (Cauchy strain term in QP)
+  - dq_cauchy_stress (Cauchy stress term in QP)
+  - dq_def_grad (deformation gradient term)
+  - dw_lin_prestress (linear prestress term)
+  - dw_surface_mass_scalar_w (weighted surface scalar mass term)
+  - de_biot_stress (averaged Biot stress term)
+  - di_surface_moment (surface moment term)
+
+
+from 2009.4 to 2010.1
+=====================
+
+- new sphinx-based documentation
+- major branches merged:
+  - 'interp' branch: interpolation between different meshes
+  - 'shape' branch: shape optimization in optimal flow problems
+- fast evaluation (in C) of Lagrange base functions:
+  - new sfepy/fem/poly_spaces.py, tests/test_fem.py
+- new GeometryElement class:
+  - tensor product geometry now in [0, 1] instead of [-1, 1]
+  - remove sfepy/eldesc/*
+- clean-up of examples and meshes
+- examples:
+  - perfusion in the total Lagrangian (TL) formulation
+  - active fibres in the TL formulation
+- homogenization:
+  - new examples:
+    - linear elasticity, micro-macro coupling + test, micro-recovery
+  - updated homogenization engine:
+    - support for coefficients summing
+    - improved saving of correctors
+  - new acoustic and perfusion homogenized coefficients
+- data probing:
+  - automatic refinement of probe points
+  - speed-up:
+    - point caching, use cKDTree for speed
+    - generate_probes() can reuse problem, probes, etc.
+  - new PointsProbe data probe
+  - update generate_probes() for multiple probe hooks
+- postprocessing and visualization:
+  - VTK source construction for any format supported by MeshIO classes
+  - HDF5FileSource -> GenericFileSource
+  - new GenericSequenceFileSource
+- graphical logging:
+  - support logging to a text file, vertical line plot (see live_plot.py)
+  - update Log and ProcessPlotter for several Log instances
+  - Log class: wait until figure save is acknowledged
+  - convergence log support in Newton and Oseen solvers
+- schroedinger: components of V evaluated point-wise in QPs
+- miscellaneous updates:
+  - new --save-regions-as-groups option in simple.py
+  - move and update functions from extractor.py into time_history.py
+  - Oseen solver: leave setup of stabilization parameters to user
+  - allow also 'dq', 'de' call modes in InstantaneousBase._call()
+  - split termsHyperElasticity.py to base, TL and UL parts
+  - utilities for work with units of physical quantities:
+    - new sfepy/mechanics/units.py
+  - functions to compute tensor-related quantities usual in continuum mechanics:
+    - new sfepy/mechanics/tensors.py
+  - many bug fixes
+- new terms:
+  - d_surface (surface of a subdomain)
+  - dw_volume_integrate_variable (volume integration a variable coefficient)
+  - dw_diffusion_r (diffusion-like term)
+  - TL formulation terms:
+    - dw_tl_fib_a (hyperelastic active fibres)
+    - dw_tl_bulk_pressure (hyperelastic bulk pressure)
+    - dw_tl_volume (volume)
+    - dw_tl_diffusion (diffusion with deformation-dependent permeability)
+    - dw_tl_surface_traction (surface traction)
+  - acoustic terms:
+    - dw_acoustic (acoustic term)
+    - d_acoustic_surface (acoustic surface term (in-plane directions))
+    - d_acoustic_alpha (evaluation of acoustic term (in-plane directions))
+    - dw_acoustic_integrate (integration of acoustic term (in-plane directions))
+    - terms for sensitivity analysis:
+      - d_sa_acoustic_alpha, d_sa_acoustic_alpha2, d_sa_acoustic_z,
+        d_sa_acoustic_z2
+
+from 2009.3 to 2009.4
+=====================
+
+- major branches merged:
+  - 'ulf' branch: updated Lagrangian (UL) formulation
+  - 'functions' branch:
+    - unified passing extra arguments to boundary condition, material, and region
+      functions
+    - physical quadrature point generation
+    - unified/improved handling of material parameters in terms:
+      - all material parameters defined in physical quadrature points
+      - all terms updated, some terms were coalesced into one
+  - 'porous' branch: homogenized porous media
+- input file keywords:
+  - new 'functions' keyword
+- simplifications & unifications:
+  - results of all time steps of an evolutionary problem can be saved to a
+    single HDF5 file
+  - enable passing variables data to ProblemDefinition.solve()
+  - runTests.py: allow multiple test files as command line arguments
+  - Viewer.call_mlab() split and refactored
+  - short syntax for periodic boundary conditions
+  - simplified input file syntax of materials
+- postprocessing and visualization:
+  - using FileSource class abstracts the particular format for storing results:
+    - VTK, HDF5 supported now
+  - support for file sequences (evolutionary simulations)
+    - time step selection for HDF5 (single) and VTK (sequence) files
+  - animations (using ffmpeg)
+  - minimalistic ViewerGUI
+  - show scalar bars
+  - various vector plotting modes
+  - watch results file (HDF5) and add time steps as they are saved
+  - listing data ranges works offscreen, summary for file sequence
+  - sfepy_gui.py:  Mayavi2-based GUI to launch simulations
+- changes aimed at interactive work:
+  - Domain, Region, Field creation refactoring
+- data probing - postprocessing mode:
+  - read a previously probed data from the probe text file, re-plot them, and
+    integrate them along the probe
+- graphical logging:
+  - dynamic adding of data groups (new axes) to Log and ProcessPlotter  
+- many bug fixes, namely:
+  - fix import_file() for multiple imports
+  - fix saving results with piece-wise constant (Q0) approximation
+- miscellaneous updates:
+  - quasistatic time stepping
+  - new zero-order elements: 3_4_P0, 3_8_Q0
+  - more elastic tensor construction functions:
+    - elastic tensor from Young's modulus and Poisson's ratio
+    - elastic tensors for use in mixed formulation
+  - setting of parameter variables by a user-defined function
+  - gen_block_mesh() can generate also 2D meshes
+  - reversed Cuthill-McKee permutation algorithm, graph in-place permutation
+- new terms:
+  - dw_volume_wdot_scalar_eth (exponential decay dot product convolution term)
+  - dw_biot_eth (exponential decay Biot convolution term)
+  - dw_lin_elastic_eth (exponential decay elastic convolution term)
+  - updated Lagrangian (UL) formulation terms:
+    - dw_ul_bulk_penalty, dw_ul_he_neohook, dw_ul_he_mooney_rivlin
+
+from 2009.2 to 2009.3
+=====================
+- basic support for Windows installation via numpy distutils (finally!):
+  - installation using standard "python setup.py install"...
+- postproc.py:
+  - quite usable now for fast first glance at the results
+  - plots point, cell data of all kinds (scalar, vector, tensor)
+  - draw iso-surface in 3D mode
+  - fixed filename in Viewer for femhub notebook
+  - new options: --scalar-mode, --list-names, --only-names,
+    --rel-text-width, --no-show, --roll, --view, --all, --layout, -o
+- cylindergen.py:
+  - cylindrical mesh generator
+- probe.py:
+  - can probe selected quantities only
+  - new options: --only-names, --auto-dir, --same-dir
+- isfepy:
+  - new options: --no-wx, --no-viewer
+- phono: basic support for liquid inclusions
+  - support for inner band gaps detection (brute force) and plotting
+- homogenization: added new-style piezo-elastic corrector and coefficient classes
+- schroedinger: fixed charge density computation
+- solvers:
+  - added SciPy direct sparse solvers (ls.scipy_direct) - unified
+  umfpack, superlu
+- new terms:
+  - de_grad (element average of gradient)
+  - d_volume_surface (compute volume using surface integral)
+  - dw_bc_newton (Newton boundary condition)
+  - dq_state_in_volume_qp, dq_state_in_surface_qp (interpolating state
+    into quadrature points)
+  - dw_surface_integrate_variable (weak surface term with variable coefficient)
+
+from 2009.1 to 2009.2:
+======================
+- scripts:
+  - added probe.py - a script to probe and plot results saved in result files
+    - data probes along geometrical objects (e.g. lines, rays) intersecting the
+      mesh
+  - added postproc.py - a script to visualize results saved in result files
+    - added Viewer class - 3D plots using mayavi2
+    - rudimentary automatic mode only
+  - added isfepy (interactive sfepy) IPython shell
+    - uses new pde_solve(), pre-imports mayavi2 based Viewer
+- short input syntax for LCBC conditions, fields, integrals, materials and
+  solvers
+- automatic html documentation generation via doxygen
+- new mesh readers:
+  - Nastran (.bdf) format
+  - Abaqus ascii (.inp)
+- new example problems:
+  - subdomains.py + test - test dw_jump interface term
+  - stabilized_navier_stokes.py input + test - test Oseen solver
+  - acoustics.py + test - compute complex acoustic pressure
+- solvers:
+  - changed API of nonlinear solvers so that scipy solvers can be used
+  - added Broyden and Anderson nonlinear solvers (SciPy implementation)
+  - updated Oseen solver 
+- major rewrite of handling of dof connectivities, matrix graph and term
+  geometries:
+  - lots of dof connectivity related code was simplified/removed
+  - extra connectivity data (surface, point) computed on demand in
+    Variables.setup_dof_conns()
+  - support for terms with traces of variables on interface regions
+  - surface data computation for terms of volume dof_conn and Surface geometry
+- extended syntax of equations to allow boundary traces of variables:
+  - to use when a field value at an interface boundary is needed from the
+    neighbouring subdomain side and the field is not defined there
+  - example: dw_jump.isurf.Gamma12_1( jump1.val, q1, p1, tr(p2) )
+- refactored linear combination boundary conditions (LCBC) code:
+  - fixed rigid LCBC for multi-field problems
+  - added no penetration LCBC
+  - major speed-up (several orders) of LCBC operator construction
+    - assembled via the coo_matrix instead of the lil_matrix
+  - fixed check_tangent_matrix() for LCBC
+- applications:
+  - homogenization:
+    - prefactorize the matrix for linear corrector problems - major speed-up
+  - phononic materials:
+    - plot also middle eigenvalues in 3D, fixed plot labels, polarization angles
+    - caching of eigenvalue problem solution and Christoffel acoustic tensor
+  - schroedinger.py:
+    - choose and call DFT solver via solver interface
+- general:
+  - fixed boundary quadrature points for multi-field problems
+  - fixed complex assembling
+  - fixed live plotting (ProcessPlotter) for multi-core machines
+  - improved Output class, simplified its usage
+  - Struct.__str__() prints in alphabetical order
+  - unified version information by introducing sfepy.__version__
+  - polished MeshIO class
+  - implemented region selection by node groups
+  - refactored Mesh nodes, lots of simplifications
+  - many small fixes and updates
+- new terms:
+    - dw_jump (scalar interface jump term)
+    - dw_surface_mass_scalar (scalar mass on a surface boundary)
+
+from 2008.4 to 2009.1:
+======================
+- new solvers:
+  - simple backtracking steepest descent optimization solver
+  - PETSc Krylov solvers via petsc4py, sequential mode
+  - LOBPCG eigenvalue solver (SciPy implementation)
+- new mesh readers:
+   - mesh3d (hermes3d)
+   - AVS UCD ascii mesh
+   - Hypermesh ascii mesh
+- homogenization: 
+  - MiniAppBase base class for "mini-applications": micro-problem correctors,
+    homogenized coefficients
+  - unified approach to resolve data dependencies: HomogenizationEngine class
+- applications:
+    - phononic materials:
+      - dispersion analysis, phase velocity computation for phononic materials
+      - homogenized coefficients computed via the HomogenizationEngine
+      - caching of coefficients to speed up parametric runs
+    - schroedinger.py:
+      - all functionality moved into SchroedingerApp class
+      - inherits from SimpleApp -> can be parametrized
+      - fixed DFT iterations, iteration plot saving
+      - basic smearing around Fermi limit
+- scripts:
+  - convert_mesh.py:
+    - --scale option, support different scaling for each axis
+- general:
+  - terms, caches now imported dynamically by load_classes()
+    - to add a new term/cache module just put it into sfepy/terms/
+  - better setup of Application options
+    - automatic option update in parametric studies
+  - default configuration options for the linear, nonlinear and eigen- solvers
+  - various 64bit fixes
+  - allow empty output prefix, combined output to file and terminal
+- new terms:
+    - dw_electric_source (electric source term)
+
+from 00.50.00 to 2008.4:
+========================
+- framework for running parametric studies
+- allow time derivatives of variables as term arguments
+  - example (transient diffusion):
+    """dw_mass_scalar.i1.Omega( s, dT/dt )
+     + dw_laplace.i1.Omega( coef.val, s, T ) = 0"""
+- initial conditions via ics, ic_<number> keywords
+- enhanced acoustic band gaps code
+  - dispersion analysis (polarization angle calculation)
+  - applied load tensor computation
+  - phase velocity computation for periodic perforated media with empty holes
+- term base classes
+  - actual term code reduced significantly
+  - adding new terms is even easier now
+- type of term arguments determined fully at run-time
+  - many terms were unified
+  - the same term can be used both for the finite element assembling and the
+  evaluation of the weak form for known fields (dw_ = d_)
+- live plotting using multiprocessing module
+  - assumes GTKAgg matplotlib backend
+  - support for setting x axis values and labels and y labels
+  - figure saving
+- printing messages: Output class
+- homogenized coefficients classes prototypes
+- improved schroedinger.py
+  - plotting DFT iterations
+- created sfepy/mechanics
+  - conversions of elastic constants and transformations to plane
+- float format used for saving results can be set by the 'float_format' option
+- new terms:
+  - dw_piezo_coupling (piezo-electric coupling term)
+  - dw_biot (Biot coupling term, former dw_biot_div, dw_biot_grad, ...)
+  - dw_stokes (Stokes coupling term, former dw_div, dw_grad, ...)
+  - dw_lin_elastic_th (linear elasticity fading memory, former dw_lin_viscous_th)
+  - dw_biot_th (Biot fading memory terms unified)
+
+from 00.46.02 to 00.50.00:
+==========================
+- finite strain elasticity: neo-Hookean, Mooney-Rivlin materials
+  - total Lagrangian (TL) formulation
+  - geometric data via finite_strain_tl DataCache
+- solving problems in complex numbers
+- generalized equations to allow linear combination of terms
+  - example: """2 * aterm.i1.Omega( v, u ) = - 3.0 * bterm.i1.Omega2( v, u )""" 
+- run-time type of state term arguments
+  - removed all *_r terms, now useless
+- 'elements by function( domain )' region selector
+- refactoring to follow Python coding style guidelines
+- history support in variables
+- MeshIO.read_dimension() to quickly get dimension in an input file
+- improved site_cfg_template.py
+- improved schroedinger.py
+- new terms:
+  - de_average_variable (average a variable in elements)
+  - dw_surface_integrate (integrate over surface operator)
+  - dw_tl_bulk_penalty (bulk penalty in TL formulation)
+  - dw_tl_he_neohook (neo-Hooekan term in TL formulation)
+  - dw_tl_he_mooney_rivlin (Mooney-Rivlin term in TL formulation)
+
+from 00.41.03 to 00.46.02:
+==========================
+- alternative short syntax for specifying essential boundary conditions,
+  variables and  regions
+- saving results per variable (useful when variables defined in different
+  subdomains)
+- manufactured solutions tests:
+    - SymPy support
+- new eigenvalue solvers:
+    - removed symeig dependence
+- linear solvers based on PyAMG
+- simple block mesh generator
+- unified HDF5 mesh/solution reading/writing
+- site configuration now via script/config.py + site_cfg.py
+- example: computing homogenized elastic coefficients
+- new terms and lots of reorganization:
+    - Biot terms
+    - some fading memory terms
+
+from 00.35.01 to 00.41.03:
+==========================
+- works on 64 bits
+- support for various mesh formats:
+    - medit: .mesh
+    - text VTK: .vtk
+    - tetgen: .node + .ele
+    - comsol: .txt
+- Schroedinger equation solver
+    - run via 'schroedinger.py'
+- input files:
+    - new syntax for variables and boundary conditions
+    - improved handling of degrees of freedom
+- more descriptive (and less) test and simulation messages
+- new handling of approximations (-> lots of thing simplified)
+- material parameters can be defined in mesh vertices
+- simple.py: allow user-specified postProcessHook function
+- documentation generation via prettydoc
+- new solvers:
+    - generic time-dependent problem solver
+    - pysparse, symeig, scipy-based eigenproblem solvers
+    - scipy-based iterative solvers
+- new terms:
+    - dw_volume_integrate (volume integral operator)
+    - dw_mass_scalar_r (rhs for time-dependent Poisson problem)
+    - di_volume_integrate_mat (integrate material parameters)
+    - dw_volume_wdot and related terms (weighted dot product)
+    - dw_mass_scalar_variable (scalar mass term with variable coefficients)
+    - dw_lin_elastic and related terms (anisotropic linear elasticity)
+    - dw_lin_viscous (linear viscosity)
+    - de_cauchy_stress (element-averaged Cauchy stress)
+
+from 00.31.06 to 00.35.01:
+==========================
+- per term integration, major rewrite of sfe.fem and related:
+    - term.integral.domain( arguments ) syntax
+    - 'integral_*' keyword for input files
+    - each term can use its own quadrature points
+    - 'field' keyword syntax changed
+
+- minor:
+    - genDocs.py: PDF term documentation generator
+
+from 00.26.01 to 00.31.06:
+==========================
+
+- acoustic band gaps determination:
+    - zones of frequencies where elastic waves do not propagate
+    - based on homogenization of material made of small inclusions periodically
+    embedded in an elastic matrix
+    - run via 'eigen.py'
+- general linear combination boundary conditions - 'lcbc' keyword:
+    - rigid body motion constraint imposed on regions
+- new Solver classes, solver reorganization:
+    - all solvers now configured in a uniform way ('solver_[0-9]+' keywords)
+    - specify solvers using 'options' keyword
+- new terms:
+    - dot product in a volume or on a surface region
+    - vector field mass term
+    - scalar field "mass", fine-coarse scalar "mass" terms:
+        - used for coarse mesh -> fine mesh interpolation of scalar fields
+
+- minor:
+    - added updated findSurf.py into distribution - extract surface from a mesh
+    - script/kill_*
+    - script/writeMesh2D.m
+    - script/writeSparseMatrixHDF5.m
+
+from 00.22.02 to 00.26.01:
+==========================
+
+- testing framework (in the spirit of unit tests):
+    - particularly tests that standard input files work
+    - runTests.py: output filtering
+- linear spring term (kind of a relaxed Dirichlet BC on node displacements)
+- volume term
+- Laplace term in 2D
+- chained periodic boundary conditions resolving
+- new options for simple.py: --save-field-meshes, --solve-not
+- periodic mesh merger (genPerMesh.py)
+
+- minor:
+    - improved region saving
+    - growing term data cache
+    - sparse matrix saving into HDF5
+    - point dof connectivity and geometry
+    - region handling improvements (canCells flag)
+    - nonlinear solver status reporting
+    - distribution: test and example meshes included in the release tarball
