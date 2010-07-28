@@ -14,16 +14,16 @@
 
   * download the repository:
    {{{
-   git clone git://git.sympy.org/sfepy.git
+   git clone git@github.com:sfepy/sfepy.git
    }}}
 
   * web access :
 
-    http://git.sympy.org/?p=sfepy.git
+    http://github.com/sfepy/sfepy
 
   * latest snapshot:
 
-    http://git.sympy.org/?p=sfepy.git;a=snapshot;h=HEAD;sf=tgz
+    http://github.com/sfepy/sfepy/archives/master
 
 *Git playground:*
 
