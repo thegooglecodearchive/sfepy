@@ -8,7 +8,7 @@
 
 *Latest released sources:*
 
-  http://sfepy.googlecode.com/files/sfepy-release-2010.2.tgz
+  http://sfepy.googlecode.com/files/sfepy-release-2010.3.tgz
 
 *Git repository:*
 
