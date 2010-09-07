@@ -12,7 +12,12 @@
 
 *Git repository:*
 
-  * download the repository:
+  * download the repository (read-only):
+   {{{
+   git clone git://github.com/sfepy/sfepy.git
+   }}}
+
+  * download the repository (read-write, permission needed):
    {{{
    git clone git@github.com:sfepy/sfepy.git
    }}}
