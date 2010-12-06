@@ -2,6 +2,8 @@
 
 = Archived News =
 
+ * *21.07.2009* Version 2009.3 released (_Windows installation_, updated postproc.py - visualization, new tests, terms, solvers, bugfixes), see [http://sfepy.googlecode.com/svn/web/releases/2009.3_RELEASE_NOTES.txt 2009.3_RELEASE_NOTES.txt]
+
  * *12.05.2009* Version 2009.2 released (new top level scripts (_isfepy_ - customized IPython shell, _postproc.py_ - mayavi2 based result viewer, _probe.py_), automatic html documentation generation via doxygen, new solvers, new mesh readers, extended syntax of equations for boundary traces of variables, short syntax for almost all input elements and other improvements), see [http://sfepy.googlecode.com/svn/web/releases/2009.2_RELEASE_NOTES.txt 2009.2_RELEASE_NOTES.txt]
 
  * *02.03.2009* Version 2009.1 released (new solvers, new mesh readers, unified homogenization framework, dispersion analysis, phase velocity computation for phononic materials and other improvements), see [http://sfepy.googlecode.com/svn/web/releases/2009.1_RELEASE_NOTES.txt 2009.1_RELEASE_NOTES.txt]
