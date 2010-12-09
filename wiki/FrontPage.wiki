@@ -2,7 +2,7 @@
 
 http://sfepy.googlecode.com/svn/web/docs/sfepy_logo_title_small.png
 
-Simple finite elements in Python.
+Simple finite elements in Python, http://sfepy.org.
 
 === News ===
  * *06.12.2010* Version 2010.4 released (higher order elements, refactoring of geometries (reference mappings), transparent DOF vector synchronization with variables, interface variables defined on a surface region, many bugfixes and many more updates), see [http://sfepy.googlecode.com/svn/web/releases/2010.4_RELEASE_NOTES.txt  2010.4_RELEASE_NOTES.txt]
@@ -27,7 +27,7 @@ For historians: see ArchivedNews.
  * other PDEs containing the implemented terms, both 2D and 3D
  * problems in complex domain (e.g. acoustics)
  * fading memory terms
- * particular applications (see the [http://sfepy.kme.zcu.cz/ Projects page])
+ * particular applications (see http://sfepy.org)
   * acoustic band gaps in phononic materials (similar to forbidden frequency ranges in photonic crystals, see http://en.wikipedia.org/wiki/Photonic_crystal)
   * Schroedinger equation
   * homogenization of porous media (modelling of muscle tissue, bones, engineering porous materials)
