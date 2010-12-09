@@ -8,7 +8,7 @@ Examples on this wiki:
 Application projects (= well documented complex examples):
  * Simulating mechanical behaviour of a fish (carp) heart: [http://docs.sfepy.org/fish_heart/]
 
-See also [http://sfepy.kme.zcu.cz/index.cgi/Examples]
+See also [http://sfepy.org].
 
 This page is in reconstruction now. The old stuff was moved to OldExamples.
 
