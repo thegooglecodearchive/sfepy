@@ -1,7 +1,7 @@
 #summary A beginner's tutorial on using SfePy.
 #labels Featured
 
-*An updated Primer is available at https://github.com/sfepy/sfepy/wiki/Primer*
+*NOTE:* An updated Primer is available at https://github.com/sfepy/sfepy/wiki/Primer
 
 <wiki:toc max_depth="1" />
 
