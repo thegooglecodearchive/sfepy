@@ -4,6 +4,8 @@ http://sfepy.googlecode.com/svn/web/docs/sfepy_logo_title_small.png
 
 Simple finite elements in Python, http://sfepy.org.
 
+----
+
 === News ===
  * *06.12.2010* Version 2010.4 released (higher order elements, refactoring of geometries (reference mappings), transparent DOF vector synchronization with variables, interface variables defined on a surface region, many bugfixes and many more updates), see [http://sfepy.googlecode.com/svn/web/releases/2010.4_RELEASE_NOTES.txt  2010.4_RELEASE_NOTES.txt]
 
@@ -16,6 +18,8 @@ Simple finite elements in Python, http://sfepy.org.
  * *24.11.2009* Version 2009.4 released (greatly improved postprocessing and visualization capabilities, unified handling of user-defined functions, new tests, terms, many bugfixes), see [http://sfepy.googlecode.com/svn/web/releases/2009.4_RELEASE_NOTES.txt 2009.4_RELEASE_NOTES.txt]
 
 For historians: see ArchivedNews.
+
+----
 
 === Key Features ===
 
@@ -33,6 +37,8 @@ For historians: see ArchivedNews.
   * homogenization of porous media (modelling of muscle tissue, bones, engineering porous materials)
 
 See [Examples] and [Documentation].
+
+----
 
 === Mailing Lists ===
 Developer/user discussions: [http://groups.google.com/group/sfepy-devel sfepy-devel]
