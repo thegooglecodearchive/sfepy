@@ -7,7 +7,7 @@ Simple finite elements in Python, http://sfepy.org.
 ----
 
 === News ===
- * 24.03.2011* Version 2011.1 released (discontinuous approximations, user-defined material nonlinearities, improved surface approximations, speed-up mesh reading, extensive clean-up - less code, many bugfixes and many more updates), see [http://sfepy.googlecode.com/svn/web/releases/2011.1_RELEASE_NOTES.txt 2011.1_RELEASE_NOTES.txt]
+ * *24.03.2011* Version 2011.1 released (discontinuous approximations, user-defined material nonlinearities, improved surface approximations, speed-up mesh reading, extensive clean-up - less code, many bugfixes and many more updates), see [http://sfepy.googlecode.com/svn/web/releases/2011.1_RELEASE_NOTES.txt 2011.1_RELEASE_NOTES.txt]
 
  * *06.12.2010* Version 2010.4 released (higher order elements, refactoring of geometries (reference mappings), transparent DOF vector synchronization with variables, interface variables defined on a surface region, many bugfixes and many more updates), see [http://sfepy.googlecode.com/svn/web/releases/2010.4_RELEASE_NOTES.txt  2010.4_RELEASE_NOTES.txt]
 
