@@ -7,6 +7,9 @@ Simple finite elements in Python, http://sfepy.org.
 ----
 
 === News ===
+ * *31.05.2011* Version 2011.2 released (experimental implementation of terms aiming at easier usage and definition of new terms, Mooney-Rivlin membrane term, update build system to use exclusively setup.py, allow switching boundary conditions on/off depending on time, support for variable time step solvers, etc.), see [http://sfepy.googlecode.com/svn/web/releases/2011.2_RELEASE_NOTES.txt 2011.2_RELEASE_NOTES.txt]
+
+
  * *24.03.2011* Version 2011.1 released (discontinuous approximations, user-defined material nonlinearities, improved surface approximations, speed-up mesh reading, extensive clean-up - less code, many bugfixes and many more updates), see [http://sfepy.googlecode.com/svn/web/releases/2011.1_RELEASE_NOTES.txt 2011.1_RELEASE_NOTES.txt]
 
  * *06.12.2010* Version 2010.4 released (higher order elements, refactoring of geometries (reference mappings), transparent DOF vector synchronization with variables, interface variables defined on a surface region, many bugfixes and many more updates), see [http://sfepy.googlecode.com/svn/web/releases/2010.4_RELEASE_NOTES.txt  2010.4_RELEASE_NOTES.txt]
@@ -14,8 +17,6 @@ Simple finite elements in Python, http://sfepy.org.
  * *06.08.2010* Version 2010.3 released (significantly rewritten code for better interactive use, cleaner and simpler high level interface, new examples, tests, simplified but more powerful homogenization engine, many bugfixes), see [http://sfepy.googlecode.com/svn/web/releases/2010.3_RELEASE_NOTES.txt 2010.3_RELEASE_NOTES.txt]
 
  * *10.05.2010* Version 2010.2 released (significantly updated documentation, new mesh readers, conversion formulas for elastic constants, basic tensor transformations, stress tensor conversion, new examples, tests, many new terms and bugfixes), see [http://sfepy.googlecode.com/svn/web/releases/2010.2_RELEASE_NOTES.txt 2010.2_RELEASE_NOTES.txt]
-
- * *01.03.2010* Version 2010.1 released (new sphinx-based documentation, refactoring of base functions (polynomial spaces) and element geometry description, interpolation between different meshes, terms for describing perfusion and active fibres in the total Lagrangian formulation (applicable, for example, to active muscle tissue models) new tests, many new terms and bugfixes), see [http://sfepy.googlecode.com/svn/web/releases/2010.1_RELEASE_NOTES.txt 2010.1_RELEASE_NOTES.txt]
 
 For historians: see ArchivedNews.
 
