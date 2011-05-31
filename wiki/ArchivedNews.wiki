@@ -2,6 +2,8 @@
 
 = Archived News =
 
+ * *01.03.2010* Version 2010.1 released (new sphinx-based documentation, refactoring of base functions (polynomial spaces) and element geometry description, interpolation between different meshes, terms for describing perfusion and active fibres in the total Lagrangian formulation (applicable, for example, to active muscle tissue models) new tests, many new terms and bugfixes), see [http://sfepy.googlecode.com/svn/web/releases/2010.1_RELEASE_NOTES.txt 2010.1_RELEASE_NOTES.txt]
+
  * *24.11.2009* Version 2009.4 released (greatly improved postprocessing and visualization capabilities, unified handling of user-defined functions, new tests, terms, many bugfixes), see [http://sfepy.googlecode.com/svn/web/releases/2009.4_RELEASE_NOTES.txt 2009.4_RELEASE_NOTES.txt]
 
  * *21.07.2009* Version 2009.3 released (_Windows installation_, updated postproc.py - visualization, new tests, terms, solvers, bugfixes), see [http://sfepy.googlecode.com/svn/web/releases/2009.3_RELEASE_NOTES.txt 2009.3_RELEASE_NOTES.txt]
