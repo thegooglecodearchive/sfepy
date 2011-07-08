@@ -12,7 +12,7 @@ This page contains instructions for simple and easy installation of SfePy onto W
 
 4. Download the latest mysysgit (http://code.google.com/p/msysgit/) windows installer (get the file that begins with "msysGit-fullinstall") and install it in the default installation directory.
 
-5. Download the latest umfpackpy (http://code.google.com/p/umfpackpy/) zip archive and follow the instructions-
+5. Download the latest umfpackpy (http://code.google.com/p/umfpackpy/) zip archive and follow the instructions below-
 
 a) Extract the *umfpackpy_0.1.zip* to your convenient location in Hard disk, Lets assume it's extracted in C:/. Now there will be two files on the extracted folder, *ez_setup.py* and *scikits.umfpack-5.1.0-py2.6-win32.egg*.
 
@@ -24,7 +24,7 @@ c) Write the following code on msys to install the UMFPACK library for python.
 
 *$ ez_setup.py scikits.umfpack-5.1.0-py2.6-win32.egg*
 
-6. Download the latest sfepy (http://code.google.com/p/sfepy/) tarball and follow the instructions-
+6. Download the latest sfepy (http://code.google.com/p/sfepy/) tarball and follow the instructions below-
 
 a) Extract the sfepy tarball to your convenient location in Hard disk, Lets assume it's extracted in C:/.
 
