@@ -99,3 +99,5 @@ There are many steps, but hopefully it is straightforward to follow this procedu
     * Congratulations! You should (hopefully) now have a working copy of !SfePy on Windows.
     * Please help aid !SfePy development by running the builtin tests
       * In msys, in the !SfePy source directory, type `./runTests.py --filter-less` and report any failures to the sfepy-devel mailing list
+
+  for simple and easy instructions of windows installation, look at http://code.google.com/p/sfepy/wiki/Simple_Windows_Installation
