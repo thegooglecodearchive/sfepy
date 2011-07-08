@@ -30,12 +30,15 @@ a) Extract the sfepy tarball to your convenient location on Hard disk, Lets assu
 
 b) Start msys and write the following code to go to the extracted folder.
 
-*$ cd /c/sfepy_folder/*
+*$ cd /c/sfepy_folder_name/*
 
 c) Write the following code on msys to Compile SfePy C extensions.
 
 *$ python setup.py build_ext --inplace --compiler=mingw32*
 
-7. You should now have a working copy of SfePy on Windows, Please help aid SfePy development by running the builtin tests.
+7. You should now have a working copy of SfePy on Windows, Please help aid SfePy development by running the builtin tests. Execute the *runTests.py* in python IDLE or Write the following code on msys.
+
+*$ runTests.py --filter-less*
+
 
 ** for detailed and advanced instructions of windows installation, look at http://code.google.com/p/sfepy/wiki/PythonXYWindowsInstall
