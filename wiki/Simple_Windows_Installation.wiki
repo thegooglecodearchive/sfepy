@@ -41,4 +41,4 @@ c) Write the following code on msys to Compile SfePy C extensions.
 *$ runTests.py --filter-less*
 
 
-** for detailed and advanced instructions of windows installation, look at http://code.google.com/p/sfepy/wiki/PythonXYWindowsInstall
+For detailed and advanced instructions of windows installation, look at http://code.google.com/p/sfepy/wiki/PythonXYWindowsInstall
