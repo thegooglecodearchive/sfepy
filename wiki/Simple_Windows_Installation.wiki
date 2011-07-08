@@ -1,4 +1,4 @@
-instructions for installing SfePy on Windows.
+#instructions for installing SfePy on Windows.
 
 This page contains instructions for installing SfePy onto Windows.
 
@@ -24,3 +24,5 @@ b) Start msys and write the following code to go to the extracted folder.
 c) Write the following code on msys to install the UMFPACK library for python.
 
 *$ ez_setup.py scikits.umfpack-5.1.0-py2.6-win32.egg*
+
+6. 
