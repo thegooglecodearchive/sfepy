@@ -6,6 +6,9 @@
 
   http://docs.sfepy.org/doc/introduction.html#installation
 
+  related: compiled UMFPACK library for python on windows: http://code.google.com/p/umfpackpy/
+
+
 *Latest released sources:*
 
   http://sfepy.googlecode.com/files/sfepy-2011.2.tar.gz
