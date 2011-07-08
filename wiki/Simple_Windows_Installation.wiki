@@ -14,11 +14,11 @@ This page contains instructions for simple and easy installation of SfePy onto W
 
 5. Download the latest umfpackpy (http://code.google.com/p/umfpackpy/) zip archive and follow the instructions-
 
-a) Extract the *umfpackpy 0.1.zip* to your convenient location on Hard disk, Lets assume it's extracted on C:/. Now there will be two files on the extracted folder, *ez_setup.py* and *scikits.umfpack-5.1.0-py2.6-win32.egg*.
+a) Extract the *umfpackpy_0.1.zip* to your convenient location in Hard disk, Lets assume it's extracted in C:/. Now there will be two files on the extracted folder, *ez_setup.py* and *scikits.umfpack-5.1.0-py2.6-win32.egg*.
 
 b) Start msys and write the following code to go to the extracted folder.
 
-*$ cd /c/umfpackpy 0.1/*
+*$ cd /c/umfpackpy_0.1/*
 
 c) Write the following code on msys to install the UMFPACK library for python.
 
@@ -26,7 +26,7 @@ c) Write the following code on msys to install the UMFPACK library for python.
 
 6. Download the latest sfepy (http://code.google.com/p/sfepy/) tarball and follow the instructions-
 
-a) Extract the sfepy tarball to your convenient location on Hard disk, Lets assume it's extracted on C:/.
+a) Extract the sfepy tarball to your convenient location in Hard disk, Lets assume it's extracted in C:/.
 
 b) Start msys and write the following code to go to the extracted folder.
 
@@ -36,7 +36,7 @@ c) Write the following code on msys to Compile SfePy C extensions.
 
 *$ python setup.py build_ext --inplace --compiler=mingw32*
 
-7. You should now have a working copy of SfePy on Windows, Please help aid SfePy development by running the builtin tests. Execute the *runTests.py* in python IDLE or Write the following code on msys.
+7. You should now have a working copy of SfePy on Windows, Please help aid SfePy development by running the built-in tests. Run the *runTests.py* in python IDLE or Write the following code on msys.
 
 *$ runTests.py --filter-less*
 
