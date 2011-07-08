@@ -6,15 +6,15 @@ This page contains instructions for installing SfePy onto Windows.
 *Pre-requisites:*
 
 1. python(x,y) (http://www.pythonxy.com/)
-   Download the latest python(x,y) windows installer.
+Download the latest python(x,y) windows installer, and install it in the default installation directory.
 
 2. pyparsing (http://sourceforge.net/projects/pyparsing)
-   Download the latest pyparsing windows installer (Python version 2.6).
+Download the latest pyparsing windows installer (Python version 2.6) and install it in the default installation directory.
 
 3. mysysgit (http://code.google.com/p/msysgit/)
-   Download the latest mysysgit installer (get the file that begins with "msysGit-fullinstall").
+Download the latest mysysgit installer (get the file that begins with "msysGit-fullinstall") and install it in the default installation directory..
 
 4. Minimum 4 Gigabytes of free disk space, Due to the installed size of python(x,y) and msysgit.
 
 
-*Installation instructions:*
+*SfePy Installation instructions:*
