@@ -1,19 +1,20 @@
-instructions for installing SfePy onto Windows
+instructions for installing SfePy on Windows.
 
 This page contains instructions for installing SfePy onto Windows.
 
 
 *Step by step Instructions:*
 
-1. Minimum 4 Gigabytes of free disk space, Due to the installed size of python(x,y) and msysgit.
+1. Minimum 4 Gigabytes of free disk space is required, Due to the installed size of python(x,y) and msysgit.
 
-2. Download the latest *python(x,y) (http://www.pythonxy.com/)* windows installer, and make a *Full installation* in the default installation directory.
+2. Download the latest python(x,y) (http://www.pythonxy.com/) windows installer, and make a *Full installation* in the default installation directory.
 
-3. Download the latest *pyparsing (http://sourceforge.net/projects/pyparsing)* windows installer (Python version 2.6) and install it in the default installation directory.
+3. Download the latest pyparsing (http://sourceforge.net/projects/pyparsing) windows installer (Python version 2.6) and install it in the default installation directory.
 
-4. Download the latest *mysysgit (http://code.google.com/p/msysgit/)* windows installer (get the file that begins with "msysGit-fullinstall") and install it in the default installation directory.
+4. Download the latest mysysgit (http://code.google.com/p/msysgit/) windows installer (get the file that begins with "msysGit-fullinstall") and install it in the default installation directory.
 
-5. Download the latest *umfpackpy (http://code.google.com/p/umfpackpy/)* zip
+5. Download the latest umfpackpy (http://code.google.com/p/umfpackpy/)* zip
+
 a) Download and Extract the *scikits.umfpack-5.1.0-py2.6-win32.zip* to your convenient location on Hard disk, Lets assume it's extracted on C:/. Now there will be two files on the extracted folder, *ez_setup.py* and *scikits.umfpack-5.1.0-py2.6-win32.egg*.
 
 b) Start msys and write the following code to go to the extracted folder.
