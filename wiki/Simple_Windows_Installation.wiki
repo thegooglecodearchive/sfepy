@@ -1,4 +1,4 @@
-instructions for installing SfePy on Windows.
+#summary instructions for installing SfePy on Windows.
 
 This page contains instructions for installing SfePy onto Windows.
 
