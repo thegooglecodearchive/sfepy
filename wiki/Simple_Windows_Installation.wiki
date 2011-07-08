@@ -2,6 +2,7 @@ instructions for installing SfePy onto Windows
 
 This page contains instructions for installing SfePy onto Windows.
 
+
 *Pre-requisites:*
 
 1. python(x,y) (http://www.pythonxy.com/)
