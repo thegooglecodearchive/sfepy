@@ -7,8 +7,10 @@ Simple finite elements in Python, http://sfepy.org.
 ----
 
 === News ===
- * *31.05.2011* Version 2011.2 released (experimental implementation of terms aiming at easier usage and definition of new terms, Mooney-Rivlin membrane term, update build system to use exclusively setup.py, allow switching boundary conditions on/off depending on time, support for variable time step solvers, etc.), see [http://sfepy.googlecode.com/svn/web/releases/2011.2_RELEASE_NOTES.txt 2011.2_RELEASE_NOTES.txt]
 
+ * *10.08.2011* Version 2011.3 released (major update of terms aiming at easier usage and definition while retaining original C functions, overriding problem description items on command line, improved developer guide, Primer tutorial - a step-by-step walk-through of the process to solve a simple mechanics problem, etc.), see [http://sfepy.googlecode.com/svn/web/releases/2011.3_RELEASE_NOTES.txt 2011.3_RELEASE_NOTES.txt]
+
+ * *31.05.2011* Version 2011.2 released (experimental implementation of terms aiming at easier usage and definition of new terms, Mooney-Rivlin membrane term, update build system to use exclusively setup.py, allow switching boundary conditions on/off depending on time, support for variable time step solvers, etc.), see [http://sfepy.googlecode.com/svn/web/releases/2011.2_RELEASE_NOTES.txt 2011.2_RELEASE_NOTES.txt]
 
  * *24.03.2011* Version 2011.1 released (discontinuous approximations, user-defined material nonlinearities, improved surface approximations, speed-up mesh reading, extensive clean-up - less code, many bugfixes and many more updates), see [http://sfepy.googlecode.com/svn/web/releases/2011.1_RELEASE_NOTES.txt 2011.1_RELEASE_NOTES.txt]
 
