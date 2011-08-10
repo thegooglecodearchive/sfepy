@@ -1,6 +1,6 @@
 #summary instructions for installing SfePy on Windows
 
-This page contains instructions for simple and easy installation of SfePy onto Windows.
+This page contains instructions for simple and easy installation of SfePy on Windows.
 
 *Step by step Instructions:*
 
