@@ -18,8 +18,6 @@ Simple finite elements in Python, http://sfepy.org.
 
  * *06.08.2010* Version 2010.3 released (significantly rewritten code for better interactive use, cleaner and simpler high level interface, new examples, tests, simplified but more powerful homogenization engine, many bugfixes), see [http://sfepy.googlecode.com/svn/web/releases/2010.3_RELEASE_NOTES.txt 2010.3_RELEASE_NOTES.txt]
 
- * *10.05.2010* Version 2010.2 released (significantly updated documentation, new mesh readers, conversion formulas for elastic constants, basic tensor transformations, stress tensor conversion, new examples, tests, many new terms and bugfixes), see [http://sfepy.googlecode.com/svn/web/releases/2010.2_RELEASE_NOTES.txt 2010.2_RELEASE_NOTES.txt]
-
 For historians: see ArchivedNews.
 
 ----
