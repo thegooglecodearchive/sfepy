@@ -1,8 +1,11 @@
 #summary A wiki for the frontpage (this line will not be visible on the front page).
 
 http://sfepy.googlecode.com/svn/web/docs/sfepy_logo_title_small.png
+... simple finite elements in Python
 
-Simple finite elements in Python, http://sfepy.org.
+*Note:* recent documentation and examples can be found at http://sfepy.org.
+
+This site serves for issue/bug tracking, downloads, mailing lists and wiki, which can be used for temporary documents or to prepare documents later to be included in the main sphinx documentation.
 
 ----
 
