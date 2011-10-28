@@ -6,23 +6,23 @@ This page contains instructions for simple and easy installation of Sfepy on Win
 
 1. Minimum 4 Gigabytes of free disk space is required, Due to the installed size of python(x,y) and msysgit.
 
-2. Download the latest python(x,y) (http://www.pythonxy.com/) windows installer, and make a *Full installation* in the default installation directory.
+2. Download the latest python(x,y)(version 2.7.X.X)(http://www.pythonxy.com/) windows installer, and make a *Full installation* in the default installation directory.
 
-3. Download the latest pyparsing (http://sourceforge.net/projects/pyparsing) windows installer (Python version 2.6) and install it in the default installation directory.
+3. Download the latest pyparsing (http://sourceforge.net/projects/pyparsing) windows installer (Python version 2.7) and install it in the default installation directory.
 
 4. Download the latest mysysgit (http://code.google.com/p/msysgit/) windows installer (get the file that begins with "msysGit-fullinstall") and install it in the default installation directory.
 
 5. Download the latest umfpackpy (http://code.google.com/p/umfpackpy/) zip archive and follow the instructions below-
 
-a) Extract the *umfpackpy_0.1.zip* to your convenient location in Hard disk, Lets assume it's extracted in C:/. Now there will be two files on the extracted folder, *ez_setup.py* and *scikits.umfpack-5.1.0-py2.6-win32.egg*.
+a) Extract the *umfpackpy_0.2.zip* to your convenient location in Hard disk, Lets assume it's extracted in C:/. Now there will be two files on the extracted folder, *ez_setup.py* and *scikits.umfpack-5.1.0-py2.7-win32.egg*.
 
 b) Start msys and write the following code to go to the extracted folder.
 
-*$ cd /c/umfpackpy_0.1/*
+*$ cd /c/umfpackpy_0.2/*
 
 c) Write the following code on msys to install the UMFPACK library for python.
 
-*$ ez_setup.py scikits.umfpack-5.1.0-py2.6-win32.egg*
+*$ ez_setup.py scikits.umfpack-5.1.0-py2.7-win32.egg*
 
 6. Download the latest sfepy (http://code.google.com/p/sfepy/) tarball and follow the instructions below-
 
