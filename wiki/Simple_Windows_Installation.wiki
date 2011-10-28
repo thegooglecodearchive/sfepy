@@ -6,7 +6,7 @@ This page contains instructions for simple and easy installation of Sfepy on Win
 
 1. Minimum 4 Gigabytes of free disk space is required, Due to the installed size of python(x,y) and msysgit.
 
-2. Download the latest python(x,y) (version 2.7.X.X) (http://www.pythonxy.com/) windows installer, and make a *Full installation* in the default installation directory.
+2. Download the latest python(x,y) (http://www.pythonxy.com/) windows installer (version 2.7.X.X), and make a *Full installation* in the default installation directory.
 
 3. Download the latest pyparsing (http://sourceforge.net/projects/pyparsing) windows installer (Python version 2.7) and install it in the default installation directory.
 
