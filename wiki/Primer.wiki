@@ -1,7 +1,7 @@
 #summary A beginner's tutorial on using SfePy.
-#labels Featured
+#labels Deprecated
 
-*NOTE:* An updated Primer is available at https://github.com/sfepy/sfepy/wiki/Primer
+*NOTE:* The Primer updated for current SfePy is available at http://docs.sfepy.org/doc-devel/primer.html - the text below is the original version that uses some now obsolete syntax and is deprecated.
 
 <wiki:toc max_depth="1" />
 
