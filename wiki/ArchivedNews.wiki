@@ -2,6 +2,8 @@
 
 = Archived News =
 
+ * *06.08.2010* Version 2010.3 released (significantly rewritten code for better interactive use, cleaner and simpler high level interface, new examples, tests, simplified but more powerful homogenization engine, many bugfixes), see [http://sfepy.googlecode.com/svn/web/releases/2010.3_RELEASE_NOTES.txt 2010.3_RELEASE_NOTES.txt]
+
  * *10.05.2010* Version 2010.2 released (significantly updated documentation, new mesh readers, conversion formulas for elastic constants, basic tensor transformations, stress tensor conversion, new examples, tests, many new terms and bugfixes), see [http://sfepy.googlecode.com/svn/web/releases/2010.2_RELEASE_NOTES.txt 2010.2_RELEASE_NOTES.txt]
 
  * *01.03.2010* Version 2010.1 released (new sphinx-based documentation, refactoring of base functions (polynomial spaces) and element geometry description, interpolation between different meshes, terms for describing perfusion and active fibres in the total Lagrangian formulation (applicable, for example, to active muscle tissue models) new tests, many new terms and bugfixes), see [http://sfepy.googlecode.com/svn/web/releases/2010.1_RELEASE_NOTES.txt 2010.1_RELEASE_NOTES.txt]
