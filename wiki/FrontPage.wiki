@@ -10,6 +10,7 @@ This site serves for issue/bug tracking, downloads, mailing lists and wiki, whic
 ----
 
 === News ===
+ * *05.12.2011* Version 2011.4 released (cython used instead of swig to interface C code, many terms unified thanks to new optional material term argument type, updated Lagrangian formulation for large deformations, automatic generation of gallery of examples, etc.), see [http://sfepy.googlecode.com/svn/web/releases/2011.4_RELEASE_NOTES.txt 2011.4_RELEASE_NOTES.txt]
 
  * *10.08.2011* Version 2011.3 released (major update of terms aiming at easier usage and definition while retaining original C functions, overriding problem description items on command line, improved developer guide, Primer tutorial - a step-by-step walk-through of the process to solve a simple mechanics problem, etc.), see [http://sfepy.googlecode.com/svn/web/releases/2011.3_RELEASE_NOTES.txt 2011.3_RELEASE_NOTES.txt]
 
@@ -18,8 +19,6 @@ This site serves for issue/bug tracking, downloads, mailing lists and wiki, whic
  * *24.03.2011* Version 2011.1 released (discontinuous approximations, user-defined material nonlinearities, improved surface approximations, speed-up mesh reading, extensive clean-up - less code, many bugfixes and many more updates), see [http://sfepy.googlecode.com/svn/web/releases/2011.1_RELEASE_NOTES.txt 2011.1_RELEASE_NOTES.txt]
 
  * *06.12.2010* Version 2010.4 released (higher order elements, refactoring of geometries (reference mappings), transparent DOF vector synchronization with variables, interface variables defined on a surface region, many bugfixes and many more updates), see [http://sfepy.googlecode.com/svn/web/releases/2010.4_RELEASE_NOTES.txt  2010.4_RELEASE_NOTES.txt]
-
- * *06.08.2010* Version 2010.3 released (significantly rewritten code for better interactive use, cleaner and simpler high level interface, new examples, tests, simplified but more powerful homogenization engine, many bugfixes), see [http://sfepy.googlecode.com/svn/web/releases/2010.3_RELEASE_NOTES.txt 2010.3_RELEASE_NOTES.txt]
 
 For historians: see ArchivedNews.
 
