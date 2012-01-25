@@ -1,3 +1,5 @@
 #summary One-sentence summary of this page.
 
 The Issues were transfered to https://github.com/sfepy/sfepy/issues?sort=created
+
+The original issues page is only for reference [http://code.google.com/p/sfepy/issues/list here] - *do not use it*!
