@@ -5,7 +5,7 @@ http://sfepy.googlecode.com/svn/web/docs/sfepy_logo_title_small.png
 
 *Note:* recent documentation and examples can be found at http://sfepy.org.
 
-This site serves for issue/bug tracking, downloads, mailing lists and wiki, which can be used for temporary documents or to prepare documents later to be included in the main sphinx documentation.
+This site serves for downloads, mailing lists and wiki, which can be used for temporary documents or to prepare documents later to be included in the main sphinx documentation. We are moving the content to http://sfepy.org and https://github.com/sfepy pages.
 
 ----
 
