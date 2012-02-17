@@ -1,7 +1,4 @@
-#summary A wiki for the frontpage (this line will not be visible on the front page).
-
-http://sfepy.googlecode.com/svn/web/docs/sfepy_logo_title_small.png
-... simple finite elements in Python
+#summary A wiki for the frontpage.
 
 *Homepage:* http://sfepy.org.
 
