@@ -3,56 +3,16 @@
 http://sfepy.googlecode.com/svn/web/docs/sfepy_logo_title_small.png
 ... simple finite elements in Python
 
-*Note:* recent documentation and examples can be found at http://sfepy.org.
+*Homepage:* http://sfepy.org.
 
 This site serves for downloads, mailing lists and wiki, which can be used for temporary documents or to prepare documents later to be included in the main sphinx documentation. We are moving the content to http://sfepy.org and https://github.com/sfepy pages.
 
 ----
 
-=== News ===
+=== Mailing List ===
 
- * *05.12.2011* Version 2011.4 released (cython used instead of swig to interface C code, many terms unified thanks to new optional material term argument type, updated Lagrangian formulation for large deformations, automatic generation of gallery of examples, etc.), see [http://sfepy.googlecode.com/svn/web/releases/2011.4_RELEASE_NOTES.txt 2011.4_RELEASE_NOTES.txt]
-
- * *10.08.2011* Version 2011.3 released (major update of terms aiming at easier usage and definition while retaining original C functions, overriding problem description items on command line, improved developer guide, Primer tutorial - a step-by-step walk-through of the process to solve a simple mechanics problem, etc.), see [http://sfepy.googlecode.com/svn/web/releases/2011.3_RELEASE_NOTES.txt 2011.3_RELEASE_NOTES.txt]
-
- * *31.05.2011* Version 2011.2 released (experimental implementation of terms aiming at easier usage and definition of new terms, Mooney-Rivlin membrane term, update build system to use exclusively setup.py, allow switching boundary conditions on/off depending on time, support for variable time step solvers, etc.), see [http://sfepy.googlecode.com/svn/web/releases/2011.2_RELEASE_NOTES.txt 2011.2_RELEASE_NOTES.txt]
-
- * *24.03.2011* Version 2011.1 released (discontinuous approximations, user-defined material nonlinearities, improved surface approximations, speed-up mesh reading, extensive clean-up - less code, many bugfixes and many more updates), see [http://sfepy.googlecode.com/svn/web/releases/2011.1_RELEASE_NOTES.txt 2011.1_RELEASE_NOTES.txt]
-
- * *06.12.2010* Version 2010.4 released (higher order elements, refactoring of geometries (reference mappings), transparent DOF vector synchronization with variables, interface variables defined on a surface region, many bugfixes and many more updates), see [http://sfepy.googlecode.com/svn/web/releases/2010.4_RELEASE_NOTES.txt  2010.4_RELEASE_NOTES.txt]
-
-For historians: see ArchivedNews.
-
-----
-
-=== Key Features ===
-
- * solving many problems described by PDEs:
-  * linear problems: linear elasticity, Poisson equation, Stokes, Darcy flow, Biot problem
-  * nonlinear problems:
-   * Navier-Stokes equations
-   * finite deformations: hyperelastic neo-Hookean, Mooney-Rivlin materials in the total Lagrangian formulation
- * other PDEs containing the implemented terms, both 2D and 3D
- * problems in complex domain (e.g. acoustics)
- * fading memory terms
- * particular applications (see http://sfepy.org)
-  * acoustic band gaps in phononic materials (similar to forbidden frequency ranges in photonic crystals, see http://en.wikipedia.org/wiki/Photonic_crystal)
-  * Schroedinger equation
-  * homogenization of porous media (modelling of muscle tissue, bones, engineering porous materials)
-
-See [Examples] and [Documentation].
-
-----
-
-=== Mailing Lists ===
 Developer/user discussions: [http://groups.google.com/group/sfepy-devel sfepy-devel]
-
-Issues announcements list: [http://groups.google.com/group/sfepy-issues sfepy-issues]
 
 === Sources ===
 
 See the [Downloads] page.
-
-=== IRC channel ===
-
-#sfepy at freenode.
