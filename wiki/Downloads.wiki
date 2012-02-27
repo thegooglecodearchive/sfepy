@@ -10,7 +10,7 @@
   
 *Latest released sources:*
 
-  http://sfepy.googlecode.com/files/sfepy-2011.4.tar.gz
+  http://sfepy.googlecode.com/files/sfepy-2012.1.tar.gz
 
 *Git repository:*
 
