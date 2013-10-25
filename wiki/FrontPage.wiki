@@ -2,7 +2,7 @@
 
 *Homepage:* http://sfepy.org.
 
-This site serves for downloads, mailing lists and wiki, which can be used for temporary documents or to prepare documents later to be included in the main sphinx documentation. We are moving the content to http://sfepy.org and https://github.com/sfepy pages.
+This site can be used to access the mailing list. Other content has been moved to http://sfepy.org and https://github.com/sfepy pages.
 
 ----
 
@@ -10,6 +10,6 @@ This site serves for downloads, mailing lists and wiki, which can be used for te
 
 Developer/user discussions: [http://groups.google.com/group/sfepy-devel sfepy-devel]
 
-=== Sources ===
+=== Downloads ===
 
-See the [Downloads] page.
+See http://sfepy.org/doc-devel/downloads.html.
