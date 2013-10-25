@@ -1,5 +1,4 @@
 #summary Development and user-contributed documentation.
-#labels Featured
 
 = Documentation ==
 
