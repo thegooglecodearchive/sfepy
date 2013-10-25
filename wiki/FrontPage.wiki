@@ -2,7 +2,7 @@
 
 *Homepage:* http://sfepy.org.
 
-This site can be used to access the mailing list. Other content has been moved to http://sfepy.org and https://github.com/sfepy pages.
+The site content (except the mailing list) has been moved to http://sfepy.org and https://github.com/sfepy pages.
 
 ----
 
