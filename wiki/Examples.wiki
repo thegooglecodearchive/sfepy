@@ -1,5 +1,4 @@
 ﻿#summary Example of usage
-#labels Featured
 
 Examples on this wiki:
 
